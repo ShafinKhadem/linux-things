@@ -1,0 +1,296 @@
+// In ubuntu 16, don't try to install gcc above version 5, the latest stable I experienced was 5.4. Couldn't install 18 directly (installation kept stuck), but could upgrade from 16, which I think is better as it contains good old unity too. But for system settings like power, touchpad you often need to login to gnome and change settings and then log out and log back in to unity.
+
+// In ubuntu 18 with unity, super+f4, super+space couldn't be used as shortcut.
+
+sudo apt-get install dconf-tools
+
+// now gui of gsettings is dconf-editor
+
+to enable hibernation:
+
+First run sudo systemctl hibernate and see whether windows remain open after restart.
+If not: run grep swap /etc/fstab, copy the UUID, sudo nano /etc/default/grub -> after quiet splash, add: resume=UUID=(paste the UUID), sudo update-grub.
+
+sudo nano /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+Copy the lines below and paste them into the nano window.
+
+[Re-enable hibernate by default in upower]
+Identity=unix-user:*
+Action=org.freedesktop.upower.hibernate
+ResultActive=yes
+
+[Re-enable hibernate by default in logind]
+Identity=unix-user:*
+Action=org.freedesktop.login1.hibernate;org.freedesktop.login1.handle-hibernate-key;org.freedesktop.login1;org.freedesktop.login1.hibernate-multiple-sessions;org.freedesktop.login1.hibernate-ignore-inhibit
+ResultActive=yes
+
+Save by pressing Ctrl-O then enter and then exit nano by pressing Ctrl-X.
+
+Restart and hibernation is back!
+
+Or run killall unity-panel-service to just reset the menu.
+
+Some users will then need to run sudo update-grub to get the hibernate option to be available in the power menu. Some users may also have to at least log out then log in to get it to appear in the (upper right) power menu.
+
+
+to enable hibenate directly using button (I think ubuntu 18's default interactive button is better):
+Press alt+f2 and open dconf-editor (or in a terminal type dconf-editor)
+
+Navigate to org.gnome.settings-daemon.plugins.power and set your default button-power action there
+
+
+//------to enable auto hibernate at low power
+sudo gsettings set org.gnome.settings-daemon.plugins.power percentage-low 40
+sudo gsettings set org.gnome.settings-daemon.plugins.power percentage-critical 30
+sudo gsettings set org.gnome.settings-daemon.plugins.power percentage-action 25
+sudo gsettings set org.gnome.settings-daemon.plugins.power use-time-for-policy false
+
+sudo nano /etc/UPower/UPower.conf ==> replace these options' value:
+UsePercentageForPolicy=true
+PercentageLow=40
+PercentageCritical=30
+PercentageAction=25
+CriticalPowerAction=HybridSleep
+
+
+
+most wanted trick is ctrl-r, man, --help and using workspaces(enable by going to system settings>appearance>behaviour
+command for changing the number of workspaces:
+dconf write /org/compiz/profiles/unity/plugins/core/vsize 3  (hsize=horizontal)
+process to change the shortcut for switching workspaces:
+Open the Keyboard utility.
+In the Shortcuts tab, select Navigation and scroll to the bottom. Double click on a row and press your new shortcut keys.
+//process to turn off workspace switching time:
+
+//---------------ccsm / compizconfig-settings-manager seems to crash a lot with 18.04-------------
+
+install ccsm: sudo apt-get install compizconfig-settings-manager
+Open CompizConfig settings manager. Under Desktop → Desktop Wall → Viewport switching set Wall sliding duration to 0 and under effect, deselect all.
+
+command for decreasing the brightness even more in ubuntu:
+sudo su -c "echo 100 >/sys/class/backlight/intel_backlight/brightness"
+if u feel it to be too much dark you can simply increase the brightness by writing higher value instead of 100
+
+to avoid repeating higher command u can simply use ctrl+r and then type some unique part of the command (it actually does reverse search), also up-down arrow can be used.
+
+To run any application from terminal without holding it:
+nohup balsalApplication &>/dev/null &disown
+
+install alacarte, so that from 'main menu' app, you can create/edit menu item (hightail).
+
+//------how to increase touchpad speed beyond max (max in system settings):
+in terminal(of course:)):
+xinput list
+xinput list-props YOURTOUCHPADID
+xinput set-prop YOURTOUCHPADID PROPERTYID NEWVALUE
+//-----change the cursor size:
+install gnome-tweak-tool
+gnome-tweak-tool(terminal enter, same process when an application can't be run normally)
+change the curson to whiteglass and turn off animations
+
+install chromium, old software center only by using terminal
+
+hash sum mismatch error:
+sudo rm -rf /var/lib/apt/lists/*
+then run:
+
+sudo apt-get update //it does only update the list of package, but doesn't install them
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+
+above three lines were the command to update system using terminal
+
+how to automatically kill bluetooth and decrease brightness in ubuntu startup:
+at first install nano
+sudo -i
+nano /etc/rc.local
+add following lines after the #comments:
+rfkill block bluetooth
+sudo su -c "echo 100 >/sys/class/backlight/intel_backlight/brightness"
+sudo chown shafin /sys/class/backlight/intel_backlight/brightness
+ctrl o enter and then ctrl x
+
+//-------to update g++ gcc in ubuntu: g++5.5 is the latest version stable for 16.04-------
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt install g++-5
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 1 \
+                         --slave /usr/bin/g++ g++ /usr/bin/g++-5
+sudo update-alternatives --config gcc
+
+//-------to update java in ubuntu------
+at first extract from tar.gz in home/shafin/Downloads/jdk....
+then to update java:
+sudo update-alternatives --install "/usr/bin/java" "java" "/home/shafin/Desktop/CSE/ubuntu desktop files/downloads/jdk1.8.0_152/bin/java" 1
+sudo update-alternatives --config java
+then select the java version/location that system is going to use as java
+
+//------to update clang from already downloaded file-------
+just extract the tar.xz file in usr/lib
+
+//---------to create shortcuts---------
+Either use ctrl+shift + drag and drop or: man ln.
+
+to configure brightness directly you can change owner:
+sudo chown -R $USER:$USER /sys/class/ba.....
+and then create a link to it in desktop
+then you can also create a custom keyboard shortcut with command:
+bash -c 'echo 150 >/sys/class/backlight/intel_backlight/brightness'
+or after creating desktop link:
+gnome-terminal -- bash -c 'gedit ~/Desktop/brightness'
+if you didn't change ownership change bash by sudo su
+
+//---------installing deb---------
+cd to that directory
+then sudo apt install ./NAME_OF_THE_DEB
+finding installation location:
+dpkg-query  -S scenebuilder
+
+to turn on auto mount open disks application, select the disk and turn off auto mount(it will actually apply auto mount at startup):)
+to hide harddisk in ubuntu turn off auto mount and then turn off auto mount at startup and show in interface
+
+//-----to speed up wifi--------
+sudo gedit /etc/nsswitch.conf (thought it's better to use nano)
+This will open the configuration file in gedit so that you could edit it easily in GUI. In here, look for the following line:
+
+hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4
+If you find this file, replace it with the following line:
+
+hosts:          files dns
+
+//-----to free unnecessary space-----
+sudo apt-get autoremove
+sudo apt-get autoclean
+rm -rf ~/.cache/thumbnails/*
+
+//-----how to use shareit with ubuntu-----
+don't use shareit, rather use xender and use wifi-direct, webshare via connect pc
+to transfer between laptops, use superbeam (can use it for mobile too)
+
+//-----how to make installer from installed packages:
+install dpkg-repack
+sudo dpkg-repack PACKAGENAME(e.g.sublime-text)
+
+//-----how to turn off harddisk after certain time:
+go to disks, click on a hard disk and upper right corner menu button->drive settings-?turn on and set 5 minutes (don't set less than 5 minutes)
+
+//-----how to remove dpkg lock----
+sudo pkill dpkg
+sudo rm /var/lib/dpkg/lock
+sudo mv /var/cache/apt/archives/lock /var/cache/apt/archives/lock_bak
+
+//------to disable cd drive------
+eject -i on
+to enable again eject -i off
+
+//to take the window minimize-.... buttons to the left:
+gsettings set org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:'
+use dconf to set org.gnome.desktop.interface.show battery percentage to on
+
+//to turn off windows effects go to compiz-config's effects and deselect the first 2 options (animation and fade windows)
+
+//sudo add-apt-repository universe    if you can't install anything with terminal
+//to use gnome without genjam install gnome-tweak-tool and gnome extensions (pixel saver+hide activity button) / unite extension, global menu extension, and workspace grid, customise some of these extensions from tweaks.
+
+//show all application using windows+a and show all open windows in current workspace using windows+w, using ctrl with it means of current application, shift with it means of any workspace.
+
+// in nemo, to focus between panes: use f6 or ctrl+12, to search using pattern use ctrl+s, ctrl+space to toggle selection (useful for using with open in terminal shortcut), ctrl+i to invert selection.
+
+//from keyboard shortcut->window-> set a shortcut to lower window, then you can easily lower a maximized window. Use it and also use alt+f10 to use menu from fullscreen
+
+//You can auto send an application to specific workspace using "main menu" and installing wmctrl. just change the command to: bash -c "wmctrl -o 0,0; chromium-browser" and add a custom shortcut alt+super+1 to: bash -c "wmctrl -o 0,0; chromium-browser --incognito"
+
+//make list view and tree view default in nautilus, add shortcut to open in terminal by sudo nano ~/.config/nautilus/accels, copy a file and paste it to a editor place to get the file path in nautilus
+
+//check the modes and keyboard shortcuts in calculator.
+
+// usage of git diff
+# To ignore all blanks / empty lines: -b --ignore-blank-lines
+# To detect space change, use git diff --word-diff-regex='[^ \t]+|[ \t]'.
+# To get nice output, use --color and in ~/.gitconfig add the following:
+# [color]
+#     ui = auto
+# [color "diff"]
+#     meta = yellow
+#     old = red bold reverse
+#     new = green bold reverse
+#     whitespace = red reverse
+
+// my /etc/rc.local in ubuntu 20.04, don't forget to run sudo chmod +x /etc/rc.local:
+#!/bin/bash -e
+chown shafin /sys/class/backlight/intel_backlight/brightness
+exit 0
+
+
+// Auto start ibus in kubuntu following: https://askubuntu.com/a/1266190/749494:
+The following worked for me with IBus 1.5.22 and Kubuntu 20.04:
+`System Settings` -> `Startup and Shutdown` -> `AutoStart` -> `Add Program` -> Type `/usr/bin/ibus-daemon` and click OK -> In the `properties` window for newly added entry -> `Application` -> `Command`: `/usr/bin/ibus-daemon -dr` (notice the `-dr`, if I only use `-d` it works at startup, but not at login after logout) -> `OK` -> `Close` -> Restart your machine.
+
+// In Kubuntu file chooser, right click the filename entering place and select `dropdown list & autocomplete`.
+
+// Kubuntu 21.04
+
+often my network interface kept crashing and ath:phy0 messages started printing in tty. Probable solution:
+iwconfig to ensure that power management for wl... (note this number for future) is off:
+wlp9s0    IEEE 802.11  ESSID:off/any
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=15 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+
+Normally output should be:
+iwconfig
+wlp9s0    IEEE 802.11  ESSID:"Fariha"
+          Mode:Managed  Frequency:2.432 GHz  Access Point: F4:F2:6D:69:A6:04
+          Bit Rate=1 Mb/s   Tx-Power=15 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+          Link Quality=64/70  Signal level=-46 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:45   Missed beacon:0
+ifconfig
+wlp9s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.104  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::a31a:9c7:cc4:86cf  prefixlen 64  scopeid 0x20<link>
+        ether 84:4b:f5:80:33:7d  txqueuelen 1000  (Ethernet)
+        RX packets 256  bytes 133189 (133.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 93  bytes 16813 (16.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sudo ifconfig wl... up
+reload ath module, but before that you need to stop other modules using it:
+lsmod | grep ath
+output:
+ath3k                  24576  0
+ath9k                 155648  0
+ath9k_common           36864  1 ath9k
+bluetooth             655360  28 btrtl,btintel,btbcm,bnep,ath3k,btusb,rfcomm
+ath9k_hw              487424  2 ath9k_common,ath9k
+ath                    36864  3 ath9k_common,ath9k,ath9k_hw
+mac80211             1028096  1 ath9k
+cfg80211              892928  4 ath9k_common,ath9k,ath,mac80211
+// disable in topological order:
+sudo modprobe -r ath9k
+sudo modprobe -r ath9k_common
+sudo modprobe -r ath9k_hw
+sudo modprobe -r ath
+// enable in reverse order:
+sudo modprobe ath
+sudo modprobe ath9k_hw
+sudo modprobe ath9k_common
+sudo modprobe ath9k
+sudo ifconfig wl... up
+
+// new PC:
+despite having intel_backlight/brightness, it doesn't work well. The procedure now is:
+xrandr --listactivemonitors and note the monitor (eDP)
+xrandr --output eDP --brightness .7
+For dual booting with windows 10: disable secure boot from BIOS and disable fast startup from windows settings.
+HP still has problem with dual boot: everytime I boot windows, next time it bypasses grub and directly boots into windows. To solve this, repeatedly press F9 while boot-> boot from efi file-> grubx64.efi:
+from ubuntu:
+efibootmgr -v
+lsblk   # to identify the location of /boot/efi
+sudo efibootmgr -c -d /dev/nvme0n1 -p 1 -L "Grub" -l '\EFI\ubuntu\grubx64.efi'
+My laptop stopped waking from 'sleep' after updating kernel from 5.13.0-27 to 5.13.0-28
+I had to use custom resolution by updating .xsessionrc. In OBS screen capture, I had to use edit->transform->fit to screen.

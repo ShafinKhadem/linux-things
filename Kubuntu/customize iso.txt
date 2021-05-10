@@ -1,0 +1,956 @@
+You can get helpful info from launchpad's cubic's sources and possibly use / modify it. You must install latest stable version (1.5.4.pl02 as of now) of xorriso from tar as the apt-version has important bugs.
+In following commands: exit means ctrl+d, not `exit`.
+For modifying previously modified iso (where all files are saved), if you want apt install start from `cd ~/livecdtmp; sudo mount -o bind /run/ edit/run` and do till umount... and exit, otherwise make whatever changes necessary in ~/livecdtmp/edit. After that, call createIsoWithElapsedTime.sh
+
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ cp /mnt/shafin/CSE/necessary/kubuntu-21.04-desktop-amd64.iso .
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ mkdir mnt
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo mount -o loop kubuntu-21.04-desktop-amd64.iso mnt
+mount: /home/shafin/livecdtmp/mnt: WARNING: source write-protected, mounted read-only.
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ mkdir extract-cd
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo rsync --exclude=/casper/filesystem.squashfs -a mnt/ extract-cd
+rsync: [generator] failed to set permissions on "/home/shafin/livecdtmp/extract-cd/ubuntu": Operation not supported (95)
+rsync: [generator] failed to set permissions on "/home/shafin/livecdtmp/extract-cd/dists/stable": Operation not supported (95)
+rsync: [generator] failed to set permissions on "/home/shafin/livecdtmp/extract-cd/dists/unstable": Operation not supported (95)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1330) [sender=3.2.3]
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo unsquashfs mnt/casper/filesystem.squashfs
+Parallel unsquashfs: Using 2 processors
+167942 inodes (189101 blocks) to write
+
+[==========================================================================================================================================-] 189101/189101 100%
+
+created 145565 files
+created 19088 directories
+created 22336 symlinks
+created 8 devices
+created 0 fifos
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo mv squashfs-root edit
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo mount -o bind /run/ edit/run
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo chroot edit
+root@shafin-Inspiron-N4050:/# mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devpts none /dev/pts
+export HOME=/root
+export LC_ALL=C
+root@shafin-Inspiron-N4050:/# add-apt-repository ppa:yannubuntu/boot-repair
+root@shafin-Inspiron-N4050:/# apt install -y boot-repair
+root@shafin-Inspiron-N4050:/# apt install -y /tmp/google-chrome-stable_current_amd64.deb git /tmp/gitkraken-amd64.deb g++ default-jre /tmp/sublime-text_3211_amd64.deb uncrustify clang gnome-disk-utility
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Note, selecting 'google-chrome-stable' instead of '/tmp/google-chrome-stable_current_amd64.deb'
+Note, selecting 'gitkraken' instead of '/tmp/gitkraken-amd64.deb'
+Note, selecting 'sublime-text' instead of '/tmp/sublime-text_3211_amd64.deb'
+The following additional packages will be installed:
+  binfmt-support binutils binutils-common binutils-x86-64-linux-gnu ca-certificates-java clang-12 cracklib-runtime default-jre-headless fonts-dejavu-extra
+  g++-10 gcc gcc-10 git-man java-common lib32gcc-s1 lib32stdc++6 libasan6 libatk-wrapper-java libatk-wrapper-java-jni libbinutils libc-dev-bin libc-devtools
+  libc6-dev libc6-i386 libcanberra-gtk3-0 libcanberra-gtk3-module libcc1-0 libclang-common-12-dev libclang-cpp12 libclang1-12 libcrack2 libcrypt-dev
+  libctf-nobfd0 libctf0 liberror-perl libffi-dev libgcc-10-dev libhandy-1-0 libitm1 libllvm12 liblsan0 libncurses-dev libnsl-dev libobjc-10-dev libomp-12-dev
+  libomp5-12 libpfm4 libpwquality-common libpwquality1 libstdc++-10-dev libtinfo-dev libtirpc-dev libtsan0 libubsan1 libz3-4 libz3-dev linux-libc-dev llvm-12
+  llvm-12-dev llvm-12-linker-tools llvm-12-runtime llvm-12-tools manpages-dev openjdk-11-jre openjdk-11-jre-headless patch python3-pygments rpcsvc-proto
+Suggested packages:
+  binutils-doc clang-12-doc g++-multilib g++-10-multilib gcc-10-doc gcc-multilib make autoconf automake libtool flex bison gcc-doc gcc-10-multilib
+  gcc-10-locales git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn libgnome-keyring0
+  gir1.2-gnomekeyring-1.0 glibc-doc ncurses-doc libomp-12-doc libstdc++-10-doc llvm-12-doc fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei
+  | fonts-wqy-zenhei diffutils-doc python-pygments-doc ttf-bitstream-vera
+The following NEW packages will be installed:
+  binfmt-support binutils binutils-common binutils-x86-64-linux-gnu ca-certificates-java clang clang-12 cracklib-runtime default-jre default-jre-headless
+  fonts-dejavu-extra g++ g++-10 gcc gcc-10 git git-man gitkraken gnome-disk-utility google-chrome-stable java-common lib32gcc-s1 lib32stdc++6 libasan6
+  libatk-wrapper-java libatk-wrapper-java-jni libbinutils libc-dev-bin libc-devtools libc6-dev libc6-i386 libcanberra-gtk3-0 libcanberra-gtk3-module libcc1-0
+  libclang-common-12-dev libclang-cpp12 libclang1-12 libcrack2 libcrypt-dev libctf-nobfd0 libctf0 liberror-perl libffi-dev libgcc-10-dev libhandy-1-0 libitm1
+  libllvm12 liblsan0 libncurses-dev libnsl-dev libobjc-10-dev libomp-12-dev libomp5-12 libpfm4 libpwquality-common libpwquality1 libstdc++-10-dev libtinfo-dev
+  libtirpc-dev libtsan0 libubsan1 libz3-4 libz3-dev linux-libc-dev llvm-12 llvm-12-dev llvm-12-linker-tools llvm-12-runtime llvm-12-tools manpages-dev
+  openjdk-11-jre openjdk-11-jre-headless patch python3-pygments rpcsvc-proto sublime-text uncrustify
+0 upgraded, 77 newly installed, 0 to remove and 0 not upgraded.
+Need to get 184 MB/352 MB of archives.
+After this operation, 1,549 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 binfmt-support amd64 2.2.1-1 [53.5 kB]
+Get:2 /tmp/google-chrome-stable_current_amd64.deb google-chrome-stable amd64 90.0.4430.72-1 [77.8 MB]
+Get:3 http://archive.ubuntu.com/ubuntu hirsute/main amd64 binutils-common amd64 2.36.1-6ubuntu1 [217 kB]
+Get:4 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libbinutils amd64 2.36.1-6ubuntu1 [584 kB]
+Get:5 /tmp/gitkraken-amd64.deb gitkraken amd64 7.4.0 [80.3 MB]
+Get:6 /tmp/sublime-text_3211_amd64.deb sublime-text amd64 3211 [9,835 kB]
+Get:7 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libctf-nobfd0 amd64 2.36.1-6ubuntu1 [97.8 kB]
+Get:8 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libctf0 amd64 2.36.1-6ubuntu1 [95.0 kB]
+Get:9 http://archive.ubuntu.com/ubuntu hirsute/main amd64 binutils-x86-64-linux-gnu amd64 2.36.1-6ubuntu1 [1,830 kB]
+Get:10 http://archive.ubuntu.com/ubuntu hirsute/main amd64 binutils amd64 2.36.1-6ubuntu1 [3,388 B]
+Get:11 http://archive.ubuntu.com/ubuntu hirsute/main amd64 java-common all 0.72 [6,816 B]
+Get:12 http://archive.ubuntu.com/ubuntu hirsute/main amd64 openjdk-11-jre-headless amd64 11.0.11+8-0ubuntu2 [37.2 MB]
+Get:13 http://archive.ubuntu.com/ubuntu hirsute/main amd64 default-jre-headless amd64 2:1.11-72 [3,192 B]
+Get:14 http://archive.ubuntu.com/ubuntu hirsute/main amd64 ca-certificates-java all 20190909 [12.1 kB]
+Get:15 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libllvm12 amd64 1:12.0.0-1ubuntu1 [18.8 MB]
+Get:16 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libclang-cpp12 amd64 1:12.0.0-1ubuntu1 [9,666 kB]
+Get:17 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libitm1 amd64 11-20210417-1ubuntu1 [26.4 kB]
+Get:18 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libasan6 amd64 11-20210417-1ubuntu1 [2,140 kB]
+Get:19 http://archive.ubuntu.com/ubuntu hirsute/main amd64 liblsan0 amd64 11-20210417-1ubuntu1 [893 kB]
+Get:20 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libtsan0 amd64 11-20210417-1ubuntu1 [2,090 kB]
+Get:21 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libubsan1 amd64 11-20210417-1ubuntu1 [845 kB]
+Get:22 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libgcc-10-dev amd64 10.3.0-1ubuntu1 [2,337 kB]
+Get:23 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libc-dev-bin amd64 2.33-0ubuntu5 [19.3 kB]
+Get:24 http://archive.ubuntu.com/ubuntu hirsute/main amd64 linux-libc-dev amd64 5.11.0-16.17 [1,202 kB]
+Get:25 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libcrypt-dev amd64 1:4.4.17-1ubuntu3 [104 kB]
+Get:26 http://archive.ubuntu.com/ubuntu hirsute/main amd64 rpcsvc-proto amd64 1.4.2-0ubuntu4 [62.8 kB]
+Get:27 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libtirpc-dev amd64 1.3.1-1build1 [183 kB]
+Get:28 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libnsl-dev amd64 1.3.0-0ubuntu3 [66.4 kB]
+Get:29 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libc6-dev amd64 2.33-0ubuntu5 [2,143 kB]
+Get:30 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libstdc++-10-dev amd64 10.3.0-1ubuntu1 [1,754 kB]
+Get:31 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libobjc-10-dev amd64 10.3.0-1ubuntu1 [175 kB]
+Get:32 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libc6-i386 amd64 2.33-0ubuntu5 [2,633 kB]
+Get:33 http://archive.ubuntu.com/ubuntu hirsute/main amd64 lib32gcc-s1 amd64 11-20210417-1ubuntu1 [50.0 kB]
+Get:34 http://archive.ubuntu.com/ubuntu hirsute/main amd64 lib32stdc++6 amd64 11-20210417-1ubuntu1 [613 kB]
+Get:35 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libclang-common-12-dev amd64 1:12.0.0-1ubuntu1 [5,252 kB]
+Get:36 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 llvm-12-linker-tools amd64 1:12.0.0-1ubuntu1 [1,145 kB]
+Get:37 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libclang1-12 amd64 1:12.0.0-1ubuntu1 [5,540 kB]
+Get:38 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 clang-12 amd64 1:12.0.0-1ubuntu1 [68.5 kB]
+Get:39 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 clang amd64 1:12.0-52~exp1 [3,432 B]
+Get:40 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libcrack2 amd64 2.9.6-3.4build1 [27.9 kB]
+Get:41 http://archive.ubuntu.com/ubuntu hirsute/main amd64 cracklib-runtime amd64 2.9.6-3.4build1 [140 kB]
+Get:42 http://archive.ubuntu.com/ubuntu hirsute/main amd64 openjdk-11-jre amd64 11.0.11+8-0ubuntu2 [176 kB]
+Get:43 http://archive.ubuntu.com/ubuntu hirsute/main amd64 default-jre amd64 2:1.11-72 [1,084 B]
+Get:44 http://archive.ubuntu.com/ubuntu hirsute/main amd64 fonts-dejavu-extra all 2.37-2build1 [2,041 kB]
+Get:45 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libcc1-0 amd64 11-20210417-1ubuntu1 [48.7 kB]
+Get:46 http://archive.ubuntu.com/ubuntu hirsute/main amd64 gcc-10 amd64 10.3.0-1ubuntu1 [17.5 MB]
+Get:47 http://archive.ubuntu.com/ubuntu hirsute/main amd64 gcc amd64 4:10.3.0-1ubuntu1 [5,212 B]
+Get:48 http://archive.ubuntu.com/ubuntu hirsute/main amd64 g++-10 amd64 10.3.0-1ubuntu1 [9,803 kB]
+Get:49 http://archive.ubuntu.com/ubuntu hirsute/main amd64 g++ amd64 4:10.3.0-1ubuntu1 [1,608 B]
+Get:50 http://archive.ubuntu.com/ubuntu hirsute/main amd64 liberror-perl all 0.17029-1 [26.5 kB]
+Get:51 http://archive.ubuntu.com/ubuntu hirsute/main amd64 git-man all 1:2.30.2-1ubuntu1 [931 kB]
+Get:52 http://archive.ubuntu.com/ubuntu hirsute/main amd64 git amd64 1:2.30.2-1ubuntu1 [3,457 kB]
+Get:53 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libcanberra-gtk3-0 amd64 0.30-7ubuntu2 [7,980 B]
+Get:54 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libhandy-1-0 amd64 1.2.0-1 [221 kB]
+Get:55 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libpwquality-common all 1.4.4-1 [8,008 B]
+Get:56 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libpwquality1 amd64 1.4.4-1 [13.1 kB]
+Get:57 http://archive.ubuntu.com/ubuntu hirsute/main amd64 gnome-disk-utility amd64 40.0-1ubuntu1 [187 kB]
+Get:58 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libatk-wrapper-java all 0.38.0-2ubuntu2 [53.5 kB]
+Get:59 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libatk-wrapper-java-jni amd64 0.38.0-2ubuntu2 [45.2 kB]
+Get:60 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libc-devtools amd64 2.33-0ubuntu5 [27.2 kB]
+Get:61 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libncurses-dev amd64 6.2+20201114-2build1 [344 kB]
+Get:62 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libomp5-12 amd64 1:12.0.0-1ubuntu1 [348 kB]
+Get:63 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libomp-12-dev amd64 1:12.0.0-1ubuntu1 [34.5 kB]
+Get:64 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libtinfo-dev amd64 6.2+20201114-2build1 [988 B]
+Get:65 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 llvm-12-runtime amd64 1:12.0.0-1ubuntu1 [178 kB]
+Get:66 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libpfm4 amd64 4.11.1+git8-gc96ebc0-1 [278 kB]
+Get:67 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 llvm-12 amd64 1:12.0.0-1ubuntu1 [10.4 MB]
+Get:68 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libffi-dev amd64 3.4~20200819gead65ca871-0ubuntu5 [57.5 kB]
+Get:69 http://archive.ubuntu.com/ubuntu hirsute/main amd64 python3-pygments all 2.7.1+dfsg-2ubuntu1 [639 kB]
+Get:70 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 llvm-12-tools amd64 1:12.0.0-1ubuntu1 [349 kB]
+Get:71 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libz3-4 amd64 4.8.10-1ubuntu1 [6,944 kB]
+Get:72 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libz3-dev amd64 4.8.10-1ubuntu1 [70.1 kB]
+Get:73 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 llvm-12-dev amd64 1:12.0.0-1ubuntu1 [28.5 MB]
+Get:74 http://archive.ubuntu.com/ubuntu hirsute/main amd64 manpages-dev all 5.10-1 [2,309 kB]
+Get:75 http://archive.ubuntu.com/ubuntu hirsute/main amd64 patch amd64 2.7.6-7 [105 kB]
+Get:76 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 uncrustify amd64 0.72.0+dfsg1-2 [548 kB]
+Get:77 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libcanberra-gtk3-module amd64 0.30-7ubuntu2 [10.1 kB]
+Fetched 184 MB in 6min 35s (371 kB/s)
+Extracting templates from packages: 100%
+Selecting previously unselected package google-chrome-stable.
+(Reading database ... 168405 files and directories currently installed.)
+Preparing to unpack .../00-google-chrome-stable_current_amd64.deb ...
+Unpacking google-chrome-stable (90.0.4430.72-1) ...
+Selecting previously unselected package binfmt-support.
+Preparing to unpack .../01-binfmt-support_2.2.1-1_amd64.deb ...
+Unpacking binfmt-support (2.2.1-1) ...
+Selecting previously unselected package binutils-common:amd64.
+Preparing to unpack .../02-binutils-common_2.36.1-6ubuntu1_amd64.deb ...
+Unpacking binutils-common:amd64 (2.36.1-6ubuntu1) ...
+Selecting previously unselected package libbinutils:amd64.
+Preparing to unpack .../03-libbinutils_2.36.1-6ubuntu1_amd64.deb ...
+Unpacking libbinutils:amd64 (2.36.1-6ubuntu1) ...
+Selecting previously unselected package libctf-nobfd0:amd64.
+Preparing to unpack .../04-libctf-nobfd0_2.36.1-6ubuntu1_amd64.deb ...
+Unpacking libctf-nobfd0:amd64 (2.36.1-6ubuntu1) ...
+Selecting previously unselected package libctf0:amd64.
+Preparing to unpack .../05-libctf0_2.36.1-6ubuntu1_amd64.deb ...
+Unpacking libctf0:amd64 (2.36.1-6ubuntu1) ...
+Selecting previously unselected package binutils-x86-64-linux-gnu.
+Preparing to unpack .../06-binutils-x86-64-linux-gnu_2.36.1-6ubuntu1_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.36.1-6ubuntu1) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../07-binutils_2.36.1-6ubuntu1_amd64.deb ...
+Unpacking binutils (2.36.1-6ubuntu1) ...
+Selecting previously unselected package java-common.
+Preparing to unpack .../08-java-common_0.72_all.deb ...
+Unpacking java-common (0.72) ...
+Selecting previously unselected package openjdk-11-jre-headless:amd64.
+Preparing to unpack .../09-openjdk-11-jre-headless_11.0.11+8-0ubuntu2_amd64.deb ...
+Unpacking openjdk-11-jre-headless:amd64 (11.0.11+8-0ubuntu2) ...
+Selecting previously unselected package default-jre-headless.
+Preparing to unpack .../10-default-jre-headless_2%3a1.11-72_amd64.deb ...
+Unpacking default-jre-headless (2:1.11-72) ...
+Selecting previously unselected package ca-certificates-java.
+Preparing to unpack .../11-ca-certificates-java_20190909_all.deb ...
+Unpacking ca-certificates-java (20190909) ...
+Selecting previously unselected package libllvm12:amd64.
+Preparing to unpack .../12-libllvm12_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking libllvm12:amd64 (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package libclang-cpp12.
+Preparing to unpack .../13-libclang-cpp12_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking libclang-cpp12 (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../14-libitm1_11-20210417-1ubuntu1_amd64.deb ...
+Unpacking libitm1:amd64 (11-20210417-1ubuntu1) ...
+Selecting previously unselected package libasan6:amd64.
+Preparing to unpack .../15-libasan6_11-20210417-1ubuntu1_amd64.deb ...
+Unpacking libasan6:amd64 (11-20210417-1ubuntu1) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../16-liblsan0_11-20210417-1ubuntu1_amd64.deb ...
+Unpacking liblsan0:amd64 (11-20210417-1ubuntu1) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../17-libtsan0_11-20210417-1ubuntu1_amd64.deb ...
+Unpacking libtsan0:amd64 (11-20210417-1ubuntu1) ...
+Selecting previously unselected package libubsan1:amd64.
+Preparing to unpack .../18-libubsan1_11-20210417-1ubuntu1_amd64.deb ...
+Unpacking libubsan1:amd64 (11-20210417-1ubuntu1) ...
+Selecting previously unselected package libgcc-10-dev:amd64.
+Preparing to unpack .../19-libgcc-10-dev_10.3.0-1ubuntu1_amd64.deb ...
+Unpacking libgcc-10-dev:amd64 (10.3.0-1ubuntu1) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../20-libc-dev-bin_2.33-0ubuntu5_amd64.deb ...
+Unpacking libc-dev-bin (2.33-0ubuntu5) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../21-linux-libc-dev_5.11.0-16.17_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (5.11.0-16.17) ...
+Selecting previously unselected package libcrypt-dev:amd64.
+Preparing to unpack .../22-libcrypt-dev_1%3a4.4.17-1ubuntu3_amd64.deb ...
+Unpacking libcrypt-dev:amd64 (1:4.4.17-1ubuntu3) ...
+Selecting previously unselected package rpcsvc-proto.
+Preparing to unpack .../23-rpcsvc-proto_1.4.2-0ubuntu4_amd64.deb ...
+Unpacking rpcsvc-proto (1.4.2-0ubuntu4) ...
+Selecting previously unselected package libtirpc-dev:amd64.
+Preparing to unpack .../24-libtirpc-dev_1.3.1-1build1_amd64.deb ...
+Unpacking libtirpc-dev:amd64 (1.3.1-1build1) ...
+Selecting previously unselected package libnsl-dev:amd64.
+Preparing to unpack .../25-libnsl-dev_1.3.0-0ubuntu3_amd64.deb ...
+Unpacking libnsl-dev:amd64 (1.3.0-0ubuntu3) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../26-libc6-dev_2.33-0ubuntu5_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.33-0ubuntu5) ...
+Selecting previously unselected package libstdc++-10-dev:amd64.
+Preparing to unpack .../27-libstdc++-10-dev_10.3.0-1ubuntu1_amd64.deb ...
+Unpacking libstdc++-10-dev:amd64 (10.3.0-1ubuntu1) ...
+Selecting previously unselected package libobjc-10-dev:amd64.
+Preparing to unpack .../28-libobjc-10-dev_10.3.0-1ubuntu1_amd64.deb ...
+Unpacking libobjc-10-dev:amd64 (10.3.0-1ubuntu1) ...
+Selecting previously unselected package libc6-i386.
+Preparing to unpack .../29-libc6-i386_2.33-0ubuntu5_amd64.deb ...
+Unpacking libc6-i386 (2.33-0ubuntu5) ...
+Selecting previously unselected package lib32gcc-s1.
+Preparing to unpack .../30-lib32gcc-s1_11-20210417-1ubuntu1_amd64.deb ...
+Unpacking lib32gcc-s1 (11-20210417-1ubuntu1) ...
+Selecting previously unselected package lib32stdc++6.
+Preparing to unpack .../31-lib32stdc++6_11-20210417-1ubuntu1_amd64.deb ...
+Unpacking lib32stdc++6 (11-20210417-1ubuntu1) ...
+Selecting previously unselected package libclang-common-12-dev.
+Preparing to unpack .../32-libclang-common-12-dev_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking libclang-common-12-dev (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package llvm-12-linker-tools.
+Preparing to unpack .../33-llvm-12-linker-tools_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking llvm-12-linker-tools (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package libclang1-12.
+Preparing to unpack .../34-libclang1-12_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking libclang1-12 (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package clang-12.
+Preparing to unpack .../35-clang-12_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking clang-12 (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package clang.
+Preparing to unpack .../36-clang_1%3a12.0-52~exp1_amd64.deb ...
+Unpacking clang (1:12.0-52~exp1) ...
+Selecting previously unselected package libcrack2:amd64.
+Preparing to unpack .../37-libcrack2_2.9.6-3.4build1_amd64.deb ...
+Unpacking libcrack2:amd64 (2.9.6-3.4build1) ...
+Selecting previously unselected package cracklib-runtime.
+Preparing to unpack .../38-cracklib-runtime_2.9.6-3.4build1_amd64.deb ...
+Unpacking cracklib-runtime (2.9.6-3.4build1) ...
+Selecting previously unselected package openjdk-11-jre:amd64.
+Preparing to unpack .../39-openjdk-11-jre_11.0.11+8-0ubuntu2_amd64.deb ...
+Unpacking openjdk-11-jre:amd64 (11.0.11+8-0ubuntu2) ...
+Selecting previously unselected package default-jre.
+Preparing to unpack .../40-default-jre_2%3a1.11-72_amd64.deb ...
+Unpacking default-jre (2:1.11-72) ...
+Selecting previously unselected package fonts-dejavu-extra.
+Preparing to unpack .../41-fonts-dejavu-extra_2.37-2build1_all.deb ...
+Unpacking fonts-dejavu-extra (2.37-2build1) ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../42-libcc1-0_11-20210417-1ubuntu1_amd64.deb ...
+Unpacking libcc1-0:amd64 (11-20210417-1ubuntu1) ...
+Selecting previously unselected package gcc-10.
+Preparing to unpack .../43-gcc-10_10.3.0-1ubuntu1_amd64.deb ...
+Unpacking gcc-10 (10.3.0-1ubuntu1) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../44-gcc_4%3a10.3.0-1ubuntu1_amd64.deb ...
+Unpacking gcc (4:10.3.0-1ubuntu1) ...
+Selecting previously unselected package g++-10.
+Preparing to unpack .../45-g++-10_10.3.0-1ubuntu1_amd64.deb ...
+Unpacking g++-10 (10.3.0-1ubuntu1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../46-g++_4%3a10.3.0-1ubuntu1_amd64.deb ...
+Unpacking g++ (4:10.3.0-1ubuntu1) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../47-liberror-perl_0.17029-1_all.deb ...
+Unpacking liberror-perl (0.17029-1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../48-git-man_1%3a2.30.2-1ubuntu1_all.deb ...
+Unpacking git-man (1:2.30.2-1ubuntu1) ...
+Selecting previously unselected package git.
+Preparing to unpack .../49-git_1%3a2.30.2-1ubuntu1_amd64.deb ...
+Unpacking git (1:2.30.2-1ubuntu1) ...
+Selecting previously unselected package gitkraken.
+Preparing to unpack .../50-gitkraken-amd64.deb ...
+Unpacking gitkraken (7.4.0) ...
+Selecting previously unselected package libcanberra-gtk3-0:amd64.
+Preparing to unpack .../51-libcanberra-gtk3-0_0.30-7ubuntu2_amd64.deb ...
+Unpacking libcanberra-gtk3-0:amd64 (0.30-7ubuntu2) ...
+Selecting previously unselected package libhandy-1-0:amd64.
+Preparing to unpack .../52-libhandy-1-0_1.2.0-1_amd64.deb ...
+Unpacking libhandy-1-0:amd64 (1.2.0-1) ...
+Selecting previously unselected package libpwquality-common.
+Preparing to unpack .../53-libpwquality-common_1.4.4-1_all.deb ...
+Unpacking libpwquality-common (1.4.4-1) ...
+Selecting previously unselected package libpwquality1:amd64.
+Preparing to unpack .../54-libpwquality1_1.4.4-1_amd64.deb ...
+Unpacking libpwquality1:amd64 (1.4.4-1) ...
+Selecting previously unselected package gnome-disk-utility.
+Preparing to unpack .../55-gnome-disk-utility_40.0-1ubuntu1_amd64.deb ...
+Unpacking gnome-disk-utility (40.0-1ubuntu1) ...
+Selecting previously unselected package libatk-wrapper-java.
+Preparing to unpack .../56-libatk-wrapper-java_0.38.0-2ubuntu2_all.deb ...
+Unpacking libatk-wrapper-java (0.38.0-2ubuntu2) ...
+Selecting previously unselected package libatk-wrapper-java-jni:amd64.
+Preparing to unpack .../57-libatk-wrapper-java-jni_0.38.0-2ubuntu2_amd64.deb ...
+Unpacking libatk-wrapper-java-jni:amd64 (0.38.0-2ubuntu2) ...
+Selecting previously unselected package libc-devtools.
+Preparing to unpack .../58-libc-devtools_2.33-0ubuntu5_amd64.deb ...
+Unpacking libc-devtools (2.33-0ubuntu5) ...
+Selecting previously unselected package libncurses-dev:amd64.
+Preparing to unpack .../59-libncurses-dev_6.2+20201114-2build1_amd64.deb ...
+Unpacking libncurses-dev:amd64 (6.2+20201114-2build1) ...
+Selecting previously unselected package libomp5-12:amd64.
+Preparing to unpack .../60-libomp5-12_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking libomp5-12:amd64 (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package libomp-12-dev.
+Preparing to unpack .../61-libomp-12-dev_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking libomp-12-dev (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package libtinfo-dev:amd64.
+Preparing to unpack .../62-libtinfo-dev_6.2+20201114-2build1_amd64.deb ...
+Unpacking libtinfo-dev:amd64 (6.2+20201114-2build1) ...
+Selecting previously unselected package llvm-12-runtime.
+Preparing to unpack .../63-llvm-12-runtime_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking llvm-12-runtime (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package libpfm4:amd64.
+Preparing to unpack .../64-libpfm4_4.11.1+git8-gc96ebc0-1_amd64.deb ...
+Unpacking libpfm4:amd64 (4.11.1+git8-gc96ebc0-1) ...
+Selecting previously unselected package llvm-12.
+Preparing to unpack .../65-llvm-12_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking llvm-12 (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package libffi-dev:amd64.
+Preparing to unpack .../66-libffi-dev_3.4~20200819gead65ca871-0ubuntu5_amd64.deb ...
+Unpacking libffi-dev:amd64 (3.4~20200819gead65ca871-0ubuntu5) ...
+Selecting previously unselected package python3-pygments.
+Preparing to unpack .../67-python3-pygments_2.7.1+dfsg-2ubuntu1_all.deb ...
+Unpacking python3-pygments (2.7.1+dfsg-2ubuntu1) ...
+Selecting previously unselected package llvm-12-tools.
+Preparing to unpack .../68-llvm-12-tools_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking llvm-12-tools (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package libz3-4:amd64.
+Preparing to unpack .../69-libz3-4_4.8.10-1ubuntu1_amd64.deb ...
+Unpacking libz3-4:amd64 (4.8.10-1ubuntu1) ...
+Selecting previously unselected package libz3-dev:amd64.
+Preparing to unpack .../70-libz3-dev_4.8.10-1ubuntu1_amd64.deb ...
+Unpacking libz3-dev:amd64 (4.8.10-1ubuntu1) ...
+Selecting previously unselected package llvm-12-dev.
+Preparing to unpack .../71-llvm-12-dev_1%3a12.0.0-1ubuntu1_amd64.deb ...
+Unpacking llvm-12-dev (1:12.0.0-1ubuntu1) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../72-manpages-dev_5.10-1_all.deb ...
+Unpacking manpages-dev (5.10-1) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../73-patch_2.7.6-7_amd64.deb ...
+Unpacking patch (2.7.6-7) ...
+Selecting previously unselected package sublime-text.
+Preparing to unpack .../74-sublime-text_3211_amd64.deb ...
+Unpacking sublime-text (3211) ...
+Selecting previously unselected package uncrustify.
+Preparing to unpack .../75-uncrustify_0.72.0+dfsg1-2_amd64.deb ...
+Unpacking uncrustify (0.72.0+dfsg1-2) ...
+Selecting previously unselected package libcanberra-gtk3-module:amd64.
+Preparing to unpack .../76-libcanberra-gtk3-module_0.30-7ubuntu2_amd64.deb ...
+Unpacking libcanberra-gtk3-module:amd64 (0.30-7ubuntu2) ...
+Setting up libpwquality-common (1.4.4-1) ...
+Setting up manpages-dev (5.10-1) ...
+Setting up google-chrome-stable (90.0.4430.72-1) ...
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/google-chrome (google-chrome) in auto mode
+Setting up sublime-text (3211) ...
+Setting up java-common (0.72) ...
+Setting up binutils-common:amd64 (2.36.1-6ubuntu1) ...
+Setting up linux-libc-dev:amd64 (5.11.0-16.17) ...
+Setting up libctf-nobfd0:amd64 (2.36.1-6ubuntu1) ...
+Setting up libcanberra-gtk3-0:amd64 (0.30-7ubuntu2) ...
+Setting up libffi-dev:amd64 (3.4~20200819gead65ca871-0ubuntu5) ...
+Setting up libcanberra-gtk3-module:amd64 (0.30-7ubuntu2) ...
+Setting up libasan6:amd64 (11-20210417-1ubuntu1) ...
+Setting up liberror-perl (0.17029-1) ...
+Setting up python3-pygments (2.7.1+dfsg-2ubuntu1) ...
+Setting up libz3-4:amd64 (4.8.10-1ubuntu1) ...
+Setting up libtirpc-dev:amd64 (1.3.1-1build1) ...
+Setting up libpfm4:amd64 (4.11.1+git8-gc96ebc0-1) ...
+Setting up rpcsvc-proto (1.4.2-0ubuntu4) ...
+Setting up libllvm12:amd64 (1:12.0.0-1ubuntu1) ...
+Setting up uncrustify (0.72.0+dfsg1-2) ...
+Setting up patch (2.7.6-7) ...
+Setting up binfmt-support (2.2.1-1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/binfmt-support.service → /lib/systemd/system/binfmt-support.service.
+Running in chroot, ignoring command 'daemon-reload'
+Running in chroot, ignoring request.
+Running in chroot, ignoring command 'start'
+Setting up llvm-12-tools (1:12.0.0-1ubuntu1) ...
+Setting up libcrack2:amd64 (2.9.6-3.4build1) ...
+Setting up libubsan1:amd64 (11-20210417-1ubuntu1) ...
+Setting up fonts-dejavu-extra (2.37-2build1) ...
+Setting up libnsl-dev:amd64 (1.3.0-0ubuntu3) ...
+Setting up libcrypt-dev:amd64 (1:4.4.17-1ubuntu3) ...
+Setting up gitkraken (7.4.0) ...
+Setting up libc6-i386 (2.33-0ubuntu5) ...
+Setting up git-man (1:2.30.2-1ubuntu1) ...
+Setting up libatk-wrapper-java (0.38.0-2ubuntu2) ...
+Setting up libbinutils:amd64 (2.36.1-6ubuntu1) ...
+Setting up libc-dev-bin (2.33-0ubuntu5) ...
+Setting up libomp5-12:amd64 (1:12.0.0-1ubuntu1) ...
+Setting up libcc1-0:amd64 (11-20210417-1ubuntu1) ...
+Setting up liblsan0:amd64 (11-20210417-1ubuntu1) ...
+Setting up libitm1:amd64 (11-20210417-1ubuntu1) ...
+Setting up libhandy-1-0:amd64 (1.2.0-1) ...
+Setting up libc-devtools (2.33-0ubuntu5) ...
+Setting up libtsan0:amd64 (11-20210417-1ubuntu1) ...
+Setting up libctf0:amd64 (2.36.1-6ubuntu1) ...
+Setting up libz3-dev:amd64 (4.8.10-1ubuntu1) ...
+Setting up libgcc-10-dev:amd64 (10.3.0-1ubuntu1) ...
+Setting up llvm-12-linker-tools (1:12.0.0-1ubuntu1) ...
+Setting up libatk-wrapper-java-jni:amd64 (0.38.0-2ubuntu2) ...
+Setting up libclang1-12 (1:12.0.0-1ubuntu1) ...
+Setting up cracklib-runtime (2.9.6-3.4build1) ...
+Setting up llvm-12-runtime (1:12.0.0-1ubuntu1) ...
+Setting up libclang-cpp12 (1:12.0.0-1ubuntu1) ...
+Setting up libpwquality1:amd64 (1.4.4-1) ...
+Setting up lib32gcc-s1 (11-20210417-1ubuntu1) ...
+Setting up lib32stdc++6 (11-20210417-1ubuntu1) ...
+Setting up git (1:2.30.2-1ubuntu1) ...
+Setting up libclang-common-12-dev (1:12.0.0-1ubuntu1) ...
+Setting up libobjc-10-dev:amd64 (10.3.0-1ubuntu1) ...
+Setting up gnome-disk-utility (40.0-1ubuntu1) ...
+Setting up libomp-12-dev (1:12.0.0-1ubuntu1) ...
+Setting up libc6-dev:amd64 (2.33-0ubuntu5) ...
+Setting up binutils-x86-64-linux-gnu (2.36.1-6ubuntu1) ...
+Setting up libncurses-dev:amd64 (6.2+20201114-2build1) ...
+Setting up libstdc++-10-dev:amd64 (10.3.0-1ubuntu1) ...
+Setting up llvm-12 (1:12.0.0-1ubuntu1) ...
+Setting up binutils (2.36.1-6ubuntu1) ...
+Setting up gcc-10 (10.3.0-1ubuntu1) ...
+Setting up llvm-12-dev (1:12.0.0-1ubuntu1) ...
+Setting up clang-12 (1:12.0.0-1ubuntu1) ...
+Setting up libtinfo-dev:amd64 (6.2+20201114-2build1) ...
+Setting up g++-10 (10.3.0-1ubuntu1) ...
+Setting up gcc (4:10.3.0-1ubuntu1) ...
+Setting up clang (1:12.0-52~exp1) ...
+Setting up g++ (4:10.3.0-1ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up default-jre-headless (2:1.11-72) ...
+Setting up openjdk-11-jre-headless:amd64 (11.0.11+8-0ubuntu2) ...
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jjs to provide /usr/bin/jjs (jjs) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+Setting up openjdk-11-jre:amd64 (11.0.11+8-0ubuntu2) ...
+Setting up default-jre (2:1.11-72) ...
+Setting up ca-certificates-java (20190909) ...
+head: cannot open '/etc/ssl/certs/java/cacerts' for reading: No such file or directory
+Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+Adding debian:DigiCert_Assured_ID_Root_G3.pem
+Adding debian:TeliaSonera_Root_CA_v1.pem
+Adding debian:QuoVadis_Root_CA.pem
+Adding debian:GlobalSign_Root_CA_-_R2.pem
+Adding debian:COMODO_Certification_Authority.pem
+Adding debian:UCA_Extended_Validation_Root.pem
+Adding debian:Security_Communication_Root_CA.pem
+Warning: there was a problem reading the certificate file /etc/ssl/certs/NetLock_Arany_=Class_Gold=_F?tan?s?tv?ny.pem. Message:
+  /etc/ssl/certs/NetLock_Arany_=Class_Gold=_F?tan?s?tv?ny.pem (No such file or directory)
+Adding debian:ISRG_Root_X1.pem
+Adding debian:QuoVadis_Root_CA_1_G3.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+Adding debian:QuoVadis_Root_CA_3_G3.pem
+Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+Adding debian:emSign_ECC_Root_CA_-_G3.pem
+Adding debian:Microsoft_RSA_Root_Certificate_Authority_2017.pem
+Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+Adding debian:GTS_Root_R2.pem
+Adding debian:COMODO_RSA_Certification_Authority.pem
+Adding debian:Amazon_Root_CA_2.pem
+Adding debian:AffirmTrust_Commercial.pem
+Adding debian:Hongkong_Post_Root_CA_1.pem
+Adding debian:Secure_Global_CA.pem
+Adding debian:GTS_Root_R4.pem
+Adding debian:Sonera_Class_2_Root_CA.pem
+Adding debian:SecureSign_RootCA11.pem
+Adding debian:Security_Communication_RootCA2.pem
+Adding debian:USERTrust_RSA_Certification_Authority.pem
+Adding debian:CA_Disig_Root_R2.pem
+Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+Adding debian:Trustwave_Global_Certification_Authority.pem
+Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+Adding debian:Certigna_Root_CA.pem
+Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+Adding debian:TWCA_Root_Certification_Authority.pem
+Adding debian:Trustis_FPS_Root_CA.pem
+Adding debian:SecureTrust_CA.pem
+Adding debian:Trustwave_Global_ECC_P256_Certification_Authority.pem
+Adding debian:Certum_Trusted_Network_CA_2.pem
+Adding debian:XRamp_Global_CA_Root.pem
+Adding debian:ssl-cert-snakeoil.pem
+Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+Adding debian:DigiCert_Assured_ID_Root_G2.pem
+Adding debian:Comodo_AAA_Services_root.pem
+Adding debian:TrustCor_RootCert_CA-1.pem
+Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G4.pem
+Adding debian:DST_Root_CA_X3.pem
+Adding debian:AC_RAIZ_FNMT-RCM.pem
+Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+Adding debian:Trustwave_Global_ECC_P384_Certification_Authority.pem
+Adding debian:UCA_Global_G2_Root.pem
+Adding debian:USERTrust_ECC_Certification_Authority.pem
+Adding debian:Amazon_Root_CA_1.pem
+Adding debian:Atos_TrustedRoot_2011.pem
+Adding debian:Buypass_Class_2_Root_CA.pem
+Adding debian:Cybertrust_Global_Root.pem
+Adding debian:QuoVadis_Root_CA_2_G3.pem
+Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+Adding debian:GTS_Root_R1.pem
+Adding debian:DigiCert_Trusted_Root_G4.pem
+Adding debian:Microsoft_ECC_Root_Certificate_Authority_2017.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+Adding debian:Certum_Trusted_Network_CA.pem
+Adding debian:Certigna.pem
+Adding debian:e-Szigno_Root_CA_2017.pem
+Adding debian:GlobalSign_Root_CA_-_R3.pem
+Adding debian:Entrust_Root_Certification_Authority.pem
+Adding debian:Amazon_Root_CA_4.pem
+Adding debian:certSIGN_Root_CA_G2.pem
+Adding debian:AffirmTrust_Networking.pem
+Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+Adding debian:DigiCert_Global_Root_G3.pem
+Adding debian:Network_Solutions_Certificate_Authority.pem
+Adding debian:CFCA_EV_ROOT.pem
+Adding debian:COMODO_ECC_Certification_Authority.pem
+Adding debian:GTS_Root_R3.pem
+Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+Adding debian:EC-ACC.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+Adding debian:TrustCor_ECA-1.pem
+Adding debian:Actalis_Authentication_Root_CA.pem
+Adding debian:emSign_Root_CA_-_C1.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+Adding debian:AffirmTrust_Premium_ECC.pem
+Adding debian:GlobalSign_Root_CA.pem
+Adding debian:NAVER_Global_Root_Certification_Authority.pem
+Adding debian:Hongkong_Post_Root_CA_3.pem
+Adding debian:emSign_Root_CA_-_G1.pem
+Adding debian:emSign_ECC_Root_CA_-_C3.pem
+Adding debian:Baltimore_CyberTrust_Root.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+Adding debian:QuoVadis_Root_CA_2.pem
+Adding debian:SwissSign_Silver_CA_-_G2.pem
+Adding debian:AffirmTrust_Premium.pem
+Adding debian:QuoVadis_Root_CA_3.pem
+Adding debian:ePKI_Root_Certification_Authority.pem
+Adding debian:Buypass_Class_3_Root_CA.pem
+Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+Adding debian:DigiCert_Global_Root_CA.pem
+Adding debian:Amazon_Root_CA_3.pem
+Adding debian:DigiCert_Global_Root_G2.pem
+Adding debian:Global_Chambersign_Root_-_2008.pem
+Adding debian:TWCA_Global_Root_CA.pem
+Adding debian:SZAFIR_ROOT_CA2.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+Adding debian:Go_Daddy_Class_2_CA.pem
+Adding debian:GlobalSign_Root_CA_-_R6.pem
+Adding debian:Starfield_Class_2_CA.pem
+Adding debian:SwissSign_Gold_CA_-_G2.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+Adding debian:DigiCert_Assured_ID_Root_CA.pem
+Adding debian:Izenpe.com.pem
+Adding debian:certSIGN_ROOT_CA.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+Adding debian:ACCVRAIZ1.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+Adding debian:OISTE_WISeKey_Global_Root_GC_CA.pem
+Adding debian:E-Tugra_Certification_Authority.pem
+Adding debian:TrustCor_RootCert_CA-2.pem
+done.
+Processing triggers for install-info (6.7.0.dfsg.2-6) ...
+Processing triggers for mailcap (3.68ubuntu1) ...
+Processing triggers for fontconfig (2.13.1-4.2ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for libglib2.0-0:amd64 (2.68.0-1) ...
+Processing triggers for libc-bin (2.33-0ubuntu5) ...
+Processing triggers for man-db (2.9.4-2) ...
+Processing triggers for ca-certificates (20210119build1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+
+done.
+done.
+root@shafin-Inspiron-N4050:/# apt clean
+rm -rf /tmp/* ~/.bash_history
+umount /proc || umount -lf /proc
+umount /sys
+umount /dev/pts
+root@shafin-Inspiron-N4050:/#
+exit
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ nano extract-cd/.disk/info
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo -s
+root@shafin-Inspiron-N4050:/home/shafin/livecdtmp# chroot edit dpkg-query -W --showformat='${Package} ${Version}\n' > extract-cd/casper/filesystem.manifest
+root@shafin-Inspiron-N4050:/home/shafin/livecdtmp#
+exit
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo mksquashfs edit extract-cd/casper/filesystem.squashfs
+Parallel mksquashfs: Using 2 processors
+Creating 4.0 filesystem on extract-cd/casper/filesystem.squashfs, block size 131072.
+[|                                                                                                                                          ]   1076/167725   0%
+Unrecognised xattr prefix system.posix_acl_access
+
+Unrecognised xattr prefix system.posix_acl_default
+[==========================================================================================================================================-] 167725/167725 100%
+
+Exportable Squashfs 4.0 filesystem, gzip compressed, data block size 131072
+        compressed data, compressed metadata, compressed fragments,
+        compressed xattrs, compressed ids
+        duplicates are removed
+Filesystem size 2030957.70 Kbytes (1983.36 Mbytes)
+        38.81% of uncompressed filesystem size (5233731.02 Kbytes)
+Inode table size 1892980 bytes (1848.61 Kbytes)
+        28.99% of uncompressed inode table size (6530603 bytes)
+Directory table size 1929841 bytes (1884.61 Kbytes)
+        40.36% of uncompressed directory table size (4781971 bytes)
+Xattr table size 51 bytes (0.05 Kbytes)
+        31.87% of uncompressed xattr table size (160 bytes)
+Number of duplicate files found 16666
+Number of inodes 187977
+Number of files 146262
+Number of fragments 9660
+Number of symbolic links  22438
+Number of device nodes 10
+Number of fifo nodes 9
+Number of socket nodes 23
+Number of directories 19235
+Number of ids (unique uids + gids) 34
+Number of uids 14
+        root (0)
+        avahi (113)
+        lp (7)
+        systemd-resolve (101)
+        sddm (118)
+        systemd-network (100)
+        systemd-timesync (102)
+        syslog (104)
+        _apt (105)
+        tss (106)
+        man (6)
+        avahi-autoipd (109)
+        colord (119)
+        geoclue (120)
+Number of gids 29
+        root (0)
+        dip (30)
+        shadow (42)
+        ssl-cert (113)
+        avahi (121)
+        lpadmin (122)
+        lp (7)
+        systemd-journal (101)
+        avahi-autoipd (118)
+        sddm (126)
+        shafin (1000)
+        systemd-network (102)
+        systemd-resolve (103)
+        systemd-timesync (104)
+        utmp (43)
+        crontab (105)
+        mlocate (115)
+        ssh (117)
+        tty (5)
+        messagebus (106)
+        staff (50)
+        man (12)
+        whoopsie (123)
+        colord (127)
+        geoclue (128)
+        tss (111)
+        adm (4)
+        syslog (110)
+        mail (8)
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ sudo bash -c 'printf $(du -sx --block-size=1 edit | cut -f1) > extract-cd/casper/filesystem.size'
+[sudo] password for shafin:
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ cd extract-cd
+sudo rm md5sum.txt
+shafin@shafin-Inspiron-N4050:~/livecdtmp/extract-cd$ isoinfo -i ../kubuntu-21.04-desktop-amd64.iso -d
+CD-ROM is in ISO 9660 format
+System id:
+Volume id: Kubuntu 21.04 amd64
+Volume set id:
+Publisher id:
+Data preparer id: XORRISO-1.5.2 2019.10.26.180001, LIBISOBURN-1.5.2, LIBISOFS-1.5.2, LIBBURN-1.5.2
+Application id:
+Copyright File id:
+Abstract File id:
+Bibliographic File id:
+Volume set size is: 1
+Volume set sequence number is: 1
+Logical block size is: 2048
+Volume size is: 1436098
+El Torito VD version 1 found, boot catalog is in sector 724
+Joliet with UCS level 3 found
+Rock Ridge signatures version 1 found
+Eltorito validation header:
+    Hid 1
+    Arch 0 (x86)
+    ID ''
+    Key 55 AA
+    Eltorito defaultboot header:
+        Bootid 88 (bootable)
+        Boot media 0 (No Emulation Boot)
+        Load segment 0
+        Sys type 0
+        Nsect 4
+        Bootoff 2D5 725
+shafin@shafin-Inspiron-N4050:~/livecdtmp/extract-cd$ xorriso -indev ../kubuntu-21.04-desktop-amd64.iso -report-el-torito as_mkisofs
+GNU xorriso 1.5.4.pl02 : RockRidge filesystem manipulator, libburnia project.
+
+xorriso : NOTE : Loading ISO image tree from LBA 0
+xorriso : UPDATE :     974 nodes read in 1 seconds
+libisofs: NOTE : Found hidden El-Torito image for EFI.
+libisofs: NOTE : EFI image start and size: 1433422 * 2048 , 10040 * 512
+xorriso : NOTE : Detected El-Torito boot information which currently is set to be discarded
+Drive current: -indev '../kubuntu-21.04-desktop-amd64.iso'
+Media current: stdio file, overwriteable
+Media status : is written , is appendable
+Boot record  : El Torito , MBR protective-msdos-label grub2-mbr cyl-align-off GPT
+Media summary: 1 session, 1436098 data blocks, 2805m data, 41.3g free
+Volume id    : 'Kubuntu 21.04 amd64'
+-V 'Kubuntu 21.04 amd64'
+--modification-date='2021042011024500'
+--grub2-mbr --interval:local_fs:0s-15s:zero_mbrpt,zero_gpt:'../kubuntu-21.04-desktop-amd64.iso'
+--protective-msdos-label
+-partition_cyl_align off
+-partition_offset 16
+--mbr-force-bootable
+-append_partition 2 28732ac11ff8d211ba4b00a0c93ec93b --interval:local_fs:5733688d-5743727d::'../kubuntu-21.04-desktop-amd64.iso'
+-appended_part_as_gpt
+-iso_mbr_part_type a2a0d0ebe5b9334487c068b6b72699c7
+-c '/boot.catalog'
+-b '/boot/grub/i386-pc/eltorito.img'
+-no-emul-boot
+-boot-load-size 4
+-boot-info-table
+--grub2-boot-info
+-eltorito-alt-boot
+-e '--interval:appended_partition_2_start_1433422s_size_10040d:all::'
+-no-emul-boot
+-boot-load-size 10040
+shafin@shafin-Inspiron-N4050:~/livecdtmp/extract-cd$ sudo xorriso -as mkisofs -r -J -joliet-long -l -iso-level 3 -o ../custom.iso . -V 'Kubuntu 21.04 amd64' --modification-date='2021042011024500' --grub2-mbr --interval:local_fs:0s-15s:zero_mbrpt,zero_gpt:'../kubuntu-21.04-desktop-amd64.iso' --protective-msdos-label -partition_cyl_align off -partition_offset 16 --mbr-force-bootable -append_partition 2 28732ac11ff8d211ba4b00a0c93ec93b --interval:local_fs:5733688d-5743727d::'../kubuntu-21.04-desktop-amd64.iso' -appended_part_as_gpt -iso_mbr_part_type a2a0d0ebe5b9334487c068b6b72699c7 -c '/boot.catalog' -b '/boot/grub/i386-pc/eltorito.img' -no-emul-boot -boot-load-size 4 -boot-info-table --grub2-boot-info -eltorito-alt-boot -e '--interval:appended_partition_2_start_1433422s_size_10040d:all::' -no-emul-boot -boot-load-size 10040
+
+GNU xorriso 1.5.4.pl02 : RockRidge filesystem manipulator, libburnia project.
+
+Drive current: -outdev 'stdio:../custom.iso'
+Media current: stdio file, overwriteable
+Media status : is blank
+Media summary: 0 sessions, 0 data blocks, 0 data, 41.3g free
+xorriso : WARNING : -volid text problematic as automatic mount point name
+xorriso : WARNING : -volid text is too long for Joliet (19 > 16)
+xorriso : WARNING : -volid text does not comply to ISO 9660 / ECMA 119 rules
+Added to ISO image: directory '/'='/home/shafin/livecdtmp/extract-cd'
+xorriso : UPDATE :     974 files added in 1 seconds
+xorriso : UPDATE :     974 files added in 1 seconds
+xorriso : NOTE : Copying to System Area: 32768 bytes from file '--interval:local_fs:0s-15s:zero_mbrpt,zero_gpt:../kubuntu-21.04-desktop-amd64.iso'
+libisofs: WARNING : Cannot add /dists/stable to Joliet tree. Symlinks can only be added to a Rock Ridge tree.
+libisofs: WARNING : Cannot add /dists/unstable to Joliet tree. Symlinks can only be added to a Rock Ridge tree.
+libisofs: WARNING : Cannot add /ubuntu to Joliet tree. Symlinks can only be added to a Rock Ridge tree.
+libisofs: WARNING : Cannot add /dists/stable to Joliet tree. Symlinks can only be added to a Rock Ridge tree.
+libisofs: WARNING : Cannot add /dists/unstable to Joliet tree. Symlinks can only be added to a Rock Ridge tree.
+libisofs: WARNING : Cannot add /ubuntu to Joliet tree. Symlinks can only be added to a Rock Ridge tree.
+xorriso : UPDATE :  0.13% done
+xorriso : UPDATE :  0.24% done
+xorriso : UPDATE :  0.86% done
+xorriso : UPDATE :  2.42% done, estimate finish Mon Apr 26 15:36:44 2021
+xorriso : UPDATE :  3.96% done, estimate finish Mon Apr 26 15:36:22 2021
+xorriso : UPDATE :  5.67% done, estimate finish Mon Apr 26 15:36:10 2021
+xorriso : UPDATE :  7.36% done, estimate finish Mon Apr 26 15:36:04 2021
+xorriso : UPDATE :  9.03% done, estimate finish Mon Apr 26 15:36:00 2021
+xorriso : UPDATE :  10.58% done, estimate finish Mon Apr 26 15:35:58 2021
+xorriso : UPDATE :  12.21% done, estimate finish Mon Apr 26 15:35:57 2021
+xorriso : UPDATE :  13.60% done, estimate finish Mon Apr 26 15:35:56 2021
+xorriso : UPDATE :  14.18% done, estimate finish Mon Apr 26 15:36:01 2021
+xorriso : UPDATE :  14.26% done, estimate finish Mon Apr 26 15:36:07 2021
+xorriso : UPDATE :  14.99% done, estimate finish Mon Apr 26 15:36:04 2021
+xorriso : UPDATE :  15.42% done, estimate finish Mon Apr 26 15:36:08 2021
+xorriso : UPDATE :  16.17% done, estimate finish Mon Apr 26 15:36:11 2021
+xorriso : UPDATE :  16.91% done, estimate finish Mon Apr 26 15:36:13 2021
+xorriso : UPDATE :  17.04% done, estimate finish Mon Apr 26 15:36:19 2021
+xorriso : UPDATE :  17.22% done, estimate finish Mon Apr 26 15:36:25 2021
+xorriso : UPDATE :  17.35% done, estimate finish Mon Apr 26 15:36:30 2021
+xorriso : UPDATE :  17.42% done, estimate finish Mon Apr 26 15:36:36 2021
+xorriso : UPDATE :  17.53% done, estimate finish Mon Apr 26 15:36:42 2021
+xorriso : UPDATE :  17.63% done, estimate finish Mon Apr 26 15:36:47 2021
+xorriso : UPDATE :  17.72% done, estimate finish Mon Apr 26 15:36:53 2021
+xorriso : UPDATE :  17.82% done, estimate finish Mon Apr 26 15:38:51 2021
+xorriso : UPDATE :  17.94% done, estimate finish Mon Apr 26 15:39:02 2021
+xorriso : UPDATE :  18.11% done, estimate finish Mon Apr 26 15:39:09 2021
+xorriso : UPDATE :  18.22% done, estimate finish Mon Apr 26 15:39:20 2021
+xorriso : UPDATE :  18.87% done, estimate finish Mon Apr 26 15:38:58 2021
+xorriso : UPDATE :  20.55% done, estimate finish Mon Apr 26 15:38:09 2021
+xorriso : UPDATE :  22.25% done, estimate finish Mon Apr 26 15:37:41 2021
+xorriso : UPDATE :  23.97% done, estimate finish Mon Apr 26 15:37:22 2021
+xorriso : UPDATE :  25.55% done, estimate finish Mon Apr 26 15:37:11 2021
+xorriso : UPDATE :  26.90% done, estimate finish Mon Apr 26 15:37:05 2021
+xorriso : UPDATE :  28.55% done, estimate finish Mon Apr 26 15:36:31 2021
+xorriso : UPDATE :  30.24% done, estimate finish Mon Apr 26 15:36:27 2021
+xorriso : UPDATE :  31.91% done, estimate finish Mon Apr 26 15:36:24 2021
+xorriso : UPDATE :  32.49% done, estimate finish Mon Apr 26 15:36:26 2021
+xorriso : UPDATE :  33.29% done, estimate finish Mon Apr 26 15:36:27 2021
+xorriso : UPDATE :  33.73% done, estimate finish Mon Apr 26 15:36:30 2021
+xorriso : UPDATE :  33.88% done, estimate finish Mon Apr 26 15:36:33 2021
+xorriso : UPDATE :  33.99% done, estimate finish Mon Apr 26 15:36:37 2021
+xorriso : UPDATE :  34.15% done, estimate finish Mon Apr 26 15:36:41 2021
+xorriso : UPDATE :  34.21% done, estimate finish Mon Apr 26 15:36:45 2021
+xorriso : UPDATE :  34.29% done, estimate finish Mon Apr 26 15:37:09 2021
+xorriso : UPDATE :  34.52% done, estimate finish Mon Apr 26 15:37:15 2021
+xorriso : UPDATE :  34.66% done, estimate finish Mon Apr 26 15:37:21 2021
+xorriso : UPDATE :  34.73% done, estimate finish Mon Apr 26 15:37:28 2021
+xorriso : UPDATE :  34.87% done, estimate finish Mon Apr 26 15:37:34 2021
+xorriso : UPDATE :  35.00% done, estimate finish Mon Apr 26 15:37:40 2021
+xorriso : UPDATE :  35.55% done, estimate finish Mon Apr 26 15:37:38 2021
+xorriso : UPDATE :  37.26% done, estimate finish Mon Apr 26 15:37:23 2021
+xorriso : UPDATE :  38.91% done, estimate finish Mon Apr 26 15:37:12 2021
+xorriso : UPDATE :  40.49% done, estimate finish Mon Apr 26 15:37:04 2021
+xorriso : UPDATE :  42.17% done, estimate finish Mon Apr 26 15:36:50 2021
+xorriso : UPDATE :  43.90% done, estimate finish Mon Apr 26 15:36:44 2021
+xorriso : UPDATE :  45.60% done, estimate finish Mon Apr 26 15:36:40 2021
+xorriso : UPDATE :  47.31% done, estimate finish Mon Apr 26 15:36:36 2021
+xorriso : UPDATE :  48.67% done, estimate finish Mon Apr 26 15:36:35 2021
+xorriso : UPDATE :  49.28% done, estimate finish Mon Apr 26 15:36:36 2021
+xorriso : UPDATE :  50.03% done, estimate finish Mon Apr 26 15:36:36 2021
+xorriso : UPDATE :  50.75% done, estimate finish Mon Apr 26 15:36:37 2021
+xorriso : UPDATE :  50.84% done, estimate finish Mon Apr 26 15:36:40 2021
+xorriso : UPDATE :  51.00% done, estimate finish Mon Apr 26 15:36:43 2021
+xorriso : UPDATE :  51.16% done, estimate finish Mon Apr 26 15:36:43 2021
+xorriso : UPDATE :  51.25% done, estimate finish Mon Apr 26 15:36:48 2021
+xorriso : UPDATE :  51.26% done, estimate finish Mon Apr 26 15:36:53 2021
+xorriso : UPDATE :  51.35% done, estimate finish Mon Apr 26 15:36:57 2021
+xorriso : UPDATE :  51.45% done, estimate finish Mon Apr 26 15:37:02 2021
+xorriso : UPDATE :  51.65% done, estimate finish Mon Apr 26 15:37:05 2021
+xorriso : UPDATE :  51.79% done, estimate finish Mon Apr 26 15:37:08 2021
+xorriso : UPDATE :  51.93% done, estimate finish Mon Apr 26 15:37:11 2021
+xorriso : UPDATE :  51.97% done, estimate finish Mon Apr 26 15:37:16 2021
+xorriso : UPDATE :  52.17% done, estimate finish Mon Apr 26 15:37:19 2021
+xorriso : UPDATE :  53.42% done, estimate finish Mon Apr 26 15:37:14 2021
+xorriso : UPDATE :  54.96% done, estimate finish Mon Apr 26 15:37:46 2021
+xorriso : UPDATE :  56.26% done, estimate finish Mon Apr 26 15:37:28 2021
+xorriso : UPDATE :  57.63% done, estimate finish Mon Apr 26 15:37:16 2021
+xorriso : UPDATE :  58.88% done, estimate finish Mon Apr 26 15:37:10 2021
+xorriso : UPDATE :  60.15% done, estimate finish Mon Apr 26 15:37:04 2021
+xorriso : UPDATE :  61.61% done, estimate finish Mon Apr 26 15:36:59 2021
+xorriso : UPDATE :  62.98% done, estimate finish Mon Apr 26 15:36:56 2021
+xorriso : UPDATE :  64.29% done, estimate finish Mon Apr 26 15:36:53 2021
+xorriso : UPDATE :  65.64% done, estimate finish Mon Apr 26 15:36:50 2021
+xorriso : UPDATE :  66.59% done, estimate finish Mon Apr 26 15:36:50 2021
+xorriso : UPDATE :  67.25% done, estimate finish Mon Apr 26 15:36:38 2021
+xorriso : UPDATE :  67.90% done, estimate finish Mon Apr 26 15:36:40 2021
+xorriso : UPDATE :  68.59% done, estimate finish Mon Apr 26 15:36:40 2021
+xorriso : UPDATE :  69.30% done, estimate finish Mon Apr 26 15:36:41 2021
+xorriso : UPDATE :  70.05% done, estimate finish Mon Apr 26 15:36:42 2021
+xorriso : UPDATE :  70.13% done, estimate finish Mon Apr 26 15:36:44 2021
+xorriso : UPDATE :  70.27% done, estimate finish Mon Apr 26 15:36:47 2021
+xorriso : UPDATE :  70.41% done, estimate finish Mon Apr 26 15:36:49 2021
+xorriso : UPDATE :  70.51% done, estimate finish Mon Apr 26 15:36:51 2021
+xorriso : UPDATE :  70.62% done, estimate finish Mon Apr 26 15:36:53 2021
+xorriso : UPDATE :  70.84% done, estimate finish Mon Apr 26 15:37:30 2021
+xorriso : UPDATE :  70.99% done, estimate finish Mon Apr 26 15:37:34 2021
+xorriso : UPDATE :  71.05% done, estimate finish Mon Apr 26 15:37:40 2021
+xorriso : UPDATE :  71.21% done, estimate finish Mon Apr 26 15:37:43 2021
+xorriso : UPDATE :  71.39% done, estimate finish Mon Apr 26 15:37:46 2021
+xorriso : UPDATE :  71.47% done, estimate finish Mon Apr 26 15:37:51 2021
+xorriso : UPDATE :  71.73% done, estimate finish Mon Apr 26 15:37:52 2021
+xorriso : UPDATE :  71.99% done, estimate finish Mon Apr 26 15:37:52 2021
+xorriso : UPDATE :  73.63% done, estimate finish Mon Apr 26 15:37:32 2021
+xorriso : UPDATE :  74.77% done, estimate finish Mon Apr 26 15:37:24 2021
+xorriso : UPDATE :  76.20% done, estimate finish Mon Apr 26 15:37:10 2021
+xorriso : UPDATE :  77.27% done, estimate finish Mon Apr 26 15:37:06 2021
+xorriso : UPDATE :  78.79% done, estimate finish Mon Apr 26 15:37:02 2021
+xorriso : UPDATE :  79.22% done, estimate finish Mon Apr 26 15:37:02 2021
+xorriso : UPDATE :  80.06% done, estimate finish Mon Apr 26 15:37:02 2021
+xorriso : UPDATE :  81.50% done, estimate finish Mon Apr 26 15:36:59 2021
+xorriso : UPDATE :  81.63% done, estimate finish Mon Apr 26 15:37:01 2021
+xorriso : UPDATE :  81.74% done, estimate finish Mon Apr 26 15:37:03 2021
+xorriso : UPDATE :  81.88% done, estimate finish Mon Apr 26 15:37:04 2021
+xorriso : UPDATE :  81.96% done, estimate finish Mon Apr 26 15:37:06 2021
+xorriso : UPDATE :  82.10% done, estimate finish Mon Apr 26 15:37:07 2021
+xorriso : UPDATE :  82.18% done, estimate finish Mon Apr 26 15:37:10 2021
+xorriso : UPDATE :  82.24% done, estimate finish Mon Apr 26 15:37:14 2021
+xorriso : UPDATE :  82.29% done, estimate finish Mon Apr 26 15:37:16 2021
+xorriso : UPDATE :  82.77% done, estimate finish Mon Apr 26 15:37:17 2021
+xorriso : UPDATE :  84.09% done, estimate finish Mon Apr 26 15:37:12 2021
+xorriso : UPDATE :  85.47% done, estimate finish Mon Apr 26 15:37:08 2021
+xorriso : UPDATE :  86.87% done, estimate finish Mon Apr 26 15:37:05 2021
+xorriso : UPDATE :  87.72% done, estimate finish Mon Apr 26 15:37:05 2021
+xorriso : UPDATE :  89.16% done, estimate finish Mon Apr 26 15:37:02 2021
+xorriso : UPDATE :  90.62% done, estimate finish Mon Apr 26 15:37:00 2021
+xorriso : UPDATE :  91.98% done, estimate finish Mon Apr 26 15:36:57 2021
+xorriso : UPDATE :  93.57% done, estimate finish Mon Apr 26 15:36:56 2021
+xorriso : UPDATE :  94.76% done, estimate finish Mon Apr 26 15:36:56 2021
+xorriso : UPDATE :  95.50% done, estimate finish Mon Apr 26 15:36:56 2021
+xorriso : UPDATE :  95.60% done, estimate finish Mon Apr 26 15:36:57 2021
+xorriso : UPDATE :  95.77% done, estimate finish Mon Apr 26 15:36:58 2021
+xorriso : UPDATE :  95.86% done, estimate finish Mon Apr 26 15:37:00 2021
+xorriso : UPDATE :  96.07% done, estimate finish Mon Apr 26 15:37:01 2021
+xorriso : UPDATE :  96.19% done, estimate finish Mon Apr 26 15:37:02 2021
+xorriso : UPDATE :  96.23% done, estimate finish Mon Apr 26 15:37:03 2021
+xorriso : UPDATE :  96.37% done, estimate finish Mon Apr 26 15:37:07 2021
+xorriso : UPDATE :  96.48% done, estimate finish Mon Apr 26 15:37:08 2021
+xorriso : UPDATE :  96.75% done, estimate finish Mon Apr 26 15:37:09 2021
+xorriso : UPDATE :  96.86% done, estimate finish Mon Apr 26 15:37:10 2021
+xorriso : UPDATE :  97.00% done, estimate finish Mon Apr 26 15:37:11 2021
+xorriso : UPDATE :  97.99% done, estimate finish Mon Apr 26 15:37:09 2021
+xorriso : UPDATE :  99.21% done
+ISO image produced: 1450650 sectors
+Written to medium : 1450650 sectors at LBA 0
+Writing to 'stdio:../custom.iso' completed successfully.
+
+shafin@shafin-Inspiron-N4050:~/livecdtmp/extract-cd$ cd ../
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ diff <(dumpet -i custom.iso) <(dumpet -i kubuntu-21.04-desktop-amd64.iso)
+25c25
+<       Load LBA: 1725912 (0x001a55d8)
+---
+>       Load LBA: 1433422 (0x0015df4e)
+shafin@shafin-Inspiron-N4050:~/livecdtmp$ diff <(isoinfo -i custom.iso -d) <(isoinfo -i kubuntu-21.04-desktop-amd64.iso -d)
+6c6
+< Data preparer id: XORRISO-1.5.4 2021.02.06.123001, LIBISOBURN-1.5.4, LIBISOFS-1.5.4, LIBBURN-1.5.4
+---
+> Data preparer id: XORRISO-1.5.2 2019.10.26.180001, LIBISOBURN-1.5.2, LIBISOFS-1.5.2, LIBBURN-1.5.2
+14c14
+< Volume size is: 1728588
+---
+> Volume size is: 1436098

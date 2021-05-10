@@ -1,0 +1,1660 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://mywiki.wooledge.org/BashFAQ/031
+Subject: BashFAQ/031 - Greg's Wiki
+Date: Mon, 26 Apr 2021 21:57:00 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----"
+
+
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: text/html
+Content-ID: <frame-E5CAF8A47CDE67E11BBC02920BD04DFE@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mywiki.wooledge.org/BashFAQ/031
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/htm=
+l4/strict.dtd"><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D=
+"cid:css-28eb0d2a-0015-47f7-ade8-77e6afb94d6c@mhtml.blink" /><link rel=3D"s=
+tylesheet" type=3D"text/css" href=3D"cid:css-aff5279d-e796-49e2-92b6-585561=
+7d9ae1@mhtml.blink" />
+
+<meta name=3D"robots" content=3D"index,nofollow">
+
+<title>BashFAQ/031 - Greg's Wiki</title>
+
+
+
+
+
+
+<link rel=3D"stylesheet" type=3D"text/css" charset=3D"utf-8" media=3D"all" =
+href=3D"http://mywiki.wooledge.org/moin_static198/modernized/css/common.css=
+">
+<link rel=3D"stylesheet" type=3D"text/css" charset=3D"utf-8" media=3D"scree=
+n" href=3D"http://mywiki.wooledge.org/moin_static198/modernized/css/screen.=
+css">
+<link rel=3D"stylesheet" type=3D"text/css" charset=3D"utf-8" media=3D"print=
+" href=3D"http://mywiki.wooledge.org/moin_static198/modernized/css/print.cs=
+s">
+<link rel=3D"stylesheet" type=3D"text/css" charset=3D"utf-8" media=3D"proje=
+ction" href=3D"http://mywiki.wooledge.org/moin_static198/modernized/css/pro=
+jection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel=3D"stylesheet" type=3D"text/css" charset=3D"utf-8" media=3D"al=
+l" href=3D"/moin_static198/modernized/css/msie.css">
+<![endif]-->
+
+
+<link rel=3D"alternate" title=3D"Greg's Wiki: BashFAQ/031" href=3D"http://m=
+ywiki.wooledge.org/BashFAQ/031?diffs=3D1&amp;show_att=3D1&amp;action=3Drss_=
+rc&amp;unique=3D0&amp;page=3DBashFAQ%2F031&amp;ddiffs=3D1" type=3D"applicat=
+ion/rss+xml">
+<link rel=3D"alternate" type=3D"application/wiki" title=3D"Edit" href=3D"ht=
+tp://mywiki.wooledge.org/BashFAQ/031?action=3Dedit">
+
+<link rel=3D"Start" href=3D"http://mywiki.wooledge.org/EnglishFrontPage">
+<link rel=3D"Alternate" title=3D"Wiki Markup" href=3D"http://mywiki.wooledg=
+e.org/BashFAQ/031?action=3Draw">
+<link rel=3D"Alternate" media=3D"print" title=3D"Print View" href=3D"http:/=
+/mywiki.wooledge.org/BashFAQ/031?action=3Dprint">
+<link rel=3D"Up" href=3D"http://mywiki.wooledge.org/BashFAQ">
+<link rel=3D"Search" href=3D"http://mywiki.wooledge.org/FindPage">
+<link rel=3D"Index" href=3D"http://mywiki.wooledge.org/TitleIndex">
+<link rel=3D"Glossary" href=3D"http://mywiki.wooledge.org/WordIndex">
+<link rel=3D"Help" href=3D"http://mywiki.wooledge.org/HelpOnFormatting">
+</head>
+
+<body lang=3D"en" dir=3D"ltr" data-new-gr-c-s-check-loaded=3D"14.1007.0" da=
+ta-gr-ext-installed=3D"">
+
+<div id=3D"header">
+
+<form id=3D"searchform" method=3D"get" action=3D"http://mywiki.wooledge.org=
+/BashFAQ/031">
+<div>
+
+
+<label for=3D"searchinput" style=3D"display: none;">Search:</label>
+<input id=3D"searchinput" type=3D"text" name=3D"value" value=3D"" size=3D"2=
+0" alt=3D"Search" class=3D"disabled">
+<input id=3D"titlesearch" name=3D"titlesearch" type=3D"submit" value=3D"Tit=
+les" alt=3D"Search Titles" disabled=3D"">
+<input id=3D"fullsearch" name=3D"fullsearch" type=3D"submit" value=3D"Text"=
+ alt=3D"Search Full Text" disabled=3D"">
+</div>
+</form>
+
+
+<div id=3D"logo"><a href=3D"http://mywiki.wooledge.org/EnglishFrontPage"><i=
+mg src=3D"http://mywiki.wooledge.org/moin_static198/common/moinmoin.png" al=
+t=3D"MoinMoin Logo"></a></div>
+<div id=3D"username"><a href=3D"http://mywiki.wooledge.org/BashFAQ/031?acti=
+on=3Dlogin" id=3D"login" rel=3D"nofollow">Login</a></div>
+<h1 id=3D"locationline">
+
+<span id=3D"pagelocation"><span class=3D"pagepath"><a href=3D"http://mywiki=
+.wooledge.org/BashFAQ">BashFAQ</a></span><span class=3D"sep">/</span><a hre=
+f=3D"http://mywiki.wooledge.org/BashFAQ/031">031</a></span>
+</h1>
+
+
+<ul id=3D"navibar">
+<li class=3D"wikilink"><a href=3D"http://mywiki.wooledge.org/BashGuide">Bas=
+hGuide</a></li><li class=3D"wikilink"><a href=3D"http://mywiki.wooledge.org=
+/BashFAQ">BashFAQ</a></li><li class=3D"wikilink"><a href=3D"http://mywiki.w=
+ooledge.org/RecentChanges">RecentChanges</a></li><li class=3D"wikilink"><a =
+href=3D"http://mywiki.wooledge.org/FindPage">FindPage</a></li><li class=3D"=
+wikilink"><a href=3D"http://mywiki.wooledge.org/HelpContents">HelpContents<=
+/a></li><li class=3D"current"><a href=3D"http://mywiki.wooledge.org/BashFAQ=
+/031">BashFAQ/031</a></li>
+</ul>
+
+<div id=3D"pageline"><hr style=3D"display:none;"></div>
+
+<ul class=3D"editbar"><li><a href=3D"http://mywiki.wooledge.org/BashFAQ/031=
+?action=3Dedit&amp;editor=3Dtext" name=3D"texteditlink" rel=3D"nofollow">Ed=
+it (Text)</a></li><li><a href=3D"http://mywiki.wooledge.org/BashFAQ/031?act=
+ion=3Dedit&amp;editor=3Dgui">Edit (GUI)</a></li><li class=3D"toggleComments=
+Button" style=3D"display:none;"><a href=3D"http://mywiki.wooledge.org/BashF=
+AQ/031#" class=3D"nbcomment">Comments</a></li><li><a class=3D"nbinfo" href=
+=3D"http://mywiki.wooledge.org/BashFAQ/031?action=3Dinfo" rel=3D"nofollow">=
+Info</a></li><li><a class=3D"nbattachments" href=3D"http://mywiki.wooledge.=
+org/BashFAQ/031?action=3DAttachFile" rel=3D"nofollow">Attachments</a></li><=
+li>
+<form class=3D"actionsmenu" method=3D"GET" action=3D"http://mywiki.wooledge=
+.org/BashFAQ/031">
+<div>
+   =20
+    <select name=3D"action">
+        <option value=3D"show">More Actions:</option><option value=3D"raw">=
+Raw Text</option>
+<option value=3D"print">Print View</option>
+<option value=3D"RenderAsDocbook">Render as Docbook</option>
+<option value=3D"refresh">Delete Cache</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"SpellCheck">Check Spelling</option>
+<option value=3D"LikePages">Like Pages</option>
+<option value=3D"LocalSiteMap">Local Site Map</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"RenamePage" disabled=3D"" class=3D"disabled">Rename Page</=
+option>
+<option value=3D"DeletePage" disabled=3D"" class=3D"disabled">Delete Page</=
+option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">Subscribe User</opt=
+ion>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">Remove Spam</option=
+>
+<option value=3D"show" disabled=3D"" class=3D"disabled">Revert to this revi=
+sion</option>
+<option value=3D"PackagePages">Package Pages</option>
+<option value=3D"SyncPages">Sync Pages</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"Load">Load</option>
+<option value=3D"Save">Save</option>
+<option value=3D"SlideShow">SlideShow</option>
+    </select>
+   =20
+   =20
+</div>
+
+</form>
+</li></ul>
+
+</div>
+
+<div id=3D"page" lang=3D"en" dir=3D"ltr">
+<div dir=3D"ltr" id=3D"content" lang=3D"en"><span class=3D"anchor" id=3D"to=
+p"></span>
+<span class=3D"anchor" id=3D"line-1"></span><p class=3D"line867"><span clas=
+s=3D"anchor" id=3D"faq31"></span> <span class=3D"anchor" id=3D"line-2"></sp=
+an>
+</p><h2 id=3D"What_is_the_difference_between_test.2C_.5B_and_.5B.5B_.3F">Wh=
+at is the difference between test, [ and [[ ?</h2>
+<span class=3D"anchor" id=3D"line-3"></span><p class=3D"line867"><tt class=
+=3D"backtick">[</tt> (aka <tt class=3D"backtick">test</tt>) command the and=
+ <tt class=3D"backtick">[[&nbsp;...&nbsp;]]</tt> test construct are used to=
+ evaluate expressions.  <tt class=3D"backtick">[[&nbsp;...&nbsp;]]</tt> wor=
+ks only in the Korn shell (where it originates), Bash, Zsh, and recent vers=
+ions of Yash and busybox <tt class=3D"backtick">sh</tt> (if enabled at comp=
+ilation time, and still very limited there especially in the <tt class=3D"b=
+acktick">hush</tt>-based variant), and is more powerful; <tt class=3D"backt=
+ick">[</tt> and <tt class=3D"backtick">test</tt> are POSIX utilities (gener=
+ally builtin). POSIX doesn't specify the <tt class=3D"backtick">[[&nbsp;...=
+&nbsp;]]</tt> construct (which has a specific syntax with significant varia=
+tions between implementations) though allows shells to treat <tt class=3D"b=
+acktick">[[</tt> as a keyword. Here are some examples: <span class=3D"ancho=
+r" id=3D"line-4"></span><span class=3D"anchor" id=3D"line-5"></span></p><p =
+class=3D"line867"><span class=3D"anchor" id=3D"line-6"></span><span class=
+=3D"anchor" id=3D"line-7"></span><span class=3D"anchor" id=3D"line-8"></spa=
+n><span class=3D"anchor" id=3D"line-9"></span></p><pre><span class=3D"ancho=
+r" id=3D"line-1"></span>#POSIX
+<span class=3D"anchor" id=3D"line-2"></span>[ "$variable" ] || echo 'variab=
+le is unset or empty!' &gt;&amp;2
+<span class=3D"anchor" id=3D"line-3"></span>[ -f "$filename" ] || printf 'F=
+ile does not exist or is not a regular file: %s\n' "$filename" &gt;&amp;2</=
+pre><span class=3D"anchor" id=3D"line-10"></span><p class=3D"line867"><span=
+ class=3D"anchor" id=3D"line-11"></span><span class=3D"anchor" id=3D"line-1=
+2"></span><span class=3D"anchor" id=3D"line-13"></span><span class=3D"ancho=
+r" id=3D"line-14"></span><span class=3D"anchor" id=3D"line-15"></span><span=
+ class=3D"anchor" id=3D"line-16"></span><span class=3D"anchor" id=3D"line-1=
+7"></span><span class=3D"anchor" id=3D"line-18"></span><span class=3D"ancho=
+r" id=3D"line-19"></span></p><pre><span class=3D"anchor" id=3D"line-1-1"></=
+span>if [[ ! -e $file ]]; then
+<span class=3D"anchor" id=3D"line-2-1"></span>    echo "File doesn't exist =
+or is in an inaccessible directory or is a symlink to a file that doesn't e=
+xist." &gt;&amp;2
+<span class=3D"anchor" id=3D"line-3-1"></span>fi
+<span class=3D"anchor" id=3D"line-4"></span>
+<span class=3D"anchor" id=3D"line-5"></span>if [[ $file0 -nt $file1 ]]; the=
+n
+<span class=3D"anchor" id=3D"line-6"></span>    printf '%s\n' "file $file0 =
+is newer than $file1 (or $file1 is no accessible)"
+<span class=3D"anchor" id=3D"line-7"></span>    # (behaviour varies between=
+ shells if $file1 is not accessible)
+<span class=3D"anchor" id=3D"line-8"></span>fi</pre><span class=3D"anchor" =
+id=3D"line-20"></span><p class=3D"line862">To cut a long story short: <tt>t=
+est</tt> implements the old, portable syntax of the command.  In almost all=
+ shells (the oldest Bourne shells are the exception), <tt>[</tt> is a synon=
+ym for <tt>test</tt> (but requires a final argument of <tt>]</tt>).  Althou=
+gh all modern shells have built-in implementations of <tt>[</tt>, there usu=
+ally still is an external executable of that name, e.g. <tt>/bin/[</tt>.  <=
+a class=3D"http" href=3D"http://pubs.opengroup.org/onlinepubs/9699919799/ut=
+ilities/test.html">POSIX</a> defines a mandatory feature set for <tt class=
+=3D"backtick">[</tt>, but almost every shell offers extensions to it.  So, =
+if you want portable code, you should be careful not to use any of those ex=
+tensions. <span class=3D"anchor" id=3D"line-21"></span><span class=3D"ancho=
+r" id=3D"line-22"></span></p><p class=3D"line867"><tt>[[</tt> is a new, imp=
+roved version of it, and it is a keyword rather than a program. This makes =
+it easier to use, as shown below. <span class=3D"anchor" id=3D"line-23"></s=
+pan><span class=3D"anchor" id=3D"line-24"></span></p><p class=3D"line862">A=
+lthough <tt>[</tt> and <tt>[[</tt> have much in common and share many expre=
+ssion operators like "<tt>-f</tt>", "<tt>-s</tt>", "<tt>-n</tt>", and "<tt>=
+-z</tt>", there are some notable differences.  Here is a comparison list: <=
+span class=3D"anchor" id=3D"line-25"></span></p><div><table><tbody><tr>  <t=
+d><p class=3D"line891"><strong>Feature</strong> </p></td>
+  <td><p class=3D"line891"><strong>new test</strong> <tt>[[</tt> </p></td>
+  <td><p class=3D"line891"><strong>old test</strong> <tt>[</tt> </p></td>
+  <td><p class=3D"line891"><strong>Example</strong> </p></td>
+</tr>
+<tr>  <td colspan=3D"1" rowspan=3D"4" style=3D"text-align: center"><span cl=
+ass=3D"anchor" id=3D"line-26"></span><p class=3D"line862">string comparison=
+ </p></td>
+  <td><p class=3D"line891"><tt>&gt;</tt> </p></td>
+  <td><p class=3D"line891"><tt>\&gt;</tt> <a href=3D"http://mywiki.wooledge=
+.org/BashFAQ/031#np">(*)</a> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;a&nbsp;&gt;&nbsp;b&nbsp;]]&nbsp;||&n=
+bsp;echo&nbsp;"a&nbsp;does&nbsp;not&nbsp;come&nbsp;after&nbsp;b"</tt> </p><=
+/td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-27"></span><p class=3D"line891"=
+><tt>&lt;</tt> </p></td>
+  <td><p class=3D"line891"><tt>\&lt;</tt> <a href=3D"http://mywiki.wooledge=
+.org/BashFAQ/031#np">(*)</a> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;az&nbsp;&lt;&nbsp;za&nbsp;]]&nbsp;&a=
+mp;&amp;&nbsp;echo&nbsp;"az&nbsp;comes&nbsp;before&nbsp;za"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-28"></span><p class=3D"line891"=
+><tt>=3D</tt> (or <tt>=3D=3D</tt>) </p></td>
+  <td><p class=3D"line891"><tt>=3D</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;a&nbsp;=3D&nbsp;a&nbsp;]]&nbsp;&amp;=
+&amp;&nbsp;echo&nbsp;"a&nbsp;equals&nbsp;a"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-29"></span><p class=3D"line891"=
+><tt>!=3D</tt> </p></td>
+  <td><p class=3D"line891"><tt>!=3D</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;a&nbsp;!=3D&nbsp;b&nbsp;]]&nbsp;&amp=
+;&amp;&nbsp;echo&nbsp;"a&nbsp;is&nbsp;not&nbsp;equal&nbsp;to&nbsp;b"</tt> <=
+/p></td>
+</tr>
+<tr>  <td colspan=3D"1" rowspan=3D"6" style=3D"text-align: center"><span cl=
+ass=3D"anchor" id=3D"line-30"></span><p class=3D"line862">integer compariso=
+n </p></td>
+  <td><p class=3D"line891"><tt>-gt</tt> </p></td>
+  <td><p class=3D"line891"><tt>-gt</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;5&nbsp;-gt&nbsp;10&nbsp;]]&nbsp;||&n=
+bsp;echo&nbsp;"5&nbsp;is&nbsp;not&nbsp;bigger&nbsp;than&nbsp;10"</tt> </p><=
+/td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-31"></span><p class=3D"line891"=
+><tt>-lt</tt> </p></td>
+  <td><p class=3D"line891"><tt>-lt</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;8&nbsp;-lt&nbsp;9&nbsp;]]&nbsp;&amp;=
+&amp;&nbsp;echo&nbsp;"8&nbsp;is&nbsp;less&nbsp;than&nbsp;9"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-32"></span><p class=3D"line891"=
+><tt>-ge</tt> </p></td>
+  <td><p class=3D"line891"><tt>-ge</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;3&nbsp;-ge&nbsp;3&nbsp;]]&nbsp;&amp;=
+&amp;&nbsp;echo&nbsp;"3&nbsp;is&nbsp;greater&nbsp;than&nbsp;or&nbsp;equal&n=
+bsp;to&nbsp;3"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-33"></span><p class=3D"line891"=
+><tt>-le</tt> </p></td>
+  <td><p class=3D"line891"><tt>-le</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;3&nbsp;-le&nbsp;8&nbsp;]]&nbsp;&amp;=
+&amp;&nbsp;echo&nbsp;"3&nbsp;is&nbsp;less&nbsp;than&nbsp;or&nbsp;equal&nbsp=
+;to&nbsp;8"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-34"></span><p class=3D"line891"=
+><tt>-eq</tt> </p></td>
+  <td><p class=3D"line891"><tt>-eq</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;5&nbsp;-eq&nbsp;05&nbsp;]]&nbsp;&amp=
+;&amp;&nbsp;echo&nbsp;"5&nbsp;equals&nbsp;05"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-35"></span><p class=3D"line891"=
+><tt>-ne</tt> </p></td>
+  <td><p class=3D"line891"><tt>-ne</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;6&nbsp;-ne&nbsp;20&nbsp;]]&nbsp;&amp=
+;&amp;&nbsp;echo&nbsp;"6&nbsp;is&nbsp;not&nbsp;equal&nbsp;to&nbsp;20"</tt> =
+</p></td>
+</tr>
+<tr>  <td colspan=3D"1" rowspan=3D"2" style=3D"text-align: center"><span cl=
+ass=3D"anchor" id=3D"line-36"></span><p class=3D"line862">conditional evalu=
+ation </p></td>
+  <td><p class=3D"line891"><tt>&amp;&amp;</tt> </p></td>
+  <td><p class=3D"line891"><tt>-a</tt> <a href=3D"http://mywiki.wooledge.or=
+g/BashFAQ/031#np2">(**)</a> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;-n&nbsp;$var&nbsp;&amp;&amp;&nbsp;-f=
+&nbsp;$var&nbsp;]]&nbsp;&amp;&amp;&nbsp;echo&nbsp;"$var&nbsp;is&nbsp;a&nbsp=
+;file"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-37"></span><p class=3D"line891"=
+><tt>||</tt> </p></td>
+  <td><p class=3D"line891"><tt>-o</tt> <a href=3D"http://mywiki.wooledge.or=
+g/BashFAQ/031#np2">(**)</a> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;-b&nbsp;$var&nbsp;||&nbsp;-c&nbsp;$v=
+ar&nbsp;]]&nbsp;&amp;&amp;&nbsp;echo&nbsp;"$var&nbsp;is&nbsp;a&nbsp;device"=
+</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-38"></span><p class=3D"line862"=
+>expression grouping </p></td>
+  <td><p class=3D"line891"><tt>(...)</tt> </p></td>
+  <td><p class=3D"line891"><tt>\(&nbsp;...&nbsp;\)</tt> <a href=3D"http://m=
+ywiki.wooledge.org/BashFAQ/031#np2">(**)</a> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;$var&nbsp;=3D&nbsp;img*&nbsp;&amp;&a=
+mp;&nbsp;($var&nbsp;=3D&nbsp;*.png&nbsp;||&nbsp;$var&nbsp;=3D&nbsp;*.jpg)&n=
+bsp;]]&nbsp;&amp;&amp;</tt><br>
+<tt>echo&nbsp;"$var&nbsp;starts&nbsp;with&nbsp;img&nbsp;and&nbsp;ends&nbsp;=
+with&nbsp;.jpg&nbsp;or&nbsp;.png"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-39"></span><p class=3D"line862"=
+>Pattern matching </p></td>
+  <td><p class=3D"line891"><tt>=3D</tt> (or <tt>=3D=3D</tt>) </p></td>
+  <td><p class=3D"line862">(not available) </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;$name&nbsp;=3D&nbsp;a*&nbsp;]]&nbsp;=
+||&nbsp;echo&nbsp;"name&nbsp;does&nbsp;not&nbsp;start&nbsp;with&nbsp;an&nbs=
+p;'a':&nbsp;$name"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-40"></span><p class=3D"line891"=
+><a href=3D"http://mywiki.wooledge.org/RegularExpression">RegularExpression=
+</a> matching </p></td>
+  <td><p class=3D"line891"><tt>=3D~</tt> </p></td>
+  <td><p class=3D"line862">(not available) </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;$(date)&nbsp;=3D~&nbsp;^Fri\&nbsp;..=
+.\&nbsp;13&nbsp;]]&nbsp;&amp;&amp;&nbsp;echo&nbsp;"It's&nbsp;Friday&nbsp;th=
+e&nbsp;13th!"</tt> </p></td>
+</tr>
+</tbody></table></div><span class=3D"anchor" id=3D"line-41"></span><span cl=
+ass=3D"anchor" id=3D"line-42"></span><span class=3D"anchor" id=3D"line-43">=
+</span><span class=3D"anchor" id=3D"line-44"></span><span class=3D"anchor" =
+id=3D"line-45"></span><p class=3D"line867"><span class=3D"anchor" id=3D"np"=
+></span> (*) This is an extension to the POSIX standard; some shells may ha=
+ve it, others may not. <span class=3D"anchor" id=3D"line-46"></span><span c=
+lass=3D"anchor" id=3D"line-47"></span></p><p class=3D"line867"><span class=
+=3D"anchor" id=3D"np2"></span> (**) The <tt class=3D"backtick">-a</tt> and =
+<tt class=3D"backtick">-o</tt> operators, and <tt class=3D"backtick">(&nbsp=
+;...&nbsp;)</tt> grouping, are defined by POSIX but only for strictly limit=
+ed cases, and are marked as deprecated.  Use of these operators is discoura=
+ged; you should use multiple <tt class=3D"backtick">[</tt> commands instead=
+: <span class=3D"anchor" id=3D"line-48"></span><span class=3D"anchor" id=3D=
+"line-49"></span></p><ul><li><p class=3D"line891"><tt class=3D"backtick">if=
+&nbsp;[&nbsp;"$a"&nbsp;=3D&nbsp;a&nbsp;]&nbsp;&amp;&amp;&nbsp;[&nbsp;"$b"&n=
+bsp;=3D&nbsp;b&nbsp;];&nbsp;then&nbsp;...</tt> <span class=3D"anchor" id=3D=
+"line-50"></span></p></li><li><p class=3D"line891"><tt class=3D"backtick">i=
+f&nbsp;[&nbsp;"$a"&nbsp;=3D&nbsp;a&nbsp;]&nbsp;||&nbsp;{&nbsp;[&nbsp;"$b"&n=
+bsp;=3D&nbsp;b&nbsp;]&nbsp;&amp;&amp;&nbsp;[&nbsp;"$c"&nbsp;=3D&nbsp;c&nbsp=
+;];};&nbsp;then&nbsp;...</tt> <span class=3D"anchor" id=3D"line-51"></span>=
+<span class=3D"anchor" id=3D"line-52"></span></p></li></ul><p class=3D"line=
+862">Special primitives that <tt>[[</tt> is defined to have, but <tt>[</tt>=
+ may be lacking (depending on the implementation): <span class=3D"anchor" i=
+d=3D"line-53"></span></p><div><table><tbody><tr>  <td><p class=3D"line891">=
+<strong>Description</strong> </p></td>
+  <td><p class=3D"line891"><strong>Primitive</strong> </p></td>
+  <td><p class=3D"line891"><strong>Example</strong> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-54"></span><p class=3D"line862"=
+>entry (file or directory) exists </p></td>
+  <td><p class=3D"line891"><tt>-e</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;-e&nbsp;$config&nbsp;]]&nbsp;&amp;&a=
+mp;&nbsp;echo&nbsp;"config&nbsp;file&nbsp;exists:&nbsp;$config"</tt> </p></=
+td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-55"></span><p class=3D"line862"=
+>file is newer/older than other file </p></td>
+  <td><p class=3D"line891"><tt>-nt</tt> / <tt>-ot</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;$file0&nbsp;-nt&nbsp;$file1&nbsp;]]&=
+nbsp;&amp;&amp;&nbsp;echo&nbsp;"$file0&nbsp;is&nbsp;newer&nbsp;than&nbsp;$f=
+ile1"</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-56"></span><p class=3D"line862"=
+>two files are the same </p></td>
+  <td><p class=3D"line891"><tt>-ef</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;$input&nbsp;-ef&nbsp;$output&nbsp;]]=
+&nbsp;&amp;&amp;&nbsp;{&nbsp;echo&nbsp;"will&nbsp;not&nbsp;overwrite&nbsp;i=
+nput&nbsp;file:&nbsp;$input";&nbsp;exit&nbsp;1;&nbsp;}&nbsp;</tt> </p></td>
+</tr>
+<tr>  <td><span class=3D"anchor" id=3D"line-57"></span><p class=3D"line862"=
+>negation </p></td>
+  <td><p class=3D"line891"><tt>!</tt> </p></td>
+  <td><p class=3D"line891"><tt>[[&nbsp;!&nbsp;-u&nbsp;$file&nbsp;]]&nbsp;&a=
+mp;&amp;&nbsp;echo&nbsp;"$file&nbsp;is&nbsp;not&nbsp;a&nbsp;setuid&nbsp;fil=
+e"</tt> </p></td>
+</tr>
+</tbody></table></div><span class=3D"anchor" id=3D"line-58"></span><span cl=
+ass=3D"anchor" id=3D"line-59"></span><span class=3D"anchor" id=3D"line-60">=
+</span><span class=3D"anchor" id=3D"line-61"></span><span class=3D"anchor" =
+id=3D"line-62"></span><p class=3D"line874">But there are more subtle differ=
+ences. <span class=3D"anchor" id=3D"line-63"></span><span class=3D"anchor" =
+id=3D"line-64"></span></p><ul><li><p class=3D"line862">No <a href=3D"http:/=
+/mywiki.wooledge.org/WordSplitting">WordSplitting</a> or <a href=3D"http://=
+mywiki.wooledge.org/glob">glob</a> expansion will be done for <tt>[[</tt> (=
+and therefore many arguments need not be quoted): <span class=3D"anchor" id=
+=3D"line-65"></span><span class=3D"anchor" id=3D"line-66"></span><span clas=
+s=3D"anchor" id=3D"line-67"></span><span class=3D"anchor" id=3D"line-68"></=
+span></p><pre><span class=3D"anchor" id=3D"line-1-2"></span> file=3D"file n=
+ame"
+<span class=3D"anchor" id=3D"line-2-2"></span> [[ -f $file ]] &amp;&amp; ec=
+ho "$file is a regular file"</pre><span class=3D"anchor" id=3D"line-69"></s=
+pan><p class=3D"line862">will work even though <tt>$file</tt> is not quoted=
+ and contains whitespace. With <tt>[</tt> the variable needs to be quoted: =
+<span class=3D"anchor" id=3D"line-70"></span><span class=3D"anchor" id=3D"l=
+ine-71"></span><span class=3D"anchor" id=3D"line-72"></span><span class=3D"=
+anchor" id=3D"line-73"></span></p><pre><span class=3D"anchor" id=3D"line-1-=
+3"></span> file=3D"file name"
+<span class=3D"anchor" id=3D"line-2-3"></span> [ -f "$file" ] &amp;&amp; ec=
+ho "$file is a regular file"</pre><span class=3D"anchor" id=3D"line-74"></s=
+pan><p class=3D"line862">This makes <tt>[[</tt> easier to use and less erro=
+r-prone. <span class=3D"anchor" id=3D"line-75"></span></p></li><li><p class=
+=3D"line862">Parentheses in <tt>[[</tt> do not need to be escaped: <span cl=
+ass=3D"anchor" id=3D"line-76"></span><span class=3D"anchor" id=3D"line-77">=
+</span><span class=3D"anchor" id=3D"line-78"></span><span class=3D"anchor" =
+id=3D"line-79"></span></p><pre><span class=3D"anchor" id=3D"line-1-4"></spa=
+n> [[ -f $file1 &amp;&amp; ( -d $dir1 || -d $dir2 ) ]]
+<span class=3D"anchor" id=3D"line-2-4"></span> [ -f "$file1" -a \( -d "$dir=
+1" -o -d "$dir2" \) ]</pre><span class=3D"anchor" id=3D"line-80"></span><sp=
+an class=3D"anchor" id=3D"line-81"></span></li><li class=3D"gap"><p class=
+=3D"line862">As of bash 4.1, string comparisons using <tt class=3D"backtick=
+">&lt;</tt> or <tt class=3D"backtick">&gt;</tt> respect the current <a href=
+=3D"http://mywiki.wooledge.org/locale">locale</a> when done in <tt class=3D=
+"backtick">[[</tt>, but <strong>not</strong> in <tt class=3D"backtick">[</t=
+t> or <tt class=3D"backtick">test</tt>.  In fact, <tt class=3D"backtick">[<=
+/tt> and <tt class=3D"backtick">test</tt> have <em>never</em> used locale c=
+ollating order even though past man pages <em>said</em> they did.  Bash ver=
+sions prior to 4.1 do not use locale collating order for <tt class=3D"backt=
+ick">[[</tt> either. <span class=3D"anchor" id=3D"line-82"></span><span cla=
+ss=3D"anchor" id=3D"line-83"></span></p></li></ul><p class=3D"line862">As a=
+ rule of thumb, <tt>[[</tt> is used for strings and files. If you want to c=
+ompare numbers, use an <a href=3D"http://mywiki.wooledge.org/ArithmeticExpr=
+ession">ArithmeticExpression</a>, e.g. <span class=3D"anchor" id=3D"line-84=
+"></span><span class=3D"anchor" id=3D"line-85"></span></p><p class=3D"line8=
+67"><span class=3D"anchor" id=3D"line-86"></span><span class=3D"anchor" id=
+=3D"line-87"></span><span class=3D"anchor" id=3D"line-88"></span><span clas=
+s=3D"anchor" id=3D"line-89"></span></p><pre><span class=3D"anchor" id=3D"li=
+ne-1-5"></span># Bash
+<span class=3D"anchor" id=3D"line-2-5"></span>i=3D0
+<span class=3D"anchor" id=3D"line-3-2"></span>while (( i &lt; 10 )); do ...=
+</pre><span class=3D"anchor" id=3D"line-90"></span><p class=3D"line862">Whe=
+n should the new test command <tt>[[</tt> be used, and when the old one <tt=
+>[</tt>? If portability/conformance to POSIX or the <a href=3D"http://mywik=
+i.wooledge.org/BourneShell">BourneShell</a> is a concern, the old syntax sh=
+ould be used. If on the other hand the script requires <a href=3D"http://my=
+wiki.wooledge.org/BASH">BASH</a>, Zsh, or <a href=3D"http://mywiki.wooledge=
+.org/KornShell">KornShell</a>, the new syntax is usually more flexible, but=
+ not necessarily backwards compatible. <span class=3D"anchor" id=3D"line-91=
+"></span><span class=3D"anchor" id=3D"line-92"></span></p><p class=3D"line8=
+62">For reasons explained in the theory section below, any problem with an =
+operator used with <tt class=3D"backtick">[[</tt> is an unhandleable parse-=
+time error that will cause bash to terminate, even if the command is never =
+evaluated. <span class=3D"anchor" id=3D"line-93"></span><span class=3D"anch=
+or" id=3D"line-94"></span></p><p class=3D"line867"><span class=3D"anchor" i=
+d=3D"line-95"></span><span class=3D"anchor" id=3D"line-96"></span><span cla=
+ss=3D"anchor" id=3D"line-97"></span><span class=3D"anchor" id=3D"line-98"><=
+/span><span class=3D"anchor" id=3D"line-99"></span><span class=3D"anchor" i=
+d=3D"line-100"></span><span class=3D"anchor" id=3D"line-101"></span><span c=
+lass=3D"anchor" id=3D"line-102"></span><span class=3D"anchor" id=3D"line-10=
+3"></span><span class=3D"anchor" id=3D"line-104"></span><span class=3D"anch=
+or" id=3D"line-105"></span><span class=3D"anchor" id=3D"line-106"></span><s=
+pan class=3D"anchor" id=3D"line-107"></span><span class=3D"anchor" id=3D"li=
+ne-108"></span></p><pre><span class=3D"anchor" id=3D"line-1-6"></span># Exa=
+mple of improper [[ usage.
+<span class=3D"anchor" id=3D"line-2-6"></span># Notice that isSet is never =
+even called.
+<span class=3D"anchor" id=3D"line-3-3"></span>
+<span class=3D"anchor" id=3D"line-4-1"></span> $ bash-3.2 &lt;&lt;\EOF
+<span class=3D"anchor" id=3D"line-5-1"></span>if ((BASH_VERSINFO[0] &gt; 4 =
+|| (BASH_VERSINFO[0] =3D=3D 4 &amp;&amp; BASH_VERSINFO[1] &gt;=3D 2))); the=
+n
+<span class=3D"anchor" id=3D"line-6-1"></span>  isSet() { [[ -v $1 ]]; }
+<span class=3D"anchor" id=3D"line-7-1"></span>else
+<span class=3D"anchor" id=3D"line-8-1"></span>  isSet() { [[ ${1+_} ]]; }
+<span class=3D"anchor" id=3D"line-9"></span>fi
+<span class=3D"anchor" id=3D"line-10"></span>EOF
+<span class=3D"anchor" id=3D"line-11"></span>bash-3.2: line 2: conditional =
+binary operator expected
+<span class=3D"anchor" id=3D"line-12"></span>bash-3.2: line 2: syntax error=
+ near `$1'
+<span class=3D"anchor" id=3D"line-13"></span>bash-3.2: line 2: `  isSet() {=
+ [[ -v $1 ]]; }'</pre><span class=3D"anchor" id=3D"line-109"></span><p clas=
+s=3D"line862">If backwards-compatibility were desired then <tt class=3D"bac=
+ktick">[&nbsp;-v</tt> should have been used instead. The only other alterna=
+tives would be to use an alias to conditionally expand during the function =
+definition, or <tt class=3D"backtick">eval</tt> to defer parsing until the =
+command is actually reached at runtime. <span class=3D"anchor" id=3D"line-1=
+10"></span><span class=3D"anchor" id=3D"line-111"></span></p><p class=3D"li=
+ne862">See the <a href=3D"http://mywiki.wooledge.org/BashGuide/TestsAndCond=
+itionals">Tests and Conditionals</a> chapter in the <a href=3D"http://mywik=
+i.wooledge.org/BashGuide">BashGuide</a>. <span class=3D"anchor" id=3D"line-=
+112"></span><span class=3D"anchor" id=3D"line-113"></span></p><p class=3D"l=
+ine867">
+</p><h3 id=3D"Theory">Theory</h3>
+<span class=3D"anchor" id=3D"line-114"></span><p class=3D"line862">The theo=
+ry behind all of this is that <tt class=3D"backtick">[</tt> is a simple com=
+mand, whereas <tt class=3D"backtick">[[</tt> is a compound command. <tt cla=
+ss=3D"backtick">[</tt> receives its arguments as any other command would, b=
+ut most compound commands introduce a special parsing context which is perf=
+ormed before any other processing. Typically this step looks for special <t=
+t class=3D"backtick">reserved&nbsp;words</tt> or <tt class=3D"backtick">con=
+trol&nbsp;operators</tt> specific to each compound command which split it i=
+nto parts or affect control-flow. The Bash test expression's logical and/or=
+ operators can short-circuit because they are special in this way (as are e=
+.g. <tt class=3D"backtick">;;</tt>, <tt class=3D"backtick">elif</tt>, and <=
+tt class=3D"backtick">else</tt>). Contrast with <a href=3D"http://mywiki.wo=
+oledge.org/ArithmeticExpression">ArithmeticExpression</a>, where all expans=
+ions are performed left-to-right in the usual way, with the resulting strin=
+g being subject to interpretation as arithmetic. <span class=3D"anchor" id=
+=3D"line-115"></span><span class=3D"anchor" id=3D"line-116"></span></p><ul>=
+<li>The arithmetic compound command has no special operators. It has only o=
+ne evaluation context - a single arithmetic expression. Arithmetic expressi=
+ons have operators too, some of which affect control flow during the arithm=
+etic evaluation step (which happens last). <span class=3D"anchor" id=3D"lin=
+e-117"></span><span class=3D"anchor" id=3D"line-118"></span><span class=3D"=
+anchor" id=3D"line-119"></span><span class=3D"anchor" id=3D"line-120"></spa=
+n><pre><span class=3D"anchor" id=3D"line-1-7"></span> # Bash
+<span class=3D"anchor" id=3D"line-2-7"></span> (( 1 + 1 =3D=3D 2 ? 1 : $(ec=
+ho "This doesn't do what you think..." &gt;&amp;2; echo 1) ))</pre><span cl=
+ass=3D"anchor" id=3D"line-121"></span><span class=3D"anchor" id=3D"line-122=
+"></span></li><li class=3D"gap">Test expressions on the other hand do have =
+"operators" as part of their syntax, which lie on the other end of the spec=
+trum (evaluated first). <span class=3D"anchor" id=3D"line-123"></span><span=
+ class=3D"anchor" id=3D"line-124"></span><span class=3D"anchor" id=3D"line-=
+125"></span><span class=3D"anchor" id=3D"line-126"></span><pre><span class=
+=3D"anchor" id=3D"line-1-8"></span> # Bash
+<span class=3D"anchor" id=3D"line-2-8"></span> [[ '1 + 1' -eq 2 &amp;&amp; =
+$(echo "...but this probably does what you expect." &gt;&amp;2) ]]</pre><sp=
+an class=3D"anchor" id=3D"line-127"></span><span class=3D"anchor" id=3D"lin=
+e-128"></span></li><li class=3D"gap">Old-style tests have no way of control=
+ling evaluation because its arguments aren't special. <span class=3D"anchor=
+" id=3D"line-129"></span><span class=3D"anchor" id=3D"line-130"></span><spa=
+n class=3D"anchor" id=3D"line-131"></span><span class=3D"anchor" id=3D"line=
+-132"></span><pre><span class=3D"anchor" id=3D"line-1-9"></span> # Bash
+<span class=3D"anchor" id=3D"line-2-9"></span> [ $((1 + 1)) -eq 2 -o $(echo=
+ 'No short-circuit' &gt;&amp;2) ]</pre><span class=3D"anchor" id=3D"line-13=
+3"></span><span class=3D"anchor" id=3D"line-134"></span></li><li class=3D"g=
+ap"><p class=3D"line862">Different error handling is made possible by searc=
+hing for special compound command tokens before performing expansions. <tt =
+class=3D"backtick">[[</tt> can detect the presence of expansions that don't=
+ result in a word yet still throw an error if none are specified. Ordinary =
+commands can't. <span class=3D"anchor" id=3D"line-135"></span><span class=
+=3D"anchor" id=3D"line-136"></span><span class=3D"anchor" id=3D"line-137"><=
+/span><span class=3D"anchor" id=3D"line-138"></span><span class=3D"anchor" =
+id=3D"line-139"></span><span class=3D"anchor" id=3D"line-140"></span><span =
+class=3D"anchor" id=3D"line-141"></span></p><pre><span class=3D"anchor" id=
+=3D"line-1-10"></span> # Bash
+<span class=3D"anchor" id=3D"line-2-10"></span> ( set -- $(echo 'Unquoted n=
+ull expansions do not result in "null" parameters.' &gt;&amp;2); echo $# )
+<span class=3D"anchor" id=3D"line-3-4"></span> [[ -z $(:) ]] &amp;&amp; ech=
+o "-z was supplied an arg and evaluated empty."
+<span class=3D"anchor" id=3D"line-4-2"></span> [ -z ] &amp;&amp; echo "-z w=
+asn't supplied an arg, and no errors are reported. There's no possible way =
+Bash could enforce specifying an argument here."
+<span class=3D"anchor" id=3D"line-5-2"></span> [[ -z ]] # This will cause a=
+n error that ordinary commands can't detect.</pre><span class=3D"anchor" id=
+=3D"line-142"></span><span class=3D"anchor" id=3D"line-143"></span></li><li=
+ class=3D"gap"><p class=3D"line862">For the very same reason, because <tt c=
+lass=3D"backtick">[</tt>'s operators are just "arguments", unlike <tt class=
+=3D"backtick">[[</tt>, you <em>can</em> specify operators as parameters to =
+an ordinary <tt class=3D"backtick">test</tt> command. This might be seen as=
+ a limitation of <tt class=3D"backtick">[[</tt>, but the downsides outweigh=
+ the good almost always. <span class=3D"anchor" id=3D"line-144"></span><spa=
+n class=3D"anchor" id=3D"line-145"></span><span class=3D"anchor" id=3D"line=
+-146"></span><span class=3D"anchor" id=3D"line-147"></span><span class=3D"a=
+nchor" id=3D"line-148"></span><span class=3D"anchor" id=3D"line-149"></span=
+><span class=3D"anchor" id=3D"line-150"></span><span class=3D"anchor" id=3D=
+"line-151"></span><span class=3D"anchor" id=3D"line-152"></span></p><pre><s=
+pan class=3D"anchor" id=3D"line-1-11"></span> # ksh93
+<span class=3D"anchor" id=3D"line-2-11"></span>
+<span class=3D"anchor" id=3D"line-3-5"></span> args=3D(0 -gt 1)
+<span class=3D"anchor" id=3D"line-4-3"></span>
+<span class=3D"anchor" id=3D"line-5-3"></span> (( $(print '0 &gt; 1') )) # =
+Valid command, Exit status is 1 as expected.
+<span class=3D"anchor" id=3D"line-6-2"></span> [ "${args[@]}" ]       # Als=
+o exit 1.
+<span class=3D"anchor" id=3D"line-7-2"></span> [[ ${args[@]} ]]       # Val=
+id command, but is misleading. Exit status 0. set -x reveals the resulting =
+command is [[ -n '0 -gt 1' ]]</pre><span class=3D"anchor" id=3D"line-153"><=
+/span><span class=3D"anchor" id=3D"line-154"></span></li><li class=3D"gap">=
+Do keep in mind which operators belong to which shell constructs. Order of =
+expansions can cause surprising results especially when mixing and nesting =
+different evaluation contexts! <span class=3D"anchor" id=3D"line-155"></spa=
+n><span class=3D"anchor" id=3D"line-156"></span><span class=3D"anchor" id=
+=3D"line-157"></span><span class=3D"anchor" id=3D"line-158"></span><span cl=
+ass=3D"anchor" id=3D"line-159"></span><span class=3D"anchor" id=3D"line-160=
+"></span><span class=3D"anchor" id=3D"line-161"></span><pre><span class=3D"=
+anchor" id=3D"line-1-12"></span> # ksh93
+<span class=3D"anchor" id=3D"line-2-12"></span> typeset -i x=3D0
+<span class=3D"anchor" id=3D"line-3-6"></span>
+<span class=3D"anchor" id=3D"line-4-4"></span> ( print "$(( ++x, ${ x+=3D1;=
+ print $x &gt;&amp;2;}1, x ))"      ) # Prints 1, 2
+<span class=3D"anchor" id=3D"line-5-4"></span> ( print "$(( $((++x)), ${ x+=
+=3D1; print $x &gt;&amp;2;}1, x ))" ) # Prints 2, 2 - because expansions ar=
+e performed first.</pre><span class=3D"anchor" id=3D"line-162"></span><span=
+ class=3D"anchor" id=3D"line-163"></span></li></ul><p class=3D"line867"></p=
+><hr><p class=3D"line874"> <span class=3D"anchor" id=3D"line-164"></span><a=
+ href=3D"http://mywiki.wooledge.org/CategoryShell">CategoryShell</a> <span =
+class=3D"anchor" id=3D"line-165"></span><span class=3D"anchor" id=3D"bottom=
+"></span></p></div><p id=3D"pageinfo" class=3D"info" lang=3D"en" dir=3D"ltr=
+">BashFAQ/031  (last edited 2020-10-15 12:33:59 by <span title=3D"StephaneC=
+hazelas @ host-80-193-213-26.static.virginmedia.com[80.193.213.26]"><a clas=
+s=3D"nonexistent" href=3D"http://mywiki.wooledge.org/StephaneChazelas" titl=
+e=3D"StephaneChazelas @ host-80-193-213-26.static.virginmedia.com[80.193.21=
+3.26]">StephaneChazelas</a></span>)</p>
+
+<div id=3D"pagebottom"></div>
+</div>
+
+
+<div id=3D"footer">
+<ul class=3D"editbar"><li><a href=3D"http://mywiki.wooledge.org/BashFAQ/031=
+?action=3Dedit&amp;editor=3Dtext" name=3D"texteditlink" rel=3D"nofollow">Ed=
+it (Text)</a></li><li><a href=3D"http://mywiki.wooledge.org/BashFAQ/031?act=
+ion=3Dedit&amp;editor=3Dgui">Edit (GUI)</a></li><li class=3D"toggleComments=
+Button" style=3D"display:none;"><a href=3D"http://mywiki.wooledge.org/BashF=
+AQ/031#" class=3D"nbcomment">Comments</a></li><li><a class=3D"nbinfo" href=
+=3D"http://mywiki.wooledge.org/BashFAQ/031?action=3Dinfo" rel=3D"nofollow">=
+Info</a></li><li><a class=3D"nbattachments" href=3D"http://mywiki.wooledge.=
+org/BashFAQ/031?action=3DAttachFile" rel=3D"nofollow">Attachments</a></li><=
+li>
+<form class=3D"actionsmenu" method=3D"GET" action=3D"http://mywiki.wooledge=
+.org/BashFAQ/031">
+<div>
+   =20
+    <select name=3D"action">
+        <option value=3D"show">More Actions:</option><option value=3D"raw">=
+Raw Text</option>
+<option value=3D"print">Print View</option>
+<option value=3D"RenderAsDocbook">Render as Docbook</option>
+<option value=3D"refresh">Delete Cache</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"SpellCheck">Check Spelling</option>
+<option value=3D"LikePages">Like Pages</option>
+<option value=3D"LocalSiteMap">Local Site Map</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"RenamePage" disabled=3D"" class=3D"disabled">Rename Page</=
+option>
+<option value=3D"DeletePage" disabled=3D"" class=3D"disabled">Delete Page</=
+option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">Subscribe User</opt=
+ion>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">Remove Spam</option=
+>
+<option value=3D"show" disabled=3D"" class=3D"disabled">Revert to this revi=
+sion</option>
+<option value=3D"PackagePages">Package Pages</option>
+<option value=3D"SyncPages">Sync Pages</option>
+<option value=3D"show" disabled=3D"" class=3D"disabled">-------------------=
+-----</option>
+<option value=3D"Load">Load</option>
+<option value=3D"Save">Save</option>
+<option value=3D"SlideShow">SlideShow</option>
+    </select>
+   =20
+   =20
+</div>
+
+</form>
+</li></ul>
+
+<ul id=3D"credits">
+<li><a href=3D"http://moinmo.in/" title=3D"This site uses the MoinMoin Wiki=
+ software.">MoinMoin Powered</a></li><li><a href=3D"http://moinmo.in/Python=
+" title=3D"MoinMoin is written in Python.">Python Powered</a></li><li><a hr=
+ef=3D"http://moinmo.in/GPL" title=3D"MoinMoin is GPL licensed.">GPL license=
+d</a></li><li><a href=3D"http://validator.w3.org/check?uri=3Dreferer" title=
+=3D"Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+
+
+
+</body></html>
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-28eb0d2a-0015-47f7-ade8-77e6afb94d6c@mhtml.blink
+
+@charset "utf-8";
+
+.backtick { background-color: rgb(238, 238, 238); font-size: larger; }
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-aff5279d-e796-49e2-92b6-5855617d9ae1@mhtml.blink
+
+@charset "utf-8";
+
+.f0d2b998-3faf-43de-a5ce-4a042b43f0b7 { position: relative !important; bord=
+er-radius: 0.2em !important; padding: 0px !important; margin: 0px !importan=
+t; }
+
+.b2b42968-d31c-466f-b402-5e5add4bdab9 .ssh-close { position: absolute; left=
+: -8px; top: -8px; width: 16px; height: 16px; z-index: 999; border: none; b=
+ackground: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAA=
+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
+NGpVYJkfGwAAAABJRU5ErkJggg=3D=3D") no-repeat border-box border-box; animati=
+on-duration: 275ms; animation-timing-function: ease-out; box-shadow: none; =
+animation-name: e17152b1-e5d6-4aa1-afb8-5fd88a3315a8; }
+
+.b2b42968-d31c-466f-b402-5e5add4bdab9 .ssh-close:hover, .b2b42968-d31c-466f=
+-b402-5e5add4bdab9 .ssh-close:focus { background-image: url("data:image/png=
+;base64,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"); }
+
+@media print {
+  .b2b42968-d31c-466f-b402-5e5add4bdab9 { box-shadow: unset !important; -we=
+bkit-print-color-adjust: exact !important; }
+}
+
+@keyframes e17152b1-e5d6-4aa1-afb8-5fd88a3315a8 {=20
+  0% { opacity: 0; transform: scale(0.6); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes c3c77a39-7fa7-4c07-995e-3cbcd05a30fc {=20
+  100% { opacity: 0; transform: scale(0.3); }
+}
+
+.b2b42968-d31c-466f-b402-5e5add4bdab9 { background-color: rgba(238, 238, 23=
+8, 0.7); color: rgb(170, 170, 170); font: inherit; box-shadow: rgb(238, 238=
+, 238) 0px 0px 0.35em; text-shadow: none !important; }
+
+.default-red-aa94e3d5-ab2f-4205-b74e-18ce31c7c0ce { box-shadow: rgb(255, 12=
+8, 128) 0px 0px 0.35em; background-color: rgba(255, 128, 128, 0.7) !importa=
+nt; color: rgb(0, 0, 0) !important; }
+
+.default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 { box-shadow: rgb(255,=
+ 210, 170) 0px 0px 0.35em; background-color: rgba(255, 210, 170, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-yellow-aaddcf5c-0e41-4f83-8a64-58c91f7c6250 { box-shadow: rgb(255,=
+ 255, 170) 0px 0px 0.35em; background-color: rgba(255, 255, 170, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-green-c4d41e0a-e40f-4c3f-91ad-2d66481614c2 { box-shadow: rgb(170, =
+255, 170) 0px 0px 0.35em; background-color: rgba(170, 255, 170, 0.7) !impor=
+tant; color: rgb(0, 0, 0) !important; }
+
+.default-cyan-f88e8827-e652-4d79-a9d9-f6c8b8ec9e2b { box-shadow: rgb(170, 2=
+55, 255) 0px 0px 0.35em; background-color: rgba(170, 255, 255, 0.7) !import=
+ant; color: rgb(0, 0, 0) !important; }
+
+.default-purple-c472dcdb-f2b8-41ab-bb1e-2fb293df172a { box-shadow: rgb(255,=
+ 170, 255) 0px 0px 0.35em; background-color: rgba(255, 170, 255, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-grey-da7cb902-89c6-46fe-b0e7-d3b35aaf237a { box-shadow: rgb(119, 1=
+19, 119) 0px 0px 0.35em; background-color: rgba(119, 119, 119, 0.7) !import=
+ant; color: rgb(255, 255, 255) !important; }
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mywiki.wooledge.org/moin_static198/modernized/css/common.css
+
+@charset "utf-8";
+
+html { background-color: white; color: black; font-family: sans-serif; font=
+-size: 1em; }
+
+body { margin: 0px; }
+
+a { color: rgb(0, 68, 179); }
+
+a:visited { color: rgb(255, 123, 179); }
+
+a.nonexistent:visited, a.nonexistent, a.badinterwiki:visited, a.badinterwik=
+i { color: gray; }
+
+a.www::before { content: url("../img/moin-www.png"); margin: 0px 0.2em; }
+
+a.http::before { content: url("../img/moin-www.png"); margin: 0px 0.2em; }
+
+a.https::before { content: url("../img/moin-www.png"); margin: 0px 0.2em; }
+
+a.file::before { content: url("../img/moin-ftp.png"); margin: 0px 0.2em; }
+
+a.ftp::before { content: url("../img/moin-ftp.png"); margin: 0px 0.2em; }
+
+a.nntp::before { content: url("../img/moin-news.png"); margin: 0px 0.2em; }
+
+a.news::before { content: url("../img/moin-news.png"); margin: 0px 0.2em; }
+
+a.telnet::before, a.ssh::before { content: url("../img/moin-telnet.png"); m=
+argin: 0px 0.2em; }
+
+a.irc::before, a.ircs::before { content: url("../img/moin-telnet.png"); mar=
+gin: 0px 0.2em; }
+
+a.mailto::before { content: url("../img/moin-email.png"); margin: 0px 0.2em=
+; }
+
+a.attachment::before { content: url("../img/moin-attach.png"); margin: 0px =
+0.2em; }
+
+a.badinterwiki::before { content: url("../img/moin-inter.png"); margin: 0px=
+ 0.2em; }
+
+a.interwiki::before { content: url("../img/moin-inter.png"); margin: 0px 0.=
+2em; }
+
+a.action::before { content: url("../img/moin-action.png"); margin: 0px 0.2e=
+m; }
+
+li p { margin: 0.25em 0px; }
+
+li.gap { margin-top: 0.5em; }
+
+dt { margin-top: 0.5em; font-weight: bold; }
+
+dd { margin-top: 0px; margin-bottom: 0px; }
+
+dd p { margin: 0.25em 0px; }
+
+a, img, img.drawing { border: 0px; }
+
+pre { border: 1pt solid rgb(174, 189, 204); background-color: rgb(243, 245,=
+ 247); padding: 5pt; font-family: courier, monospace; white-space: pre-wrap=
+; overflow-wrap: break-word; }
+
+pre.comment { background-color: rgb(204, 204, 204); color: red; padding: 0p=
+x; margin: 0px; border: 0px; }
+
+pre.comment::before { content: url("../img/attention.png"); }
+
+.comment { color: rgb(85, 85, 85); background-color: rgb(221, 221, 255); }
+
+.red { background-color: rgb(255, 204, 204); }
+
+.green { background-color: rgb(204, 255, 204); }
+
+.blue { background-color: rgb(204, 204, 255); }
+
+.yellow { background-color: rgb(255, 242, 159); }
+
+.orange { background-color: rgb(255, 213, 155); }
+
+.solid { border: 2px solid rgb(0, 0, 0); padding: 2px; }
+
+.dashed { border: 2px dashed rgb(0, 0, 0); padding: 2px; }
+
+.dotted { border: 2px dotted rgb(0, 0, 0); padding: 2px; }
+
+.left { text-align: left; }
+
+.center { text-align: center; }
+
+.right { text-align: right; }
+
+.justify { text-align: justify; }
+
+table { margin: 0.5em 0px 0px 0.5em; border-collapse: collapse; }
+
+th, td { padding: 0.25em 0.5em; border: 1pt solid rgb(173, 185, 204); }
+
+td p { margin: 0px; padding: 0px; }
+
+div.table-of-contents { border: 1px solid rgb(187, 187, 187); color: black;=
+ background-color: rgb(238, 238, 238); font-size: 80%; text-align: left; ma=
+rgin: 0.5em 0px 0.5em 1em; padding: 0.5em 0.75em 0.5em 0.5em; max-width: 50=
+%; display: inline-table; }
+
+div.table-of-contents ol { margin: 0px; padding: 0px 0px 0px 2em; }
+
+div.table-of-contents ul { margin: 0px; list-style: none; }
+
+div.table-of-contents li { margin: 0px; padding: 0px; }
+
+p.table-of-contents-heading { font-weight: bold; padding: 0px; margin: 0px =
+0px 0.5em; letter-spacing: 0.075em; }
+
+table.navigation { background: rgb(255, 255, 255); margin: 0px; }
+
+.footnotes div { width: 5em; border-top: 1pt solid gray; }
+
+.footnotes ol { padding: 0px 2em; margin: 0px 0px 1em; }
+
+.footnotes li { }
+
+.info { float: right; font-size: 0.7em; color: gray; }
+
+#pageinfo { margin-top: 2em; }
+
+.seperator { color: gray; }
+
+#pagebottom { clear: both; }
+
+hr { height: 1pt; background-color: rgb(156, 156, 156); border: 0px; }
+
+.hr1 { height: 2pt; }
+
+.hr2 { height: 3pt; }
+
+.hr3 { height: 4pt; }
+
+.hr4 { height: 5pt; }
+
+.hr5 { height: 6pt; }
+
+.hr6 { height: 7pt; }
+
+.u { text-decoration: underline; }
+
+.strike { text-decoration: line-through; }
+
+.warning { color: red; }
+
+.error { color: red; }
+
+strong.highlight { background-color: rgb(204, 224, 255); padding: 1pt; }
+
+.rcrss { float: right; margin: 0px 7px 0px 14px; height: 0px; position: rel=
+ative; top: 9px; }
+
+[div=3D"rtl"] .rcrss { float: left; }
+
+.recentchanges[dir=3D"rtl"] .rcrss { float: left; }
+
+.recentchanges table { clear: both; border-collapse: collapse; border: 1px =
+solid rgb(77, 125, 169); }
+
+.recentchanges td { vertical-align: top; border: none; background: rgb(230,=
+ 234, 240); }
+
+.recentchanges .rcdaybreak td { background: rgb(129, 187, 242); border: 1px=
+ solid rgb(77, 125, 169); }
+
+.rcdaybreak td a { font-size: 0.88em; }
+
+.rcicon1, .rcicon2 { text-align: center; }
+
+.rcpagelink { width: 33%; }
+
+.rctime { font-size: 0.88em; white-space: nowrap; }
+
+.rceditor { white-space: nowrap; font-size: 0.88em; }
+
+.rccomment { width: 50%; color: gray; font-size: 0.88em; }
+
+.userpref table, .userpref td { border: none; }
+
+div.codemsg { margin: 0.5em 0px; padding: 0.5em 0.5em 0.5em 2.5em; backgrou=
+nd: url("../img/alert.png") 0.5em 0.5em no-repeat rgb(247, 240, 224); borde=
+r: 1pt solid rgb(204, 189, 174); color: black; }
+
+div.codearea { margin: 0.5em 0px; padding: 0px; border: 1pt solid rgb(174, =
+189, 204); background-color: rgb(243, 245, 247); color: black; }
+
+div.codearea pre { margin: 0px; padding: 10pt; border: none; }
+
+a.codenumbers { margin: 0px 10pt; font-size: 0.85em; color: gray; }
+
+div.codearea pre span.LineNumber { color: gray; }
+
+div.codearea pre span.ID { color: rgb(0, 0, 0); }
+
+div.codearea pre span.Operator { color: rgb(0, 0, 192); }
+
+div.codearea pre span.Char { color: rgb(0, 64, 128); }
+
+div.codearea pre span.Comment { color: rgb(0, 128, 0); }
+
+div.codearea pre span.Number { color: rgb(0, 128, 192); }
+
+div.codearea pre span.String { color: rgb(0, 64, 128); }
+
+div.codearea pre span.SPChar { color: rgb(0, 0, 192); }
+
+div.codearea pre span.ResWord { color: rgb(160, 0, 0); }
+
+div.codearea pre span.ConsWord { color: rgb(0, 128, 128); font-weight: bold=
+; }
+
+div.codearea pre span.Error { color: rgb(255, 128, 128); border: 1.5pt soli=
+d rgb(255, 0, 0); }
+
+div.codearea pre span.ResWord2 { color: rgb(0, 128, 255); font-weight: bold=
+; }
+
+div.codearea pre span.Special { color: rgb(0, 0, 255); }
+
+div.codearea pre span.Preprc { color: rgb(128, 57, 153); }
+
+div.codearea pre span.DiffAdded { color: rgb(72, 118, 255); }
+
+div.codearea pre span.DiffRemoved { color: rgb(255, 0, 0); }
+
+div.codearea pre span.DiffChanged { color: rgb(255, 127, 80); }
+
+div.codearea pre span.DiffSeparator { color: rgb(34, 139, 34); font-weight:=
+ bold; }
+
+.advancedsearch { border: 1pt solid rgb(173, 185, 204); }
+
+.advancedsearch td { vertical-align: top; background-color: rgb(231, 231, 2=
+31); border: 0px; }
+
+.advancedsearch td.searchfor { font-weight: bold; }
+
+.advancedsearch input { border: 1px solid rgb(173, 185, 204); background-co=
+lor: rgb(255, 255, 255); }
+
+.advancedsearch input[disabled] { background-color: rgb(238, 238, 238); }
+
+.advancedsearch td.submit { border-top: 1px solid rgb(173, 185, 204); backg=
+round-color: rgb(255, 255, 255); text-align: right; }
+
+.advancedsearch optioni, .advancedsearch select { border: 1px solid rgb(173=
+, 185, 204); background-color: rgb(255, 255, 255); }
+
+.searchresults dt { margin-top: 1em; font-weight: normal; }
+
+.searchresults dd, .searchresults p { font-size: 0.85em; }
+
+.searchresults .searchhitinfobar { color: rgb(0, 128, 0); margin-left: 15px=
+; margin-top: 0px; }
+
+p.searchstats { font-size: 0.8em; text-align: right; width: 100%; backgroun=
+d-color: rgb(230, 234, 240); border-top: 1px solid rgb(144, 136, 220); padd=
+ing: 2px; }
+
+p.searchhint { background-color: rgb(230, 234, 240); border: 1px solid rgb(=
+144, 136, 220); padding: 2px; }
+
+.searchpages { margin-left: auto; margin-right: auto; }
+
+.searchpages tr, .searchpages td { border: 0px; padding: 5px; margin: 0px; =
+text-align: center; vertical-align: middle; color: rgb(185, 58, 88); font-w=
+eight: bold; font-size: 1.05em; }
+
+.searchpages td a, .searchpages td a:link { text-decoration: underline; }
+
+a.cal-emptyday { color: rgb(119, 119, 119); text-align: center; }
+
+a.cal-usedday { color: rgb(0, 0, 0); font-weight: bold; text-align: center;=
+ }
+
+td.cal-workday { background-color: rgb(221, 221, 255); text-align: center; =
+}
+
+td.cal-weekend { background-color: rgb(255, 221, 221); text-align: center; =
+}
+
+td.cal-today { background-color: rgb(204, 255, 204); border-style: solid; b=
+order-width: 2pt; text-align: center; }
+
+td.cal-invalidday { background-color: rgb(204, 204, 204); }
+
+a.cal-link { color: rgb(0, 0, 0); text-decoration: none; }
+
+th.cal-header { background-color: rgb(221, 187, 255); text-align: center; }
+
+table.tip { color: black; background-color: rgb(255, 136, 136); font-size: =
+small; font-weight: normal; border-style: solid; border-width: 1px; }
+
+th.tip { background-color: rgb(255, 68, 68); font-weight: bold; text-align:=
+ center; }
+
+td.tip { text-align: left; }
+
+[dir=3D"rtl"] td.tip { text-align: right; }
+
+#message .hint { font-style: italic; }
+
+#message .info { float: none; font-size: 1em; color: black; }
+
+#message .info::before { content: url("../img/icon-info.png"); margin: 0px =
+0.2em; }
+
+#message .warning::before { content: url("../img/alert.png"); margin: 0px 0=
+.2em; }
+
+#message .error::before { content: url("../img/icon-error.png"); margin: 0p=
+x 0.2em; }
+
+#content div.caution, #content div.important, #content div.note, #content d=
+iv.tip, #content div.warning { border: 1pt solid rgb(229, 229, 229); backgr=
+ound-color: rgb(249, 249, 255); color: black; margin: 10pt 30pt; background=
+-repeat: no-repeat; background-position: 8px 8px; min-height: 64px; padding=
+-left: 64px; }
+
+#content div.caution p, #content div.important p, #content div.note p, #con=
+tent div.tip p, #content div.warning p { margin-top: 8px; }
+
+#content div.tip { background-image: url("../img/admon-tip.png"); }
+
+#content div.note { background-image: url("../img/admon-note.png"); }
+
+#content div.important { background-image: url("../img/admon-important.png"=
+); }
+
+#content div.caution { background-image: url("../img/admon-caution.png"); }
+
+#content div.warning { background-image: url("../img/admon-warning.png"); }
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://mywiki.wooledge.org/moin_static198/modernized/img/moin-www.png
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1QQaBywH5hnejwAAADV0RVh0Q29tbWVudAAoYykgMjAw
+NCBKYWt1YiBTdGVpbmVyCgpDcmVhdGVkIHdpdGggVGhlIEdJTVCQ2YtvAAAC7ElEQVQ4y62TXWhb
+ZRyHn/ec95xjkzRpm+ajjW3W0KIsuHWyyMSrKagwFG+UKd1FZTgQb4ShoLdSEMX7XYgVR0HE6Y1M
+hjezMLWzlo12K67rXD+znCwfTXKSc5Kc1wvZxO3W5/r/ey7+/H6CBzj+3uwp4C1dyv0KLOX7DaVY
+0HTt7NzM1BcP3ov7wfe/nDR17ceJsWTiyIE0Y6koAcuiXG+ytmmzuLLJjY3CZSHEybmZqav/Ebz2
+7ue5YLjnt1eOHhQHJ+KU603snQ1kKA49/eDYpBJRFla2OT+/chchnr0nkQDRaOin55/JiicyA5SK
+eQZHs0QGh3BabfKb60jfQ+s2eS6Xoeur6IVL188ATwNob3741UfJeH/4aG4cQ/PpyBBoAkNKTEMS
+sCSJaC9D8RixviC57KOkhweOvPHB2WkALRwJnDycHaVSLnLHDRAf3odS4CtAaAjfY7fU4PuLy1yY
+XyRiKfaPDwO8CiBrTjuWTvazcKNAZiKOr/79bL1S4qnJLEIIlFJs796h1WwyFIsAHAbQWl5HsywT
+LRSnUm9h1zwct0vN8fDqNkL8oxNCkIhFubp6E8uQAAMAUtc1v9poacHWDiFpUWgMUjRMOl2fVqnD
+ZLuN63r0hoI4jsO+VIxC0wMoAUhD0/K3torDh8aTZEaGuL25zfzaHh4mTS/Ip99ewRJd3n75ALVa
+jaVrN6E3DfA7gKa63XNLq1t4vgQgPZLi2KEYu4USd6sNqq7gdtnHtm2q1SqP9KdYXc8DfAOgL/18
+7vx47qXTQtfNSNCgx9T5ZXGZ5byi1nDZa7jsOS65EZ3CnsdW2efa2s6vczNT79wvUqVQPHHxsv+d
+78OTjyX44UqVsmfidbq4XgfLEGxUFH8V2lz6Y60shDj10BaOTX/8+mhmZDYc6TMfzyRJDoaxLAOn
+1WbXrvDnrTxbO8XrQpfHH9rCPfoGxswXTpye1a3Ai+iyD4RQyu+oTntdCe2zrz+ZPsP/zd9wbDf3
+MdodlQAAAABJRU5ErkJggg==
+
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mywiki.wooledge.org/moin_static198/modernized/css/screen.css
+
+@charset "utf-8";
+
+body { padding: 0px; border: 0px; }
+
+a:link { color: rgb(68, 119, 255); text-decoration: none; }
+
+a:link:hover, a:link:active { text-decoration: underline; color: green; }
+
+a:visited { text-decoration: none; color: rgb(0, 68, 170); }
+
+a:visited:hover { text-decoration: none; color: red; }
+
+a.nonexistent:link { color: rgb(102, 102, 102); }
+
+a.nonexistent:hover { color: black; text-decoration: underline; }
+
+a.download { font-size: 120%; letter-spacing: 0.05em; font-weight: bold; ba=
+ckground: rgb(231, 231, 231); border: 1px solid rgb(156, 156, 156); padding=
+: 0.5em; text-align: center; }
+
+input { }
+
+textarea { font-size: 1em; font-family: monospace; }
+
+.disabled { color: gray; }
+
+#header { margin: 1px; padding: 1px; background: rgb(230, 234, 240); line-h=
+eight: 1.1em; }
+
+#logo { float: left; margin: 5px 10px; padding: 0px; font-size: 1.4em; line=
+-height: 1em; font-weight: bold; }
+
+[dir=3D"rtl"] #logo { float: right; }
+
+#logo img { vertical-align: middle; }
+
+#logo a { color: black; text-decoration: none; }
+
+#username { display: block; margin: 8px 12px 4px; padding: 0px; font-size: =
+0.82em; }
+
+#username form { display: inline; }
+
+#username input { display: inline; padding: 0px; margin: 0px; border: none;=
+ background: transparent; color: blue; font-size: 0.82em; cursor: pointer; =
+}
+
+#username input:hover { color: red; }
+
+#searchform { margin: 4px 0.5em 8px; padding: 0px; font-size: 0.82em; float=
+: right; clear: right; text-align: right; }
+
+[dir=3D"rtl"] #searchform { float: left; clear: left; text-align: left; }
+
+#searchform input { font-size: 100%; vertical-align: middle; }
+
+#pagetrail { clear: right; display: inline; margin: 0px 0.88em 0.25em; padd=
+ing: 0px; font-size: 0.88em; }
+
+[dir=3D"rtl"] #pagetrail { clear: left; }
+
+#interwiki { font-size: 1em; }
+
+#locationline { padding: 0px; font-size: 100%; font-weight: normal; margin:=
+ 0.25em 12px 5px; clear: right; }
+
+[dir=3D"rtl"] #locationline { clear: left; }
+
+#pagelocation { font-size: 1.5em; letter-spacing: 0.05em; }
+
+[dir=3D"rtl"] #pagetrail span.sep { visibility: hidden; }
+
+[dir=3D"rtl"] #pagetrail span.sep::after { content: " =C2=AB "; }
+
+#navibar { clear: both; display: block; margin: 0px; padding: 0px 10px; fon=
+t-size: 0.82em; zoom: 1; }
+
+#navibar li { float: left; display: inline; margin: 0px 2px; padding: 2px 5=
+px; border-top: 1px solid rgb(170, 204, 221); border-right: 1px solid rgb(1=
+70, 204, 221); border-left: 1px solid rgb(170, 204, 221); border-image: ini=
+tial; border-bottom: none; white-space: nowrap; }
+
+[dir=3D"rtl"] #navibar li { float: right; }
+
+#navibar li.wikilink { background: white; }
+
+#navibar li.userlink { background: rgb(230, 234, 240); }
+
+#navibar a, #navibar a:visited { color: black; text-decoration: none; }
+
+#navibar li.current a { font-weight: bold; }
+
+#navibar li:hover { background: rgb(214, 228, 249); }
+
+#navibar li.current, #navibar li.current:hover { background: rgb(129, 187, =
+242); border-width: 1px; border-style: solid; border-color: rgb(77, 125, 16=
+9) rgb(77, 125, 169) rgb(129, 187, 242); border-image: initial; margin-bott=
+om: -1px; }
+
+#pageline { clear: both; margin: 0px; padding: 0px; width: 100%; height: 4p=
+x; line-height: 4px; border-bottom: 1px solid rgb(77, 125, 169); border-top=
+: 1px solid rgb(77, 125, 169); background: rgb(129, 187, 242); }
+
+.editbar { clear: both; display: block; margin: -1px 0px 0px; padding: 2px =
+8px; background: rgb(214, 228, 249); font-size: 0.8em; border-bottom: 1px s=
+olid rgb(77, 125, 169); border-top: 1px solid rgb(77, 125, 169); }
+
+.editbar form, .editbar form div { display: inline; margin: 0px; }
+
+.editbar select { font-size: 100%; vertical-align: middle; }
+
+.editbar li { display: inline; padding: 0px; margin: 4px 6px; }
+
+.editbar a, .editbar a:visited { color: rgb(0, 68, 179); }
+
+#message { clear: both; margin: 0px; padding: 5px 10px; border-bottom: 1px =
+solid rgb(201, 201, 201); background: rgb(230, 234, 240); }
+
+#message p { margin: 5px 0px; padding: 0px; }
+
+#message div.buttons { font-weight: normal; }
+
+.dialog form { margin: 0px 15px; }
+
+.dialog td { border: none; padding: 5px; }
+
+.dialog td.label { text-align: right; font-weight: bold; width: 25%; }
+
+[dir=3D"rtl"] .dialog td.label { text-align: left; }
+
+.dialog td.content input { width: 100%; }
+
+#page { background-color: white; margin: 0px; padding: 2px 20px 20px; }
+
+#editor-textarea, #editor-help { font-family: monospace; border: 1px solid =
+rgb(140, 172, 187); color: black; background-color: white; padding: 3px; wi=
+dth: 100%; margin-top: 0.5em; }
+
+#editor-help { font-size: small; background-color: rgb(238, 238, 255); }
+
+#editor-comment { font-size: 100%; border: 1px solid rgb(140, 172, 187); co=
+lor: black; background-color: white; vertical-align: middle; padding: 1px; =
+display: inline; width: 70%; }
+
+#preview, #previewbelow { border: 1px solid rgb(108, 118, 128); padding: 3p=
+x; width: 100%; background: url("../img/draft.png"); margin-top: 0.5em; }
+
+#textcha { font-size: 100%; margin-top: 0.5em; border: 2px solid rgb(255, 1=
+36, 136); color: black; vertical-align: middle; padding: 3px 2px; }
+
+#textcha-answer { border: 2px solid rgb(0, 0, 0); padding: 3px 2px; }
+
+input.button { }
+
+#footer { clear: both; margin: 0px; padding: 0px; }
+
+#credits, #version, #timings { margin: 5px 10px; padding: 0px; text-align: =
+center; font-size: 0.88em; color: rgb(108, 118, 128); }
+
+#credits li, #timings li { display: inline; padding: 0px 2px; margin: 0px 4=
+px; }
+
+#credits img { vertical-align: middle; }
+
+.diff { width: 99%; table-layout: fixed; }
+
+.diff-header { font-weight: bold; }
+
+.diff-title { background-color: rgb(192, 192, 192); }
+
+.diff-added { background-color: rgb(224, 255, 224); vertical-align: top; wi=
+dth: 50%; white-space: pre-wrap; overflow-wrap: break-word; font-family: co=
+urier, monospace; }
+
+.diff-removed { background-color: rgb(255, 255, 224); vertical-align: top; =
+width: 50%; white-space: pre-wrap; overflow-wrap: break-word; font-family: =
+courier, monospace; }
+
+.diff-added span { background-color: rgb(128, 255, 128); }
+
+.diff-removed span { background-color: rgb(255, 255, 128); }
+
+td.diff-info { vertical-align: top; }
+
+div.diff-info { white-space: nowrap; }
+
+div.diff-info-rev-comment span.diff-info-value { white-space: normal; }
+
+div.diff-info-header { background-color: rgb(232, 232, 232); width: 100%; p=
+adding: 0.25em 0.5em; margin: -0.25em -0.5em 0.25em; text-align: center; }
+
+td.diff-same { text-align: center; border: 0px; }
+
+table.navigation { float: right; margin: 2px; }
+
+#openididentifier { background: url("../../common/openid.png") 0px 50% no-r=
+epeat; padding-left: 18px; }
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mywiki.wooledge.org/moin_static198/modernized/css/print.css
+
+@charset "utf-8";
+
+html { font-family: Times, serif; font-size: 12pt; }
+
+body { margin: 1.5cm; }
+
+a, a:visited, a.nonexistent, a.badinterwiki { color: black; text-decoration=
+: none; }
+
+a:hover { text-decoration: underline; }
+
+.info a { color: gray; }
+
+pre { font-size: 10pt; }
+
+a.interwiki::before, a.badinterwiki::before { content: attr(title) ":"; }
+
+a.interwiki img, a.badinterwiki img { display: none; }
+
+.footnotes div { width: 5em; border-top: 1pt solid gray; }
+
+#header, #sidebar, #footer, #timings, #credits, #interwiki, #pagelocation {=
+ display: none; }
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mywiki.wooledge.org/moin_static198/modernized/css/projection.css
+
+@charset "utf-8";
+
+@import url("screen.css");
+
+html { line-height: 1.8em; }
+
+body, b, em, a, span, div, p, td { font-size: 18pt; }
+
+h1 { font-size: 26pt; }
+
+h2 { font-size: 22pt; }
+
+h3 { font-size: 20pt; }
+
+h4 { font-size: 18pt; }
+
+h5 { font-size: 16pt; }
+
+h6 { font-size: 14pt; }
+
+tt, pre { font-size: 16pt; }
+
+sup, sub { font-size: 12pt; }
+
+table.navigation { float: right; margin: 2px; }
+
+.navigation td, .navigation a { font-size: 10pt; padding: 2px; }
+
+#interwiki, #pagelocation, #pageinfo { display: none; }
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://mywiki.wooledge.org/moin_static198/common/moinmoin.png
+
+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
+gwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAMAUExURQAAAP///7W3u4G78qinqKOjpays
+rmJiY/7+/8PDxJ6en6SlqbW2uoKDhq6vsr/Bxry+w8TGy9PW3Lm7v7e5vbS2urO1ucHDx7u9wXx9
+f3+AgqCho8THzMLFys7R1srN0sfKz5OVmK+xtLK0t6eqrr3AxIG89oG79Hqs3XOdxnmhyHaZvHaZ
+u3SVtWSAnFdqfmh+lFNkdW+BlFlmc15oclRcZFBXXmpzfFxiaGFnbVBUWFdbX3d5e05PUF9gYVhZ
+WmZnaITD/4TF/4PD/oPD/YPB/IPB+4LA+oPA+YK/+IK+94TC+oK99oK99YG89IG884G783+58H22
+7XWq3YPA9oK+9IC58Hy06Hqx5YG68YC573mu4YC47HOl1Xyy5IC36n+153Ghznan1oC15n2w4Hmq
+2WyYwn2u3Xus2nys2Huq1Xqn0Xqmz2yTuHagx2iNsGaKrHObwGWIqHigxnKWuGSEonaZuW+Qrm6O
+rF54kWyKpmqHoVhvhFtyiGiCmnOPqVtsfGN1hW6AkFFeal9temp0fWpze4XI/4XG/4bH/4bJ/3uz
+44O97XGTsIXK/4bK/4fM/4jL/4fP/4nU/1tdXjY3N7W1s/r6+ejo5+Dg38/PzktKSPTz8VFPTGFf
+XMLAvayppeHe2ldSTHx3cc3IwtLOyWVeVnZvZ4B5cWFXTWpgVm5kWlpTTG5mXnFpYUZBPKKYjmNd
+V4eAeaefl66noLqzrIyHgqCblpiTjrOuqW1qZ9rW0nFvbX99e9TRzubj4Li2tGVkY/v59+fl42lo
+Z/38+/r5+PDv7u3s61tOQl5SR3tuYnJmW2ZcU2JZUXZsY31zanRrY0I8N0tFQFJMR5mOhWhhW11X
+UoF6dHBqZXJsZ4uEfsG5so6Ig2xnY2plYVlVUnhzb5uWksC7t/Pw7t3a2J6YlY+NjP37+vj29ff1
+9JWSkWZlZWVkZObl5ePi4t3c3Jybm/7+/v39/fv7+/n5+fb29vHx8dbW1ry8vG9vb2xsbGZmZlJS
+UkxMTP///xWf3yUAAAEAdFJOU///////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////wBT9wclAAAJMUlE
+QVR42qxXe1BT6RU/997ckBeQECEYw6MuAl1FQDSgrMjDBoUEtdg7u9qZLrpW6djZHdfpTh2qu9uu
+s9OK2t0qap21uqyPVKpjAgSEINooBhSfu4o8RMIjkEASIORBkv6R1w3K6s70/pPvO+d3Tr7n+X4/
+xAWv/oyXIl16IQ4AdjUXGdoQOgsOeVWCybPiZv4f7JIqZy4AKNFiGf7XgVXyTcw3S3CclrpwvzSz
+zyKxIPUAIHLRZLQoFbHncbtl++sT3B7jlZrTXkhkQXi1z1hot0pk0XcYFVpO+msS1M9RjD7OvxLC
+kAIAFFrsQKPKAQAIs6mobmHYGp3oxxIYnwuyeeJ6thQAgBjPvMqn30hdDLfpboNBJNde08SGzpqg
+gvu0Y2mdOxyKR0Rn3q1th9S1wzGNYW4bYchvi0/Ql86SoK9dNUfBc0OhWEddvpYaEY0MaB52Mhu5
+HjOhXaPLTI3yB6G+1s1OpoLf5I0nDHRd4oqcdCYjvmhd4bkcowcl5TXxFczOmy+PYFJ+LDa5Wea1
+x209+8edQQNcPXBdrBHlv+ft9oVIVt1/vkPsPRMUr1l5LGax2hcP/K7LHOYk6AH0MBodpuasbvC6
+ZPRlrmMMyYwp1GXGprRKffHEOq4uZlzv6eFrdnTk+actbU2JzawLTNBsLUtW++IJyWKo62SNeftj
+KA2nZxH+DOrkMmszeQ0M9X/+4JoMYLX9F4A0KrPWPRFE7wge8UUEP6npvZ9TV5+TB4AoGwEk2Sf/
+JGL7E9yT0a6Fgq7g+pN8MBuXq7/flZQe0+UfdNh0b+eu0XBJeygGZt3K6nAwZlskKb5FrE/rGOBB
+6n+Hh6ttHQlbdD178+I5XVy9f68osei3Ez+MCrlMSNw2HC7cTSj4UfUizwgsVz7fdhsyKsIPPirk
+gaon2LHLiKD6gCPPtaN2Fb0v6B1QdS/6/YKk3UT6P/cW0dwJBk814cFppz4O3+BBW/C3pi16rhOf
+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
+
+------MultipartBoundary--fAfl9NTSEgryHL5QEZgoAfOicWjW7t8lbNmJOoTE6P------

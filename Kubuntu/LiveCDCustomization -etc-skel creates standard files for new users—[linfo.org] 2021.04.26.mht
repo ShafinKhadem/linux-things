@@ -1,0 +1,350 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://www.linfo.org/etc_skel.html
+Subject: /etc/skel creates standard files for new users
+Date: Mon, 26 Apr 2021 11:46:01 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--1htUYZDvDfkpMTsoNkwl0RvFZIlbpi7yWuVzTWWkic----"
+
+
+------MultipartBoundary--1htUYZDvDfkpMTsoNkwl0RvFZIlbpi7yWuVzTWWkic----
+Content-Type: text/html
+Content-ID: <frame-18FA85DF63C3D30FB861D07C8B8E7FEF@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.linfo.org/etc_skel.html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-=
+transitional.dtd"><html xmlns=3D"http://www.w3.org/1999/xhtml"><head><meta =
+http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"><link re=
+l=3D"stylesheet" type=3D"text/css" href=3D"cid:css-3f224b37-1b8f-4138-bda9-=
+56f0b6783cfe@mhtml.blink" />
+
+<link rel=3D"stylesheet" type=3D"text/css" href=3D"http://www.linfo.org/bel=
+ug1.css">
+
+<title>/etc/skel creates standard files for new users</title></head>
+
+<body bgcolor=3D"#ffffff" data-new-gr-c-s-check-loaded=3D"14.1007.0" data-g=
+r-ext-installed=3D"">
+
+<a href=3D"http://www.linfo.org/index.html">LINFO</a>
+
+<br><center><h1>The /etc/skel Directory</h1></center><br>
+
+<table width=3D"100%"><tbody><tr><td width=3D"10%"></td><td width=3D"80%">
+
+<br>
+
+<p>
+The <i>/etc/skel</i> directory contains files and directories that are auto=
+matically copied over to a new user's <a href=3D"http://www.linfo.org/home_=
+directory.html"><i>home directory</i></a> when such user is created by the =
+<i>useradd</i> program.
+</p>
+
+<p>
+A home directory, also called a <i>login directory</i>, is the directory on=
+ <a href=3D"http://www.linfo.org/unix-like.html">Unix-like</a> <a href=3D"h=
+ttp://www.linfo.org/operating_systems_list.html">operating systems</a> that=
+ serves as the repository for a user's personal files, directories and prog=
+rams, including personal configuration files. It is also the directory that=
+ a user is first in after <a href=3D"http://www.linfo.org/login_def.html">l=
+ogging into</a> the system. The <i>/etc</i> directory and its subdirectorie=
+s contain the many important configuration files for the system.=20
+</p>
+
+<p>
+The <i>useradd</i> program is located in the <i>/usr/sbin/</i> directory, a=
+nd on most systems it is accessible only by the <a href=3D"http://www.linfo=
+.org/root.html"><i>root</i></a> (i.e., administrative) user. On some system=
+s this program might be called <i>adduser</i>.=20
+</p>
+
+<p>
+/etc/skel allows a system administrator to create a default home directory =
+for all new users on a computer or network and thus to make certain that al=
+l users begin with the same settings or <i>environment</i>.=20
+</p>
+
+<p>
+Several user configuration files are placed in /etc/skel by default when th=
+e operating system is installed. Typically they might include <i>.bash_prof=
+ile</i>, <i>.bashrc</i>, <i>.bash_logout</i>, <i>dircolors</i>, <i>.inputrc=
+</i> and <i>.vimrc</i>. The dots preceding the names of these files indicat=
+e that they are <a href=3D"http://www.linfo.org/hidden_file.html"><i>hidden=
+ files</i></a>, i.e., files that are not normally visible in order to avoid=
+ visual clutter and help reduce the chances of accidental damage.
+</p>
+
+<p>
+The contents of /etc/skel can be viewed by using the <i>ls</i> (i.e., <i>li=
+st</i>) command with its <i>-a</i> option (which shows all files and direct=
+ories, including hidden ones), i.e.,=20
+</p>
+
+<blockquote>
+<p>
+<code>ls -a /etc/skel</code>
+</p>
+</blockquote>
+
+<p>
+The location of /etc/skel can be changed by editing the line that begins wi=
+th SKEL=3D in the configuration file <i>/etc/default/useradd</i>. By defaul=
+t this line says SKEL=3D/etc/skel.
+</p>
+
+<p>
+It is usually better to keep /etc/skel as small as possible and put system-=
+wide configuration items into global configuration files such as <i>/etc/pr=
+ofile</i>. This is because the latter makes it much easier to update existi=
+ng users' files because its settings take effect as soon as the system is t=
+urned on and apply to new users and old uses alike.=20
+</p>
+
+<p>
+When a user is removed from the system by an administrator with the <i>user=
+del</i> command, that user's home directory, including the files and direct=
+ories that have been copied into it from /etc/skel, remains intact.=20
+</p>
+
+<p>
+The name of the directory <i>skel</i> is derived from the word <i>skeleton<=
+/i>, because the files it contains form the basic structure for users' home=
+ directories.=20
+</p>
+
+
+
+
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+<p class=3D"copy">Created June 25, 2005.<br>
+Copyright =C2=A9 2005 The Linux Information Project. All Rights Reserved.</=
+p>
+
+</td><td width=3D"10%"></td></tr></tbody></table>
+
+
+</body></html>
+------MultipartBoundary--1htUYZDvDfkpMTsoNkwl0RvFZIlbpi7yWuVzTWWkic----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-3f224b37-1b8f-4138-bda9-56f0b6783cfe@mhtml.blink
+
+@charset "utf-8";
+
+.d0bdb78e-9ac4-47e8-9cf2-9700021cb502 { position: relative !important; bord=
+er-radius: 0.2em !important; padding: 0px !important; margin: 0px !importan=
+t; }
+
+.b0c434a2-318f-4942-8762-f9aa2b0bc1d1 .ssh-close { position: absolute; left=
+: -8px; top: -8px; width: 16px; height: 16px; z-index: 999; border: none; b=
+ackground: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAA=
+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
+NGpVYJkfGwAAAABJRU5ErkJggg=3D=3D") no-repeat border-box border-box; animati=
+on-duration: 275ms; animation-timing-function: ease-out; box-shadow: none; =
+animation-name: cf119d19-4995-4221-892b-92e30d8a7bf2; }
+
+.b0c434a2-318f-4942-8762-f9aa2b0bc1d1 .ssh-close:hover, .b0c434a2-318f-4942=
+-8762-f9aa2b0bc1d1 .ssh-close:focus { background-image: url("data:image/png=
+;base64,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"); }
+
+@media print {
+  .b0c434a2-318f-4942-8762-f9aa2b0bc1d1 { box-shadow: unset !important; -we=
+bkit-print-color-adjust: exact !important; }
+}
+
+@keyframes cf119d19-4995-4221-892b-92e30d8a7bf2 {=20
+  0% { opacity: 0; transform: scale(0.6); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes d8424569-1549-44ee-8e97-9e79e1d0b165 {=20
+  100% { opacity: 0; transform: scale(0.3); }
+}
+
+.b0c434a2-318f-4942-8762-f9aa2b0bc1d1 { background-color: rgba(238, 238, 23=
+8, 0.7); color: rgb(170, 170, 170); font: inherit; box-shadow: rgb(238, 238=
+, 238) 0px 0px 0.35em; text-shadow: none !important; }
+
+.default-red-aa94e3d5-ab2f-4205-b74e-18ce31c7c0ce { box-shadow: rgb(255, 12=
+8, 128) 0px 0px 0.35em; background-color: rgba(255, 128, 128, 0.7) !importa=
+nt; color: rgb(0, 0, 0) !important; }
+
+.default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 { box-shadow: rgb(255,=
+ 210, 170) 0px 0px 0.35em; background-color: rgba(255, 210, 170, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-yellow-aaddcf5c-0e41-4f83-8a64-58c91f7c6250 { box-shadow: rgb(255,=
+ 255, 170) 0px 0px 0.35em; background-color: rgba(255, 255, 170, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-green-c4d41e0a-e40f-4c3f-91ad-2d66481614c2 { box-shadow: rgb(170, =
+255, 170) 0px 0px 0.35em; background-color: rgba(170, 255, 170, 0.7) !impor=
+tant; color: rgb(0, 0, 0) !important; }
+
+.default-cyan-f88e8827-e652-4d79-a9d9-f6c8b8ec9e2b { box-shadow: rgb(170, 2=
+55, 255) 0px 0px 0.35em; background-color: rgba(170, 255, 255, 0.7) !import=
+ant; color: rgb(0, 0, 0) !important; }
+
+.default-purple-c472dcdb-f2b8-41ab-bb1e-2fb293df172a { box-shadow: rgb(255,=
+ 170, 255) 0px 0px 0.35em; background-color: rgba(255, 170, 255, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-grey-da7cb902-89c6-46fe-b0e7-d3b35aaf237a { box-shadow: rgb(119, 1=
+19, 119) 0px 0px 0.35em; background-color: rgba(119, 119, 119, 0.7) !import=
+ant; color: rgb(255, 255, 255) !important; }
+------MultipartBoundary--1htUYZDvDfkpMTsoNkwl0RvFZIlbpi7yWuVzTWWkic----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.linfo.org/belug1.css
+
+@charset "utf-8";
+
+p { text-align: left; }
+
+p.link { text-align: left; font-family: Helvetica, Arial; font-weight: norm=
+al; font-size: 80%; }
+
+p.copy { text-align: center; font-size: 80%; }
+
+p.more { text-align: right; font-style: normal; font-size: 100%; }
+
+p.typed { font-family: Courier, courier; }
+
+p.vilink { text-align: right; }
+
+p.faq1, p.intro { text-align: left; font-family: Helvetica, Arial; font-wei=
+ght: normal; font-style: italic; }
+
+a:link { color: blue; text-decoration: none; }
+
+a:hover { background: rgb(238, 238, 238); color: black; }
+
+a:visited { color: blue; text-decoration: none; }
+------MultipartBoundary--1htUYZDvDfkpMTsoNkwl0RvFZIlbpi7yWuVzTWWkic------

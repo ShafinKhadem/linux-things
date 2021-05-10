@@ -1,0 +1,90 @@
+run freshInstall.sh and follow its ending comments.
+sudo apt install kompare kamoso qdbusviewer
+cp pasteAsShortcut.desktop ~/.local/share/kservices5/ServiceMenus/
+cp pasteAsShortcut.sh ~
+sudo add-apt-repository ppa:kubuntu-ppa/backports
+sudo apt update && sudo apt full-upgrade -y
+
+opening a file using qt file chooser (e.g. from google-chrome) creates kdialogrc. Delete history from it i.e. delete the whole part with recent, don't keep the word `recent`.
+rm -rf ~/.local/share/kactivitymanagerd/* ~/.local/share/RecentDocuments/*
+chmod a-w ~/.local/share/kactivitymanagerd ~/.local/share/RecentDocuments ~/.config/kdialogrc
+do a grep --include="*rc" -ir "recent" ~/.config -> konsolerc, systemsettingsrc, gwenviewrc in ~/.local/share -> krunnerstaterc, ~/.config/kdeglobals also contains `History Items`
+klipper-> ignore selection, uncheck 'save clipboard contents on exit'
+vlc-> settings-> audio -> output module-> alsa, show all settings -> interface-> qt-> increase max volume to 200, uncheck 'save the recently played...'.
+task manager-> icons only task manager-> remove widget to show desktop (as it can be done using ctrl+f12)
+
+right click on application launcher icon->
+show alternative-> application menu,
+configure application menu-> unchek recent.. and expand search...
+edit applications-> Development-> New Item-> Hightail-> command: java -jar java -jar /mnt/shafin/CSE/git_repos/hightail_current/hightail/Hightail/dist/Hightail-combined.jar,  work path: ~
+BTW, Alt+F1 (also Meta+F1) == Meta in KDE 5.21.4 (which launches application menu)
+right click on desktop-> {icons-> icon size-> small medium, add widgets-> trash}
+
+System settings->
+Appearance->
+    Colors-> Breeze Dark
+    Window Decorations-> Add 'Application menu' in top-left and drop 'on all desktops'.
+Display and monitor-> {compositor-> uncheck 'enable compositor at startup'. It will disable desktop effects after a reboot. Night color-> activate, 6100K, always on.}
+Regional settings-> change everything to en_US
+Workspace Behavior-> Activities-> Privacy-> keep history for 1 month (smallest possible :)), opened documents: Do not remember
+Startup and shutdown-> Desktop session-> start with an empty session, Background Services-> uncheck bluetooth, plasma browser integration and wacom tablet.
+Applications-> launch feedback-> 30 seconds, file associations-> text/plain-> make sublime top, x-mimearchives-> chrome, application/pdf-> chrome, x-compressed-tar-> ark; diagnostics-> uncheck all. open ~/.config/mimeapps.list-> under [Default Applications], add output of:
+sed -n "/mime-type type=\"image\/[a-zA-Z0-9]*\">/p" /usr/share/mime/packages/freedesktop.org.xml | sed -E 's/.*(image.*)">/\1=google-chrome.desktop;/'
+sed -n "/mime-type type=\"video\/[a-zA-Z0-9]*\">/p" /usr/share/mime/packages/freedesktop.org.xml | sed -E 's/.*(video.*)">/\1=vlc.desktop;/'
+sed -n "/mime-type type=\"audio\/[a-zA-Z0-9]*\">/p" /usr/share/mime/packages/freedesktop.org.xml | sed -E 's/.*(audio.*)">/\1=vlc.desktop;/'
+
+Power Management-> Advanced-> Low:30%, critical:20%, configure notifications-> sound for power disconnect and charge complete (you can also add speech event message, but that needs logout-login to work), Energy saving-> uncheck Screen brightness and dim screen from all plans.
+Custom shortcuts-> New-> Global shortcut-> D-bus command-> Action-> remote Application: org.freedesktop.FileManager1, remote object: /dolphin/Dolphin_1, Function: org.kde.dolphin.MainWindow.pasteIntoFolder-> Trigger-> Ctrl+shift+alt+v. Details can be seen from https://unix.stackexchange.com/questions/3543/expand-kde-activities-concept-to-the-shell
+KDE supports shortcut key for other key. If you don't have Menu key, add a new Global shortcut-> Send keyboard input -> Action-> Menu, Trigger-> Alt+/.
+More about khotkeys: https://docs.kde.org/trunk5/en/khotkeys/kcontrol/khotkeys/khotkeys.pdf
+
+Dolphin-> configure keyboard shortcuts-> remove shift+del from cut, ctrl+shift+d for compare files (apt install kompare, for comparing files from different locations: use split view f3), ctrl+enter for open in new tabS, ctrl+shift+enter for show target. right click on left pane-> add entry with location recentdocuments:/, settings-> Confirmations-> open executable file in application, Startup-> /home/shafin, view modes-> compact-> default icon size 0
+cp {pasteAsShortcut,open_as_root}.desktop ~/.local/share/kservices5/ServiceMenus
+cp pasteAsShortcut.sh ~
+How to select non contiguous files:
+Hold the ctrl key and use the arrow keys to navigate to the files you want to select. You should see a border of tiny gray dashed line on the file which you have reached to. Then select it by pressing space. On pressing space the file is selected. Repeat until all required files are selected.
+
+Konsole-> settings-> profile-> make a default profile and edit it -> appearance-> Linux-color (otherwise folders in hard drives look unreadable in ls), mouse-> { triple click selects-> from mouse position to end of line. miscallenous-> underline file (which will enable you to ctrl+click on files/folders from terminal results e.g. grep -n)
+You can right click on konsole and open current location in file manager. Other very hidden konsole features include monitor for activity/silence/end_of_process:
+
+```
+#KDETip: Sync input to Konsole terminal panes:
+
+1. Open terminal panes with [Ctrl] + [(], change focus using [Ctrl] + [Shift] + [left/right]. (also doable with multiple tabs).
+2. Press [Ctrl] + [Shift] + [.]
+3. Sync and share commands across panes
+4. Stop sync with [Ctrl] + [Shift] + [/]
+```
+
+In file selector, change both location bar and file bar text completiion to 'dropdown list and automatic', right click to the right of location bar, change from edit to navigate.
+
+Kubuntu comes with Muon package manager, so no need for another.
+
+startup disk creator kept crashing, so I ran it with terminal, saw the error: module not found 'sip', solved by apt install python3-sip
+
+ubiquity installer doesn't work properly with dark color-scheme. A temporary fix: edit /usr/share/ubiquity/qt/style.qss to replace
+
+```
+#setup_page,
+#footer_frame {
+    background-image: url(/usr/share/ubiquity/qt/images/main.png);
+}
+```
+
+with
+
+```
+#setup_page,
+#footer_frame {
+    background-color: #777;
+}
+```
+
+This will match both light and dark theme fairly well.
+
+Execute .desktop files using kioclient5 exec <path-to-desktop-file>
+kde bug 260266 has been solved by me in https://invent.kde.org/shafinkhadem/dolphin
+As of 2021, kde has no keyring which is needed by vscode to function, so install gnome-keyring
+kde login scripts are stored as .desktop files and for .desktop files to Exec a shell script, the script must start with a shebang.
+
+display configuration has global scale which is extremely useful if your fonts are too small.

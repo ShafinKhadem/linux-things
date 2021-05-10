@@ -1,0 +1,1660 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+Subject: Desktop Entry Specification
+Date: Tue, 20 Apr 2021 07:23:22 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--SUoUp28T0mgGT7y0GHZkmaWZaG48XgNAXGyBMJw2LZ----"
+
+
+------MultipartBoundary--SUoUp28T0mgGT7y0GHZkmaWZaG48XgNAXGyBMJw2LZ----
+Content-Type: text/html
+Content-ID: <frame-7B8D388C602F15CD51DAB8DADF002DC1@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-d75744=
+5c-6847-4fd8-a162-1d03435064fc@mhtml.blink" /><title>Desktop Entry Specific=
+ation</title><meta name=3D"generator" content=3D"DocBook XSL Stylesheets Vs=
+napshot"></head><body bgcolor=3D"white" text=3D"black" link=3D"#0000FF" vli=
+nk=3D"#840084" alink=3D"#0000FF" data-new-gr-c-s-check-loaded=3D"14.1006.0"=
+ data-gr-ext-installed=3D""><div class=3D"article"><div class=3D"titlepage"=
+><div><div><h2 class=3D"title"><a name=3D"index"></a>Desktop Entry Specific=
+ation</h2></div><div><div class=3D"authorgroup"><div class=3D"author"><h3 c=
+lass=3D"author"><span class=3D"firstname">Preston</span> <span class=3D"sur=
+name">Brown</span></h3><div class=3D"affiliation"><div class=3D"address"><p=
+><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<code class=3D"email">&lt;<a class=3D"email" href=
+=3D"mailto:pbrown@kde.org">pbrown@kde.org</a>&gt;</code><br>
+	&nbsp;&nbsp;</p></div></div></div><div class=3D"author"><h3 class=3D"autho=
+r"><span class=3D"firstname">Jonathan</span> <span class=3D"surname">Blandf=
+ord</span></h3><div class=3D"affiliation"><div class=3D"address"><p><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<code class=3D"email">&lt;<a class=3D"email" href=
+=3D"mailto:jrb@redhat.com">jrb@redhat.com</a>&gt;</code><br>
+	&nbsp;&nbsp;</p></div></div></div><div class=3D"author"><h3 class=3D"autho=
+r"><span class=3D"firstname">Owen</span> <span class=3D"surname">Taylor</sp=
+an></h3><div class=3D"affiliation"><div class=3D"address"><p><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<code class=3D"email">&lt;<a class=3D"email" href=
+=3D"mailto:otaylor@gtk.org">otaylor@gtk.org</a>&gt;</code><br>
+	&nbsp;&nbsp;</p></div></div></div><div class=3D"author"><h3 class=3D"autho=
+r"><span class=3D"firstname">Vincent</span> <span class=3D"surname">Untz</s=
+pan></h3><div class=3D"affiliation"><div class=3D"address"><p><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<code class=3D"email">&lt;<a class=3D"email" href=
+=3D"mailto:vuntz@gnome.org">vuntz@gnome.org</a>&gt;</code><br>
+	&nbsp;&nbsp;</p></div></div></div><div class=3D"author"><h3 class=3D"autho=
+r"><span class=3D"firstname">Waldo</span> <span class=3D"surname">Bastian</=
+span></h3><div class=3D"affiliation"><div class=3D"address"><p><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<code class=3D"email">&lt;<a class=3D"email" href=
+=3D"mailto:waldo.bastian@intel.com">waldo.bastian@intel.com</a>&gt;</code><=
+br>
+	&nbsp;&nbsp;</p></div></div></div><div class=3D"author"><h3 class=3D"autho=
+r"><span class=3D"firstname">Allison</span> <span class=3D"surname">Lortie<=
+/span></h3><div class=3D"affiliation"><div class=3D"address"><p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<co=
+de class=3D"email">&lt;<a class=3D"email" href=3D"mailto:desrt@desrt.ca">de=
+srt@desrt.ca</a>&gt;</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div></div=
+></div><div class=3D"author"><h3 class=3D"author"><span class=3D"firstname"=
+>David</span> <span class=3D"surname">Faure</span></h3><div class=3D"affili=
+ation"><div class=3D"address"><p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<co=
+de class=3D"email">&lt;<a class=3D"email" href=3D"mailto:faure@kde.org">fau=
+re@kde.org</a>&gt;</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div></div=
+></div><div class=3D"author"><h3 class=3D"author"><span class=3D"firstname"=
+>Will</span> <span class=3D"surname">Thompson</span></h3><div class=3D"affi=
+liation"><div class=3D"address"><p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<co=
+de class=3D"email">&lt;<a class=3D"email" href=3D"mailto:wjt@endlessm.com">=
+wjt@endlessm.com</a>&gt;</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div></div=
+></div></div></div><div><p class=3D"releaseinfo">Version 1.5</p></div><div>=
+<p class=3D"pubdate">2020-04-27</p></div></div><hr></div><div class=3D"toc"=
+><p><b>Table of Contents</b></p><dl class=3D"toc"><dt><span class=3D"sect1"=
+><a href=3D"https://specifications.freedesktop.org/desktop-entry-spec/deskt=
+op-entry-spec-latest.html#introduction">Introduction</a></span></dt><dt><sp=
+an class=3D"sect1"><a href=3D"https://specifications.freedesktop.org/deskto=
+p-entry-spec/desktop-entry-spec-latest.html#file-naming">File naming</a></s=
+pan></dt><dd><dl><dt><span class=3D"sect2"><a href=3D"https://specification=
+s.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#desktop=
+-file-id">Desktop File ID</a></span></dt></dl></dd><dt><span class=3D"sect1=
+"><a href=3D"https://specifications.freedesktop.org/desktop-entry-spec/desk=
+top-entry-spec-latest.html#basic-format">Basic format of the file</a></span=
+></dt><dd><dl><dt><span class=3D"sect2"><a href=3D"https://specifications.f=
+reedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#comments">=
+Comments</a></span></dt><dt><span class=3D"sect2"><a href=3D"https://specif=
+ications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#=
+group-header">Group headers</a></span></dt><dt><span class=3D"sect2"><a hre=
+f=3D"https://specifications.freedesktop.org/desktop-entry-spec/desktop-entr=
+y-spec-latest.html#entries">Entries</a></span></dt></dl></dd><dt><span clas=
+s=3D"sect1"><a href=3D"https://specifications.freedesktop.org/desktop-entry=
+-spec/desktop-entry-spec-latest.html#value-types">Possible value types</a><=
+/span></dt><dt><span class=3D"sect1"><a href=3D"https://specifications.free=
+desktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#localized-key=
+s">Localized values for keys</a></span></dt><dt><span class=3D"sect1"><a hr=
+ef=3D"https://specifications.freedesktop.org/desktop-entry-spec/desktop-ent=
+ry-spec-latest.html#recognized-keys">Recognized desktop entry keys</a></spa=
+n></dt><dt><span class=3D"sect1"><a href=3D"https://specifications.freedesk=
+top.org/desktop-entry-spec/desktop-entry-spec-latest.html#exec-variables">T=
+he <code class=3D"varname">Exec</code> key</a></span></dt><dt><span class=
+=3D"sect1"><a href=3D"https://specifications.freedesktop.org/desktop-entry-=
+spec/desktop-entry-spec-latest.html#dbus">D-Bus Activation</a></span></dt><=
+dt><span class=3D"sect1"><a href=3D"https://specifications.freedesktop.org/=
+desktop-entry-spec/desktop-entry-spec-latest.html#interfaces">Interfaces</a=
+></span></dt><dt><span class=3D"sect1"><a href=3D"https://specifications.fr=
+eedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#mime-types"=
+>Registering MIME Types</a></span></dt><dt><span class=3D"sect1"><a href=3D=
+"https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-sp=
+ec-latest.html#extra-actions">Additional applications actions</a></span></d=
+t><dd><dl><dt><span class=3D"sect2"><a href=3D"https://specifications.freed=
+esktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#extra-actions-=
+identifier">Action identifier</a></span></dt><dt><span class=3D"sect2"><a h=
+ref=3D"https://specifications.freedesktop.org/desktop-entry-spec/desktop-en=
+try-spec-latest.html#extra-actions-keys">Action keys</a></span></dt><dt><sp=
+an class=3D"sect2"><a href=3D"https://specifications.freedesktop.org/deskto=
+p-entry-spec/desktop-entry-spec-latest.html#extra-actions-implementation-no=
+tes">Implementation notes</a></span></dt></dl></dd><dt><span class=3D"sect1=
+"><a href=3D"https://specifications.freedesktop.org/desktop-entry-spec/desk=
+top-entry-spec-latest.html#extending">Extending the format</a></span></dt><=
+dt><span class=3D"appendix"><a href=3D"https://specifications.freedesktop.o=
+rg/desktop-entry-spec/desktop-entry-spec-latest.html#example">A. Example De=
+sktop Entry File</a></span></dt><dt><span class=3D"appendix"><a href=3D"htt=
+ps://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-l=
+atest.html#kde-items">B. Currently reserved for use within KDE</a></span></=
+dt><dt><span class=3D"appendix"><a href=3D"https://specifications.freedeskt=
+op.org/desktop-entry-spec/desktop-entry-spec-latest.html#deprecated-items">=
+C. Deprecated Items</a></span></dt><dt><span class=3D"appendix"><a href=3D"=
+https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spe=
+c-latest.html#legacy-mixed">D. The <code class=3D"constant">Legacy-Mixed</c=
+ode> Encoding (Deprecated)</a></span></dt><dt><span class=3D"appendix"><a h=
+ref=3D"https://specifications.freedesktop.org/desktop-entry-spec/desktop-en=
+try-spec-latest.html#idm45632483469632">E. Changes to this Specification</a=
+></span></dt><dd><dl><dt><span class=3D"section"><a href=3D"https://specifi=
+cations.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#i=
+dm45632483468992">Changes from version 1.3 to 1.4</a></span></dt><dt><span =
+class=3D"section"><a href=3D"https://specifications.freedesktop.org/desktop=
+-entry-spec/desktop-entry-spec-latest.html#idm45632483467840">Changes from =
+version 1.2 to 1.3</a></span></dt><dt><span class=3D"section"><a href=3D"ht=
+tps://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-=
+latest.html#idm45632483466576">Changes from version 1.1 to 1.2</a></span></=
+dt><dt><span class=3D"section"><a href=3D"https://specifications.freedeskto=
+p.org/desktop-entry-spec/desktop-entry-spec-latest.html#idm45632483464544">=
+Changes from version 1.0 to 1.1</a></span></dt></dl></dd></dl></div><div cl=
+ass=3D"sect1"><div class=3D"titlepage"><div><div><h2 class=3D"title" style=
+=3D"clear: both"><a name=3D"introduction"></a>Introduction</h2></div></div>=
+</div><p>
+      Both the KDE and GNOME desktop environments have adopted a similar
+      format for "desktop entries", or configuration files describing how a
+      particular program is to be launched, how it appears in menus, etc.
+      It is to the larger community's benefit that a unified standard be
+      agreed upon by all parties such that interoperation between the two
+      environments, and indeed any additional environments that implement
+      the specification, becomes simpler.
+    </p></div><div class=3D"sect1"><div class=3D"titlepage"><div><div><h2 c=
+lass=3D"title" style=3D"clear: both"><a name=3D"file-naming"></a>File namin=
+g</h2></div></div></div><p>
+      Desktop entry files should have the <code class=3D"filename">.desktop=
+</code>
+      extension, except for files of <code class=3D"varname">Type</code>
+      <code class=3D"constant">Directory</code> which should have the
+      <code class=3D"filename">.directory</code> extension. Determining fil=
+e type on basis
+      of extension makes determining the file type very easy and quick.
+      When no file extension is present, the desktop system should
+      fall back to recognition via "magic detection".
+    </p><p>
+      For applications, the part of the name of the desktop file before the
+      <code class=3D"filename">.desktop</code> extension should be a valid
+      <a class=3D"ulink" href=3D"https://dbus.freedesktop.org/doc/dbus-spec=
+ification.html#message-protocol-names" target=3D"_top">D-Bus
+        well-known name</a>. This means that it is a sequence of
+      non-empty elements separated by dots (U+002E FULL STOP), none of
+      which starts with a digit, and each of which contains only
+      characters from the set <code class=3D"literal">[A-Za-z0-9-_]</code>:=
+ ASCII
+      letters, digits, dash (U+002D HYPHEN-MINUS) and underscore
+      (U+005F LOW LINE).
+    </p><p>
+      The name of the desktop entry should follow the "reverse DNS"
+      convention: it should start with a reversed DNS domain name
+      controlled by the author of the application, in lower case. The
+      domain name should be followed by the name of the application, which
+      is conventionally written with words run together and initial capital
+      letters (CamelCase). For example, if the owner of
+      <code class=3D"literal">example.org</code> writes "Foo Viewer", they =
+might choose
+      the name <code class=3D"literal">org.example.FooViewer</code>, result=
+ing in a file
+      named <code class=3D"literal">org.example.FooViewer.desktop</code>.
+    </p><p>
+      Well-known names containing the dash are allowed but not recommended,
+      because the dash is not allowed in some related uses of reversed
+      DNS names, such as D-Bus object paths and interface names, and Flatpa=
+k
+      app IDs. If the author's domain name contains a dash, replacing it
+      with an underscore is recommended: this cannot cause ambiguity,
+      because underscores are not allowed in DNS domain names.
+    </p><p>
+      If the author's domain name contains a label starting with a digit,
+      (which is not allowed in D-Bus well-known names), prepending an
+      underscore to that element of the desktop entry name is recommended.
+      For example, 7-zip.org might release an application named
+      <code class=3D"literal">org._7_zip.Archiver</code>.
+    </p><div class=3D"sect2"><div class=3D"titlepage"><div><div><h3 class=
+=3D"title"><a name=3D"desktop-file-id"></a>Desktop File ID</h3></div></div>=
+</div><p>
+        Each desktop entry representing an application is identified by
+        its <em class=3D"firstterm">desktop file ID</em>, which is based on=
+ its
+        filename.
+      </p><p>
+          To determine the ID of a desktop file, make its full path relativ=
+e to
+          the <code class=3D"literal">$XDG_DATA_DIRS</code> component in wh=
+ich the desktop file is installed, remove the "applications/"
+          prefix, and turn '/' into '-'.
+       </p><p>
+          For example <code class=3D"filename">/usr/share/applications/foo/=
+bar.desktop</code> has
+          the desktop file ID <code class=3D"literal">foo-bar.desktop</code=
+>.
+       </p><p>
+          If multiple files have the same desktop file ID, the first one in=
+ the
+          $XDG_DATA_DIRS precedence order is used.
+       </p><p>
+          For example, if <code class=3D"literal">$XDG_DATA_DIRS</code> con=
+tains the default paths /usr/local/share:/usr/share, then
+          <code class=3D"filename">/usr/local/share/applications/org.foo.ba=
+r.desktop</code> and
+          <code class=3D"filename">/usr/share/applications/org.foo.bar.desk=
+top</code> both have
+          the same desktop file ID <code class=3D"literal">org.foo.bar.desk=
+top</code>, but only the first
+          one will be used.
+       </p><p>
+          If both <code class=3D"filename">foo-bar.desktop</code> and <code=
+ class=3D"filename">foo/bar.desktop</code> exist,
+          it is undefined which is selected.
+       </p><p>
+          If the desktop file is not installed in an <code class=3D"literal=
+">applications</code> subdirectory of one
+          of the $XDG_DATA_DIRS components, it does not have an ID.
+       </p></div></div><div class=3D"sect1"><div class=3D"titlepage"><div><=
+div><h2 class=3D"title" style=3D"clear: both"><a name=3D"basic-format"></a>=
+Basic format of the file</h2></div></div></div><p>
+      Desktop entry files are encoded in UTF-8. A file is interpreted as a
+      series of lines that are separated by linefeed characters. Case is
+      significant everywhere in the file.
+    </p><p>
+      Compliant implementations MUST not remove any fields from the file,
+      even if they don't support them.  Such fields must be maintained in a
+      list somewhere, and if the file is "rewritten", they will be included=
+.
+      This ensures that any desktop-specific extensions will be preserved
+      even if another system accesses and changes the file.
+    </p><div class=3D"sect2"><div class=3D"titlepage"><div><div><h3 class=
+=3D"title"><a name=3D"comments"></a>Comments</h3></div></div></div><p>
+      Lines beginning with a <code class=3D"literal">#</code> and blank lin=
+es are
+      considered comments and will be ignored, however they should be
+      preserved across reads and writes of the desktop entry file.
+    </p><p>
+      Comment lines are uninterpreted and may contain any character
+      (except for LF). However, using UTF-8 for comment lines that
+      contain characters not in ASCII is encouraged.
+    </p></div><div class=3D"sect2"><div class=3D"titlepage"><div><div><h3 c=
+lass=3D"title"><a name=3D"group-header"></a>Group headers</h3></div></div><=
+/div><p>
+	A group header with name <code class=3D"literal">groupname</code> is a lin=
+e in the
+	format:
+      </p><pre class=3D"programlisting">[groupname]</pre><p>
+	Group names may contain all ASCII characters except for
+	<code class=3D"literal">[</code> and <code class=3D"literal">]</code> and =
+control characters.
+      </p><p>
+	Multiple groups may not have the same name.
+      </p><p>
+	All <code class=3D"literal">{key,value}</code> pairs following a group hea=
+der until
+	a new group header belong to the group.
+      </p><p>
+	The basic format of the desktop entry file requires that there be
+	a group header named <code class=3D"literal">Desktop Entry</code>.  There =
+may
+	be other groups present in the file, but this is the most
+	important group which explicitly needs to be supported.  This
+	group should also be used as the "magic key" for automatic MIME
+	type detection.  There should be nothing preceding this group in
+	the desktop entry file but possibly one or more comments.
+      </p></div><div class=3D"sect2"><div class=3D"titlepage"><div><div><h3=
+ class=3D"title"><a name=3D"entries"></a>Entries</h3></div></div></div><p>
+	Entries in the file are <code class=3D"literal">{key,value}</code> pairs i=
+n the
+	format:
+      </p><pre class=3D"programlisting">Key=3DValue</pre><p>
+	Space before and after the equals sign should be ignored; the
+	<code class=3D"literal">=3D</code> sign is the actual delimiter.
+      </p><p>
+	Only the characters <code class=3D"literal">A-Za-z0-9-</code> may be used =
+in
+	key names.
+      </p><p>
+	As the case is significant, the keys <code class=3D"varname">Name</code> a=
+nd
+	<code class=3D"varname">NAME</code> are not equivalent.
+      </p><p>
+	Multiple keys in the same group may not have the same name. Keys in
+	different groups may have the same name.
+      </p></div></div><div class=3D"sect1"><div class=3D"titlepage"><div><d=
+iv><h2 class=3D"title" style=3D"clear: both"><a name=3D"value-types"></a>Po=
+ssible value types</h2></div></div></div><p>
+      The value types recognized are <code class=3D"literal">string</code>,
+      <code class=3D"literal">localestring</code>,
+      <code class=3D"literal">iconstring</code>,
+      <code class=3D"literal">boolean</code>, and
+      <code class=3D"literal">numeric</code>.
+    </p><div class=3D"itemizedlist"><ul class=3D"itemizedlist" style=3D"lis=
+t-style-type: disc; "><li class=3D"listitem"><p>
+	 Values of type <code class=3D"literal">string</code> may contain all ASCI=
+I
+	 characters except for control characters.
+       </p></li><li class=3D"listitem"><p>
+	 Values of type <code class=3D"literal">localestring</code> are user displ=
+ayable,
+	 and are encoded in UTF-8.
+       </p></li><li class=3D"listitem"><p>
+	Values of type <code class=3D"literal">iconstring</code> are the names of =
+icons;
+	these may be absolute paths, or symbolic names for icons located using
+	the algorithm described in the <a class=3D"ulink" href=3D"http://freedeskt=
+op.org/wiki/Standards/icon-theme-spec" target=3D"_top">Icon
+	Theme Specification</a>. Such values are not user-displayable, and
+	are encoded in UTF-8.
+       </p></li><li class=3D"listitem"><p>
+	  Values of type <code class=3D"literal">boolean</code> must either be the=
+ string
+	  <code class=3D"literal">true</code> or <code class=3D"literal">false</co=
+de>.
+       </p></li><li class=3D"listitem"><p>
+	  Values of type <code class=3D"literal">numeric</code> must be a valid fl=
+oating
+	  point number as recognized by the <code class=3D"literal">%f</code> spec=
+ifier for
+	  <code class=3D"function">scanf</code> in the <code class=3D"literal">C</=
+code> locale.
+       </p></li></ul></div><p>
+      The escape sequences <code class=3D"literal">\s</code>, <code class=
+=3D"literal">\n</code>,
+      <code class=3D"literal">\t</code>, <code class=3D"literal">\r</code>,=
+ and
+      <code class=3D"literal">\\</code> are supported for values of type
+      <code class=3D"literal">string</code>, <code class=3D"literal">locale=
+string</code> and
+      <code class=3D"literal">iconstring</code>, meaning
+      ASCII space, newline, tab, carriage return, and backslash, respective=
+ly.
+    </p><p>
+      Some keys can have multiple values. In such a case, the value of the =
+key
+      is specified as a plural: for example, <code class=3D"literal">string=
+(s)</code>. The
+      multiple values should be separated by a semicolon and the value of t=
+he
+      key may be optionally terminated by a semicolon. Trailing empty strin=
+gs
+      must always be terminated with a semicolon. Semicolons in these value=
+s
+      need to be escaped using <code class=3D"literal">\;</code>.
+    </p></div><div class=3D"sect1"><div class=3D"titlepage"><div><div><h2 c=
+lass=3D"title" style=3D"clear: both"><a name=3D"localized-keys"></a>Localiz=
+ed values for keys</h2></div></div></div><p>
+	  Keys with type <code class=3D"literal">localestring</code> and
+	  <code class=3D"literal">iconstring</code> may be postfixed by
+	  [<em class=3D"replaceable"><code>LOCALE</code></em>],
+	  where <em class=3D"replaceable"><code>LOCALE</code></em> is the locale t=
+ype of the
+	  entry.  <em class=3D"replaceable"><code>LOCALE</code></em> must be of th=
+e form
+	  <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></em>=
+_<em class=3D"replaceable"><code>COUNTRY</code></em>.<em class=3D"replaceab=
+le"><code>ENCODING</code></em>@<em class=3D"replaceable"><code>MODIFIER</co=
+de></em></code>,
+	  where
+	  <code class=3D"literal">_<em class=3D"replaceable"><code>COUNTRY</code><=
+/em></code>,
+	  <code class=3D"literal">.<em class=3D"replaceable"><code>ENCODING</code>=
+</em></code>,=20
+	  and <code class=3D"literal">@<em class=3D"replaceable"><code>MODIFIER</c=
+ode></em></code>
+	  may be omitted. If a postfixed key occurs, the same
+	  key must be also present without the postfix.
+    </p><p>
+      When reading in the desktop entry file, the value of the key is
+      selected by matching the current POSIX locale for the
+      <code class=3D"varname">LC_MESSAGES</code> category against the
+      <em class=3D"replaceable"><code>LOCALE</code></em> postfixes of all o=
+ccurrences
+      of the key, with the
+      <code class=3D"literal">.<em class=3D"replaceable"><code>ENCODING</co=
+de></em></code> part
+      stripped.
+    </p><p>
+	  The matching is done as follows.  If
+	  <code class=3D"varname">LC_MESSAGES</code> is of the form
+	  <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></em>=
+_<em class=3D"replaceable"><code>COUNTRY</code></em>.<em class=3D"replaceab=
+le"><code>ENCODING</code></em>@<em class=3D"replaceable"><code>MODIFIER</co=
+de></em></code>,=20
+	  then it will match a key of the form
+	  <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></em>=
+_<em class=3D"replaceable"><code>COUNTRY</code></em>@<em class=3D"replaceab=
+le"><code>MODIFIER</code></em></code>.=20
+	  If such a key does not exist, it will attempt to match
+	  <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></em>=
+_<em class=3D"replaceable"><code>COUNTRY</code></em></code>
+	  followed by
+	  <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></em>=
+@<em class=3D"replaceable"><code>MODIFIER</code></em></code>.
+	  Then, a match against <em class=3D"replaceable"><code>lang</code></em> b=
+y itself
+	  will be attempted.  Finally, if no matching key is found the
+	  required key without a locale specified is used.  The encoding
+	  from the <code class=3D"varname">LC_MESSAGES</code> value is ignored
+	  when matching.
+    </p><p>
+      If <code class=3D"varname">LC_MESSAGES</code> does not have a <em cla=
+ss=3D"replaceable"><code>MODIFIER</code></em>
+      field, then no key with a modifier will be matched.  Similarly, if
+      <code class=3D"varname">LC_MESSAGES</code> does not have a <em class=
+=3D"replaceable"><code>COUNTRY</code></em>
+      field, then no key with a country specified will be matched.  If
+      <code class=3D"varname">LC_MESSAGES</code> just has a <em class=3D"re=
+placeable"><code>lang</code></em> field, then
+      it will do a straight match to a key with a similar value.  The
+      following table lists possible matches of various <code class=3D"varn=
+ame">LC_MESSAGES</code> values in
+      the order in which they are matched.  Note that the
+      <em class=3D"replaceable"><code>ENCODING</code></em> field isn't show=
+n.
+    </p><div class=3D"table"><a name=3D"idm45632487957680"></a><p class=3D"=
+title"><b>Table&nbsp;1.&nbsp;Locale Matching</b></p><div class=3D"table-con=
+tents"><table class=3D"table" summary=3D"Locale Matching" border=3D"1"><col=
+group><col><col></colgroup><thead><tr><th><code class=3D"varname">LC_MESSAG=
+ES</code> value</th><th>Possible keys in order of matching</th></tr></thead=
+><tbody><tr><td><code class=3D"literal"><em class=3D"replaceable"><code>lan=
+g</code></em>_<em class=3D"replaceable"><code>COUNTRY</code></em>@<em class=
+=3D"replaceable"><code>MODIFIER</code></em></code></td><td>
+      <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></=
+em>_<em class=3D"replaceable"><code>COUNTRY</code></em>@<em class=3D"replac=
+eable"><code>MODIFIER</code></em></code>,
+      <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></=
+em>_<em class=3D"replaceable"><code>COUNTRY</code></em></code>,
+      <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></=
+em>@<em class=3D"replaceable"><code>MODIFIER</code></em></code>,
+      <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></=
+em></code>,
+      default value
+    </td></tr><tr><td><code class=3D"literal"><em class=3D"replaceable"><co=
+de>lang</code></em>_<em class=3D"replaceable"><code>COUNTRY</code></em></co=
+de></td><td>
+      <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></=
+em>_<em class=3D"replaceable"><code>COUNTRY</code></em></code>,
+      <em class=3D"replaceable"><code>lang</code></em>,
+      default value
+    </td></tr><tr><td><code class=3D"literal"><em class=3D"replaceable"><co=
+de>lang</code></em>@<em class=3D"replaceable"><code>MODIFIER</code></em></c=
+ode></td><td>
+      <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></=
+em>@<em class=3D"replaceable"><code>MODIFIER</code></em></code>,
+      <em class=3D"replaceable"><code>lang</code></em>,
+      default value
+    </td></tr><tr><td><em class=3D"replaceable"><code>lang</code></em></td>=
+<td>
+      <em class=3D"replaceable"><code>lang</code></em>,
+      default value
+    </td></tr></tbody></table></div></div><br class=3D"table-break"><p>
+      For example, if the current value of the <code class=3D"varname">LC_M=
+ESSAGES</code> category
+      is <code class=3D"literal">sr_YU@Latn</code> and the desktop file inc=
+ludes:
+    </p><pre class=3D"programlisting"> Name=3DFoo
+ Name[sr_YU]=3D...
+ Name[sr@Latn]=3D...
+ Name[sr]=3D...</pre><p>
+      then the value of the <code class=3D"varname">Name</code> keyed by <c=
+ode class=3D"literal">sr_YU</code> is used.
+    </p><p>
+      Although icon names of type <code class=3D"literal">iconstring</code>=
+ are localizable,
+      they are not human-readable strings, so should typically not be handl=
+ed
+      by translation tools.  Most applications are not expected to localize
+      their icons; exceptions might include icons containing text or
+      culture-specific symbology.
+    </p></div><div class=3D"sect1"><div class=3D"titlepage"><div><div><h2 c=
+lass=3D"title" style=3D"clear: both"><a name=3D"recognized-keys"></a>Recogn=
+ized desktop entry keys</h2></div></div></div><p>
+      Keys are either OPTIONAL or REQUIRED.  If a key is OPTIONAL it may or
+      may not be present in the file.  However, if it isn't, the
+      implementation of the standard should not blow up, it must provide
+      some sane defaults.
+    </p><p>
+      Some keys only make sense in the context when another particular key
+      is also present and set to a specific value. Those keys should not be
+      used if the particular key is not present or not set to the specific
+      value. For example, the <code class=3D"varname">Terminal</code> key c=
+an only be used
+      when the value of the <code class=3D"varname">Type</code> key is
+      <code class=3D"constant">Application</code>.
+    </p><p>
+      If a REQUIRED key is only valid in the context of another key set to =
+a
+      specific value, then it has to be present only if the other key is se=
+t to
+      the specific value. For example, the <code class=3D"varname">URL</cod=
+e> key has to be
+      present when and only when when the value of the <code class=3D"varna=
+me">Type</code>
+      key is <code class=3D"constant">Link</code>.
+    </p><p>
+      Some example keys: <code class=3D"varname">Name[C]</code>, <code clas=
+s=3D"varname">Comment[it]</code>.
+    </p><div class=3D"table"><a name=3D"idm45632488282464"></a><p class=3D"=
+title"><b>Table&nbsp;2.&nbsp;Standard Keys</b></p><div class=3D"table-conte=
+nts"><table class=3D"table" summary=3D"Standard Keys" border=3D"1"><colgrou=
+p><col><col><col><col><col></colgroup><thead><tr><th>Key</th><th>Descriptio=
+n</th><th>Value Type</th><th>REQ?</th><th>Type</th></tr></thead><tbody><tr>=
+<td><a name=3D"key-type"></a><code class=3D"varname">Type</code></td><td>
+	      This specification defines 3 types of desktop entries:
+	      <code class=3D"constant">Application</code> (type 1),
+	      <code class=3D"constant">Link</code> (type 2)
+	      and <code class=3D"constant">Directory</code> (type 3).
+	      To allow the addition of new types in the future,=20
+	      implementations should ignore desktop entries with an
+	      unknown type.
+	    </td><td>string</td><td>YES</td><td class=3D"auto-generated">&nbsp;</t=
+d></tr><tr><td><a name=3D"key-version"></a><code class=3D"varname">Version<=
+/code></td><td>
+	      Version of the Desktop Entry Specification that the
+	      desktop entry conforms with. Entries that confirm with this=20
+	      version of the specification should use <code class=3D"literal">1.5<=
+/code>.
+	      Note that the version field is not required to be present.
+	    </td><td>string</td><td>NO</td><td>1-3</td></tr><tr><td><a name=3D"key=
+-name"></a><code class=3D"varname">Name</code></td><td>
+          Specific name of the application, for example "Mozilla".
+	    </td><td>localestring</td><td>YES</td><td>1-3</td></tr><tr><td><a name=
+=3D"key-genericname"></a><code class=3D"varname">GenericName</code></td><td=
+>
+          Generic name of the application, for example "Web Browser".
+	    </td><td>localestring</td><td>NO</td><td>1-3</td></tr><tr><td><a name=
+=3D"key-nodisplay"></a><code class=3D"varname">NoDisplay</code></td><td>
+		  <code class=3D"varname">NoDisplay</code> means "this application exists=
+, but don't display it in the menus".
+		  This can be useful to e.g. associate this application with MIME types, =
+so that
+		  it gets launched from a file manager (or other apps), without having a =
+menu
+		  entry for it (there are tons of good reasons for this, including e.g. t=
+he
+		  <code class=3D"literal">netscape -remote</code>, or <code class=3D"lite=
+ral">kfmclient openURL</code> kind of stuff).
+	    </td><td>boolean</td><td>NO</td><td>1-3</td></tr><tr><td><a name=3D"ke=
+y-comment"></a><code class=3D"varname">Comment</code></td><td>
+	    Tooltip for the entry, for example "View sites on the
+	    Internet". The value should not be redundant with the values of
+	    <code class=3D"varname">Name</code> and <code class=3D"varname">Generi=
+cName</code>.
+	    </td><td>localestring</td><td>NO</td><td>1-3</td></tr><tr><td><a name=
+=3D"key-icon"></a><code class=3D"varname">Icon</code></td><td>
+          Icon to display in file manager, menus, etc.  If the
+          name is an absolute path, the given file will be
+          used. If the name is not an absolute path, the algorithm describe=
+d
+	  in the <a class=3D"ulink" href=3D"http://freedesktop.org/wiki/Standards/=
+icon-theme-spec" target=3D"_top">Icon
+	  Theme Specification</a> will be used to locate the icon.
+	    </td><td>iconstring</td><td>NO</td><td>1-3</td></tr><tr><td><a name=3D=
+"key-hidden"></a><code class=3D"varname">Hidden</code></td><td>
+		  <code class=3D"varname">Hidden</code> should have been called <code cla=
+ss=3D"varname">Deleted</code>.
+		  It means the user deleted (at his level)
+		  something that was present (at an upper level, e.g. in the system dirs)=
+. It's
+		  strictly equivalent to the <code class=3D"filename">.desktop</code> fil=
+e not existing at all, as far as that user is
+		  concerned. This can also be used to "uninstall" existing files (e.g. du=
+e to a renaming)
+		  - by letting <code class=3D"literal">make install</code> install a file=
+ with <code class=3D"literal">Hidden=3Dtrue</code> in it.
+	    </td><td>boolean</td><td>NO</td><td>1-3</td></tr><tr><td><a name=3D"ke=
+y-onlyshowin"></a><code class=3D"varname">OnlyShowIn</code>, <code class=3D=
+"varname">NotShowIn</code></td><td>
+              <p>
+                A list of strings identifying the desktop environments that
+                should display/not display a given desktop entry.
+              </p>
+
+              <p>
+                By default, a desktop file should be shown, unless an OnlyS=
+howIn
+                key is present, in which case, the default is for the file =
+not to
+                be shown.
+              </p>
+
+              <p>
+                If <code class=3D"envar">$XDG_CURRENT_DESKTOP</code> is set=
+ then it contains a
+                colon-separated list of strings.  In order, each string is
+                considered.  If a matching entry is found in
+                <code class=3D"varname">OnlyShowIn</code> then the desktop =
+file is shown.
+                If an entry is found in <code class=3D"varname">NotShowIn</=
+code> then the
+                desktop file is not shown.  If none of the strings match th=
+en
+                the default action is taken (as above).
+              </p>
+
+              <p>
+                <code class=3D"envar">$XDG_CURRENT_DESKTOP</code> should ha=
+ve been set by the login manager, according to the
+                value of the <code class=3D"varname">DesktopNames</code> fo=
+und in the session file.  The entry in the
+                session file has multiple values separated in the usual way=
+: with a semicolon.
+              </p>
+
+              <p>
+                The same desktop name may not appear in both
+                <code class=3D"varname">OnlyShowIn</code> and <code class=
+=3D"varname">NotShowIn</code> of
+                a group.
+              </p>
+	    </td><td>string(s)</td><td>NO</td><td>1-3</td></tr><tr><td><a name=3D"=
+key-dbusactivatable"></a><code class=3D"varname">DBusActivatable</code></td=
+><td>
+              A boolean value specifying if D-Bus activation is supported f=
+or this application.  If this key is
+              missing, the default value is <code class=3D"literal">false</=
+code>.  If the value is <code class=3D"literal">true</code>
+              then implementations should ignore the <code class=3D"varname=
+">Exec</code> key and send a D-Bus message to
+              launch the application.  See <a class=3D"link" href=3D"https:=
+//specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-late=
+st.html#dbus" title=3D"D-Bus Activation">D-Bus Activation</a> for more info=
+rmation on
+              how this works.  Applications should still include Exec=3D li=
+nes in their desktop files for
+              compatibility with implementations that do not understand the=
+ DBusActivatable key.
+            </td><td>boolean</td><td>NO</td><td>&nbsp;</td></tr><tr><td><a =
+name=3D"key-tryexec"></a><code class=3D"varname">TryExec</code></td><td>
+          Path to an executable file on disk used to determine if the progr=
+am
+          is actually installed. If the path is not an absolute path, the f=
+ile
+          is looked up in the $PATH environment variable. If the file is no=
+t
+          present or if it is not executable, the entry may be ignored (not=
+ be
+          used in menus, for example).
+	    </td><td>string</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"key-e=
+xec"></a><code class=3D"varname">Exec</code></td><td>
+              Program to execute, possibly with arguments. See the
+              <a class=3D"link" href=3D"https://specifications.freedesktop.=
+org/desktop-entry-spec/desktop-entry-spec-latest.html#exec-variables" title=
+=3D"The Exec key"><code class=3D"varname">Exec</code> key</a> for details o=
+n how this key
+              works.  The <code class=3D"varname">Exec</code> key is requir=
+ed if <code class=3D"varname">DBusActivatable</code> is not
+              set to <code class=3D"literal">true</code>.  Even if <code cl=
+ass=3D"varname">DBusActivatable</code> is
+              <code class=3D"literal">true</code>, <code class=3D"varname">=
+Exec</code> should be specified for compatibility with
+              implementations that do not understand <code class=3D"varname=
+">DBusActivatable</code>.
+	    </td><td>string</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"key-p=
+ath"></a><code class=3D"varname">Path</code></td><td>
+           If entry is of type <code class=3D"constant">Application</code>,=
+ the working directory to run the program in.
+	    </td><td>string</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"key-t=
+erminal"></a><code class=3D"varname">Terminal</code></td><td>
+           Whether the program runs in a terminal window.
+	    </td><td>boolean</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"key-=
+actions"></a><code class=3D"varname">Actions</code></td><td>
+           Identifiers for application actions. This can be used to tell th=
+e
+           application to make a specific action, different from the defaul=
+t
+           behavior. The <a class=3D"link" href=3D"https://specifications.f=
+reedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#extra-acti=
+ons" title=3D"Additional applications actions">Application actions</a>
+           section describes how actions work.
+	    </td><td>string(s)</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"ke=
+y-mimetype"></a><code class=3D"varname">MimeType</code></td><td>
+           The MIME type(s) supported by this application.
+	    </td><td>string(s)</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"ke=
+y-categories"></a><code class=3D"varname">Categories</code></td><td>
+          Categories in which the entry should be shown in a menu (for
+          possible values see the <a class=3D"ulink" href=3D"http://www.fre=
+edesktop.org/Standards/menu-spec" target=3D"_top">Desktop
+          Menu Specification</a>).
+	    </td><td>string(s)</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"ke=
+y-implements"></a><code class=3D"varname">Implements</code></td><td>
+              A list of interfaces that this application implements.  By de=
+fault, a desktop file implements no
+              interfaces.  See <a class=3D"link" href=3D"https://specificat=
+ions.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#inte=
+rfaces" title=3D"Interfaces">Interfaces</a> for more information on how thi=
+s
+              works.
+            </td><td>string(s)</td><td>NO</td><td>&nbsp;</td></tr><tr><td><=
+a name=3D"key-keywords"></a><code class=3D"varname">Keywords</code></td><td=
+>
+            A list of strings which may be used in addition to other
+            metadata to describe this entry. This can be useful e.g. to
+            facilitate searching through entries. The values are not meant
+            for display, and should not be redundant with the values of
+            <code class=3D"varname">Name</code> or <code class=3D"varname">=
+GenericName</code>.
+            </td><td>localestring(s)</td><td>NO</td><td>1</td></tr><tr><td>=
+<a name=3D"key-startupnotify"></a><code class=3D"varname">StartupNotify</co=
+de></td><td>
+			If true, it is KNOWN that the application will send a "remove"
+			message when started with the DESKTOP_STARTUP_ID environment variable se=
+t.
+			If false, it is KNOWN that the application does not work
+			with startup notification at all (does not shown any window, breaks
+			even when using StartupWMClass, etc.).
+			If absent, a reasonable handling is up to implementations (assuming fals=
+e,
+			using StartupWMClass, etc.). (See the <a class=3D"ulink" href=3D"http://=
+www.freedesktop.org/Standards/startup-notification-spec" target=3D"_top">St=
+artup Notification Protocol Specification</a> for more details).
+	    </td><td>boolean</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"key-=
+startupwmclass"></a><code class=3D"varname">StartupWMClass</code></td><td>
+			If specified, it is known that the application will map at least one
+			window with the given string as its WM class or WM name hint (see the <a=
+ class=3D"ulink" href=3D"http://www.freedesktop.org/Standards/startup-notif=
+ication-spec" target=3D"_top">Startup Notification Protocol Specification</=
+a> for more details).
+	    </td><td>string</td><td>NO</td><td>1</td></tr><tr><td><a name=3D"key-u=
+rl"></a><code class=3D"varname">URL</code></td><td>
+           If entry is Link type, the URL to access.
+	    </td><td>string</td><td>YES</td><td>2</td></tr><tr><td><a name=3D"key-=
+prefersnondefaultgpu"></a><code class=3D"varname">PrefersNonDefaultGPU</cod=
+e></td><td>
+              If true, the application prefers to be run on a more powerful=
+ discrete GPU if available,
+              which we describe as =E2=80=9Ca GPU other than the default on=
+e=E2=80=9D in this spec to avoid the need
+              to define what a discrete GPU is and in which cases it might =
+be considered more powerful
+              than the default GPU.
+              This key is only a hint and support might not be present depe=
+nding on the implementation.
+            </td><td>boolean</td><td>NO</td><td>1</td></tr></tbody></table>=
+</div></div><br class=3D"table-break"></div><div class=3D"sect1"><div class=
+=3D"titlepage"><div><div><h2 class=3D"title" style=3D"clear: both"><a name=
+=3D"exec-variables"></a>The <code class=3D"varname">Exec</code> key</h2></d=
+iv></div></div><p>
+      The <code class=3D"varname">Exec</code> key must contain a command li=
+ne.
+      A command line consists of an executable program optionally followed
+      by one or more arguments.
+      The executable program can either be specified with its full path or
+      with the name of the executable only. If no full path is provided the
+      executable is looked up in the $PATH environment variable used by the
+      desktop environment.  =20
+      The name or path of the executable program may not contain the equal
+      sign ("=3D"). Arguments are separated by a space.
+    </p><p>
+      Arguments may be quoted in whole. If an argument contains a reserved
+      character the argument must be quoted. The rules for quoting of
+      arguments is also applicable to the executable name or path of the
+      executable program as provided.
+    </p><p>
+      Quoting must be done by enclosing the argument between double quotes
+      and escaping the double quote character, backtick character ("`"),
+      dollar sign ("$") and backslash character ("\") by preceding it with =
+an
+      additional backslash character. Implementations must undo quoting bef=
+ore
+      expanding field codes and before passing the argument to the executab=
+le
+      program. Reserved characters are space (" "), tab, newline, double
+      quote, single quote ("'"), backslash character ("\"),=20
+      greater-than sign ("&gt;"), less-than sign ("&lt;"),
+      tilde ("~"), vertical bar ("|"), ampersand ("&amp;"), semicolon (";")=
+,
+      dollar sign ("$"), asterisk ("*"), question mark ("?"), hash mark ("#=
+"),
+      parenthesis ("(") and (")") and backtick character ("`").
+    </p><p>
+      Note that the general escape rule for values of type string states th=
+at
+      the backslash character can be escaped as ("\\") as well and that thi=
+s
+      escape rule is applied before the quoting rule. As such, to
+      unambiguously represent a literal backslash character in a quoted
+      argument in a desktop entry file requires the use of four successive
+      backslash characters ("\\\\"). Likewise, a literal dollar sign in a
+      quoted argument in a desktop entry file is unambiguously represented
+      with ("\\$").
+    </p><p>
+      A number of special field codes have been defined which will be
+      expanded by the file manager or program launcher when encountered
+      in the command line.
+      Field codes consist of the percentage character ("%") followed by
+      an alpha character. Literal percentage characters must be escaped
+      as <code class=3D"literal">%%</code>.
+      Deprecated field codes should be removed from the command line and
+      ignored.
+      Field codes are expanded only once, the string that is used to
+      replace the field code should not be checked for field codes itself.
+    </p><p>
+      Command lines that contain a field code that is not listed in this
+      specification are invalid and must not be processed, in particular
+      implementations may not introduce support for field codes not listed
+      in this specification. Extensions, if any, should be introduced by
+      means of a new key.
+    </p><p>
+      Implementations must take care not to expand field codes into multipl=
+e
+      arguments unless explicitly instructed by this specification.
+      This means that name fields, filenames and other replacements that
+      can contain spaces must be passed as a single argument
+      to the executable program after expansion.
+    </p><p>
+      Although the <code class=3D"varname">Exec</code> key is defined to ha=
+ve a value
+      of the type string, which is limited to ASCII characters, field code
+      expansion may introduce non-ASCII characters in arguments.
+      Implementations must take care that all characters in arguments
+      passed to the executable program are properly encoded according to
+      the applicable locale setting.
+    </p><p>
+    Recognized field codes are as follows:
+    </p><div class=3D"informaltable"><table class=3D"informaltable" border=
+=3D"1"><colgroup><col><col></colgroup><thead><tr><th>Code</th><th>Descripti=
+on</th></tr></thead><tbody><tr><td><code class=3D"literal">%f</code></td><t=
+d>
+	      A single file name (including the path), even if multiple files are =
+selected.  The system
+	      reading the desktop entry should recognize that the program in
+	      question cannot handle multiple file arguments, and it should
+	      should probably spawn and execute multiple copies of a program
+	      for each selected file if the program is not able to handle
+	      additional file arguments. If files are not on the local file system
+	      (i.e. are on HTTP or FTP locations), the files will be copied to the=
+ local
+	      file system and <code class=3D"literal">%f</code> will be expanded t=
+o point at the temporary
+	      file. Used for programs that do not understand the URL syntax.
+	    </td></tr><tr><td><code class=3D"literal">%F</code></td><td>
+	      A list of files. Use for apps that can open several local
+	      files at once.
+	      Each file is passed as a separate argument to
+	      the executable program.
+	    </td></tr><tr><td><code class=3D"literal">%u</code></td><td>
+	      A single URL. Local files may either be passed as
+	      file: URLs or as file path.=20
+	    </td></tr><tr><td><code class=3D"literal">%U</code></td><td>
+	      A list of URLs.
+	      Each URL is passed as a separate argument to
+	      the executable program. Local files may either be passed as
+	      file: URLs or as file path.=20
+	    </td></tr><tr><td><code class=3D"literal">%d</code></td><td>
+	      Deprecated.
+	    </td></tr><tr><td><code class=3D"literal">%D</code></td><td>
+	      Deprecated.
+	    </td></tr><tr><td><code class=3D"literal">%n</code></td><td>
+	      Deprecated.
+	    </td></tr><tr><td><code class=3D"literal">%N</code></td><td>
+	      Deprecated.
+	    </td></tr><tr><td><code class=3D"literal">%i</code></td><td>
+              The <code class=3D"varname">Icon</code> key of the desktop en=
+try
+              expanded as two arguments, first
+              <code class=3D"literal">--icon</code> and then the value of t=
+he
+              <code class=3D"varname">Icon</code> key. Should not expand to=
+ any
+              arguments if the <code class=3D"varname">Icon</code> key is e=
+mpty
+              or missing.
+	    </td></tr><tr><td><code class=3D"literal">%c</code></td><td>
+	      The translated name of the application as listed in
+	      the appropriate <code class=3D"varname">Name</code> key in the
+	      desktop entry.
+	    </td></tr><tr><td><code class=3D"literal">%k</code></td><td>
+	      The location of the desktop file as either a URI (if for
+	      example gotten from the vfolder system) or a local
+	      filename or empty if no location is known.
+	    </td></tr><tr><td><code class=3D"literal">%v</code></td><td>
+	      Deprecated.
+	    </td></tr><tr><td><code class=3D"literal">%m</code></td><td>
+	      Deprecated.
+	    </td></tr></tbody></table></div><p>
+      A command line may contain at most one %f, %u, %F or %U field code.
+      If the application should not open any
+      file the %f, %u, %F and %U field codes must be removed from the
+      command line and ignored.
+    </p><p>
+      Field codes must not be used inside a quoted argument, the result of
+      field code expansion inside a quoted argument is undefined. The %F an=
+d
+      %U field codes may only be used as an argument on their own.
+    </p></div><div class=3D"sect1"><div class=3D"titlepage"><div><div><h2 c=
+lass=3D"title" style=3D"clear: both"><a name=3D"dbus"></a>D-Bus Activation<=
+/h2></div></div></div><p>
+      Applications that support being launched by D-Bus must implement the =
+following interface (given in D-Bus
+      introspection XML format):
+    </p><pre class=3D"programlisting">  &lt;interface name=3D'org.freedeskt=
+op.Application'&gt;
+    &lt;method name=3D'Activate'&gt;
+      &lt;arg type=3D'a{sv}' name=3D'platform_data' direction=3D'in'/&gt;
+    &lt;/method&gt;
+    &lt;method name=3D'Open'&gt;
+      &lt;arg type=3D'as' name=3D'uris' direction=3D'in'/&gt;
+      &lt;arg type=3D'a{sv}' name=3D'platform_data' direction=3D'in'/&gt;
+    &lt;/method&gt;
+    &lt;method name=3D'ActivateAction'&gt;
+      &lt;arg type=3D's' name=3D'action_name' direction=3D'in'/&gt;
+      &lt;arg type=3D'av' name=3D'parameter' direction=3D'in'/&gt;
+      &lt;arg type=3D'a{sv}' name=3D'platform_data' direction=3D'in'/&gt;
+    &lt;/method&gt;
+  &lt;/interface&gt;
+    </pre><p>
+      The application must name its desktop file in accordance with the nam=
+ing recommendations in the
+      introduction section (e.g. the filename must be like <code class=3D"l=
+iteral">org.example.FooViewer.desktop</code>).
+      The application must have a D-Bus service activatable at the well-kno=
+wn name that is equal to the desktop
+      file name with the <code class=3D"filename">.desktop</code> portion r=
+emoved (for our example,
+      <code class=3D"literal">org.example.FooViewer</code>).  The above int=
+erface must be implemented at an object path
+      determined as follows: starting with the well-known D-Bus name of the=
+ application, change all dots to
+      slashes and prefix a slash.  If a dash ('<code class=3D"literal">-</c=
+ode>') is found, convert it to an underscore
+      ('<code class=3D"literal">_</code>').  For our example, this is <code=
+ class=3D"literal">/org/example/FooViewer</code>.
+    </p><p>
+      The <code class=3D"literal">Activate</code> method is called when the=
+ application is started without files to open.
+    </p><p>
+      The <code class=3D"literal">Open</code> method is called when the app=
+lication is started with files.  The array of
+      strings is an array of URIs, in UTF-8.
+    </p><p>
+      The <code class=3D"literal">ActivateAction</code> method is called wh=
+en <a class=3D"link" href=3D"https://specifications.freedesktop.org/desktop=
+-entry-spec/desktop-entry-spec-latest.html#extra-actions" title=3D"Addition=
+al applications actions">Desktop
+      Actions</a> are activated.  The <code class=3D"literal">action-name</=
+code> parameter is the name of the action.
+    </p><p>
+      All methods take a <code class=3D"literal">platform-data</code> argum=
+ent that is used in a similar way to how
+      environment variables might be used.  Currently, only one field is de=
+fined by the specification:
+      <code class=3D"varname">desktop-startup-id</code>.  This should be a =
+string of the same value as would be stored in
+      the <code class=3D"varname">DESKTOP_STARTUP_ID</code> environment var=
+iable, as specified by the <a class=3D"ulink" href=3D"http://www.freedeskto=
+p.org/Standards/startup-notification-spec" target=3D"_top">Startup Notifica=
+tion Protocol
+      Specification</a>.
+    </p></div><div class=3D"sect1"><div class=3D"titlepage"><div><div><h2 c=
+lass=3D"title" style=3D"clear: both"><a name=3D"interfaces"></a>Interfaces<=
+/h2></div></div></div><p>
+      The <code class=3D"varname">Implements</code> key can be used to decl=
+are one or more interfaces that a desktop file
+      implements.
+    </p><p>
+      Each interface name must follow the rules used for D-Bus interface na=
+mes, but other than that, they have
+      no particular meaning.  For instance, listing an interface here does =
+not necessarily mean that this
+      application implements that D-Bus interface or even that such a D-Bus=
+ interface exists.  It is entirely up
+      to the entity who defined a particular interface to define what it me=
+ans to implement it.
+    </p><p>
+      Although it is entirely up to the designer of the interface to decide=
+ what a given interface name means,
+      here are some recommended "best practices":
+    </p><div class=3D"itemizedlist"><ul class=3D"itemizedlist" style=3D"lis=
+t-style-type: disc; "><li class=3D"listitem"><p>
+          interfaces should require that application is DBusActivatable, in=
+cluding the requirement that the
+          application's desktop file is named using the D-Bus "reverse DNS"=
+ convention
+        </p></li><li class=3D"listitem"><p>
+          the interface name should correspond to a D-Bus interface that th=
+e application exports on the same
+          object path as it exports the org.freedesktop.Application interfa=
+ce
+        </p></li><li class=3D"listitem"><p>
+          if the interface wishes to allow for details about the implementa=
+tion, it should do so by specifying
+          that implementers add a group in their desktop file with the same=
+ name as the interface (eg:
+          "[org.freedesktop.ImageAcquire]")
+        </p></li></ul></div><p>
+      Recommendations notwithstanding, interfaces could specify almost any =
+imaginable requirement including such
+      (ridiculous) things as "when launched via the Exec line, the applicat=
+ion is expected to present a window
+      with the _FOO_IDENTIFIER property set, at which point an X client mes=
+sage will be sent to that window".
+      Another example is "all implementations of this interface are expecte=
+d to be marked NoDisplay and, on
+      launch, will present no windows and will delete all of the user's fil=
+es without confirmation".
+    </p><p>
+      Interface definers should take care to keep issues of backward and fo=
+rward compatibility in mind when
+      designing their interfaces.
+    </p></div><div class=3D"sect1"><div class=3D"titlepage"><div><div><h2 c=
+lass=3D"title" style=3D"clear: both"><a name=3D"mime-types"></a>Registering=
+ MIME Types</h2></div></div></div><p>
+      The <code class=3D"varname">MimeType</code> key is used to indicate t=
+he MIME
+      Types that an application knows how to handle. It is expected that
+      for some applications this list could become long.  An application
+      is expected to be able to reasonably open files of these types
+      using the command listed in the <code class=3D"varname">Exec</code> k=
+ey.
+    </p><p>
+      There should be no priority for MIME Types in this field, or any
+      form of priority in the desktop file.  Priority for applications
+      is handled external to the <code class=3D"filename">.desktop</code> f=
+iles.
+    </p></div><div class=3D"sect1"><div class=3D"titlepage"><div><div><h2 c=
+lass=3D"title" style=3D"clear: both"><a name=3D"extra-actions"></a>Addition=
+al applications actions</h2></div></div></div><p>
+      Desktop entries of type Application can include one or more actions. =
+An
+      action represents an additional way to invoke the application.
+      Application launchers should expose them to the user (for example, as=
+ a
+      submenu) within the context of the application. This is used to build
+      so called "Quicklists" or "Jumplists".
+    </p><div class=3D"sect2"><div class=3D"titlepage"><div><div><h3 class=
+=3D"title"><a name=3D"extra-actions-identifier"></a>Action identifier</h3><=
+/div></div></div><p>
+        Each action is identified by a string, following the same format
+        as key names (see <a class=3D"xref" href=3D"https://specifications.=
+freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#entries" =
+title=3D"Entries">the section called =E2=80=9CEntries=E2=80=9D</a>). Each i=
+dentifier is associated
+        with an action group that must be present in the <code class=3D"fil=
+ename">.desktop</code>
+        file. The action group is a group named <code class=3D"varname">Des=
+ktop Action %s</code>,
+        where <code class=3D"varname">%s</code> is the action identifier.
+      </p><p>
+        It is not valid to have an action group for an action identifier no=
+t
+        mentioned in the <code class=3D"varname">Actions</code> key. Such a=
+n action group
+        must be ignored by implementors.
+      </p></div><div class=3D"sect2"><div class=3D"titlepage"><div><div><h3=
+ class=3D"title"><a name=3D"extra-actions-keys"></a>Action keys</h3></div><=
+/div></div><p>
+        The following keys are supported within each action group. If a
+        REQUIRED key is not present in an action group, then the implemento=
+r
+        should ignore this action.
+      </p><div class=3D"table"><a name=3D"idm45632483602448"></a><p class=
+=3D"title"><b>Table&nbsp;3.&nbsp;Action Specific Keys</b></p><div class=3D"=
+table-contents"><table class=3D"table" summary=3D"Action Specific Keys" bor=
+der=3D"1"><colgroup><col><col><col><col><col></colgroup><thead><tr><th>Key<=
+/th><th>Description</th><th>Value Type</th><th>REQ?</th><td class=3D"auto-g=
+enerated">&nbsp;</td></tr></thead><tbody><tr><td><a name=3D"key-action-grou=
+p-name"></a><code class=3D"varname">Name</code></td><td>
+                Label that will be shown to the user. Since actions are
+                always shown in the context of a specific application (that=
+ is, as
+                a submenu of a launcher), this only needs to be unambiguous=
+ within
+                one application and should not include the application name=
+.
+              </td><td>localestring</td><td>YES</td><td class=3D"auto-gener=
+ated">&nbsp;</td></tr><tr><td><a name=3D"key-action-group-icon"></a><code c=
+lass=3D"varname">Icon</code></td><td>
+                Icon to be shown together with the action. If the name is
+                an absolute path, the given file will be used. If the name =
+is not
+                an absolute path, the algorithm described in the <a class=
+=3D"ulink" href=3D"http://freedesktop.org/wiki/Standards/icon-theme-spec" t=
+arget=3D"_top">Icon
+                Theme Specification</a> will be used to locate the icon.
+                Implementations may choose to ignore it.
+              </td><td>iconstring</td><td>NO</td><td class=3D"auto-generate=
+d">&nbsp;</td></tr><tr><td><a name=3D"key-action-group-exec"></a><code clas=
+s=3D"varname">Exec</code></td><td>
+                Program to execute for this action, possibly with arguments=
+.  See the
+                <a class=3D"link" href=3D"https://specifications.freedeskto=
+p.org/desktop-entry-spec/desktop-entry-spec-latest.html#exec-variables" tit=
+le=3D"The Exec key"><code class=3D"varname">Exec</code> key</a> for details=
+ on how this key
+                works.  The <code class=3D"varname">Exec</code> key is requ=
+ired if <code class=3D"varname">DBusActivatable</code> is not
+                set to <code class=3D"literal">true</code> in the main desk=
+top entry group.  Even if
+                <code class=3D"varname">DBusActivatable</code> is <code cla=
+ss=3D"literal">true</code>, <code class=3D"varname">Exec</code> should be
+                specified for compatibility with implementations that do no=
+t understand
+                <code class=3D"varname">DBusActivatable</code>.
+              </td><td>string</td><td>NO</td><td class=3D"auto-generated">&=
+nbsp;</td></tr></tbody></table></div></div><br class=3D"table-break"></div>=
+<div class=3D"sect2"><div class=3D"titlepage"><div><div><h3 class=3D"title"=
+><a name=3D"extra-actions-implementation-notes"></a>Implementation notes</h=
+3></div></div></div><p>
+        Application actions should be supported by implementors. However, i=
+n
+        case they are not supported, implementors can simply ignore the
+        <code class=3D"varname">Actions</code> key and the associated <code=
+ class=3D"varname">Desktop
+        Action</code> action groups, and keep using the <code class=3D"varn=
+ame">Desktop
+        Entry</code> group: the primary way to describe and invoke the
+        application is through the Name, Icon and Exec keys from the
+        <code class=3D"varname">Desktop Entry</code> group.
+      </p><p>
+        It is not expected that other desktop components showing applicatio=
+n
+        lists (software installers, for instance) will provide any user
+        interface for these actions. Therefore applications must only inclu=
+de
+        actions that make sense as general launchers.
+      </p></div></div><div class=3D"sect1"><div class=3D"titlepage"><div><d=
+iv><h2 class=3D"title" style=3D"clear: both"><a name=3D"extending"></a>Exte=
+nding the format</h2></div></div></div><p>
+      If the standard is to be amended with a new <code class=3D"literal">{=
+key,value}</code> pair which
+      should be applicable to all supporting parties, a group discussion
+      will take place.  This is the preferred method for introducing
+      changes.  If one particular party wishes to add a field for personal
+      use, they should prefix the key with the string <code class=3D"varnam=
+e">X-<em class=3D"replaceable"><code>PRODUCT</code></em></code>,
+      e.g. <code class=3D"varname">X-NewDesktop-Foo</code>, following the p=
+recedent set by other IETF and RFC
+      standards.
+    </p><p>
+      Alternatively, fields can be placed in their own group, where they ma=
+y
+      then have arbitrary key names.  If this is the case, the group should
+      follow the scheme outlined above,
+      i.e. <code class=3D"literal">[X-<em class=3D"replaceable"><code>PRODU=
+CT</code></em>
+      <em class=3D"replaceable"><code>GROUPNAME</code></em>]</code> or
+      something similar.  These steps will avoid namespace clashes between
+      different yet similar environments.
+    </p></div><div class=3D"appendix"><h2 class=3D"title" style=3D"clear: b=
+oth"><a name=3D"example"></a>A.&nbsp;Example Desktop Entry File</h2><pre cl=
+ass=3D"programlisting">[Desktop Entry]
+Version=3D1.0
+Type=3DApplication
+Name=3DFoo Viewer
+Comment=3DThe best viewer for Foo objects available!
+TryExec=3Dfooview
+Exec=3Dfooview %F
+Icon=3Dfooview
+MimeType=3Dimage/x-foo;
+Actions=3DGallery;Create;
+
+[Desktop Action Gallery]
+Exec=3Dfooview --gallery
+Name=3DBrowse Gallery
+
+[Desktop Action Create]
+Exec=3Dfooview --create-new
+Name=3DCreate a new Foo!
+Icon=3Dfooview-new
+    </pre></div><div class=3D"appendix"><h2 class=3D"title" style=3D"clear:=
+ both"><a name=3D"kde-items"></a>B.&nbsp;Currently reserved for use within =
+KDE</h2><p>
+      For historical reasons KDE is using some KDE-specific extensions
+      that are currently not prefixed by a <code class=3D"literal">X-KDE-</=
+code> prefix.
+    </p><div class=3D"itemizedlist"><ul class=3D"itemizedlist" style=3D"lis=
+t-style-type: disc; "><li class=3D"listitem"><p>
+         KDE specific keys: <code class=3D"varname">ServiceTypes</code>,
+         <code class=3D"varname">DocPath</code>, <code class=3D"varname">In=
+itialPreference</code>
+        </p></li><li class=3D"listitem"><p>
+         KDE specific types: <code class=3D"constant">ServiceType</code>,
+         <code class=3D"constant">Service</code> and <code class=3D"constan=
+t">FSDevice</code>
+        </p></li></ul></div><p>
+      KDE also used the <code class=3D"varname">Keywords</code> key before =
+it was
+      standardized, using commas instead of semi-colons as separators.
+      At the time of standardization, the field had been prefixed with a
+      <code class=3D"literal">X-KDE</code> prefix, but the Trinity fork sti=
+ll used
+      the non-prefixed variant.
+    </p><p>
+      KDE uses the following additional keys for desktop entries of the
+      <code class=3D"constant">FSDevice</code> type.
+    </p><div class=3D"table"><a name=3D"idm45632483565776"></a><p class=3D"=
+title"><b>Table&nbsp;B.1.&nbsp;FSDevice Specific Keys</b></p><div class=3D"=
+table-contents"><table class=3D"table" summary=3D"FSDevice Specific Keys" b=
+order=3D"1"><colgroup><col><col><col></colgroup><thead><tr><th>Key</th><th>=
+Description</th><th>Value Type</th></tr></thead><tbody><tr><td><a name=3D"k=
+ey-dev"></a><code class=3D"varname">Dev</code></td><td>
+           The device to mount.
+	    </td><td>string</td></tr><tr><td><a name=3D"key-fstype"></a><code clas=
+s=3D"varname">FSType</code></td><td>
+           The type of file system to try to mount.
+	    </td><td>string</td></tr><tr><td><a name=3D"key-mountpoint"></a><code =
+class=3D"varname">MountPoint</code></td><td>
+           The mount point of the device in question.
+	    </td><td>string</td></tr><tr><td><a name=3D"key-readonly"></a><code cl=
+ass=3D"varname">ReadOnly</code></td><td>
+           Specifies whether or not the device is read only.
+	    </td><td>boolean</td></tr><tr><td><a name=3D"key-unmounticon"></a><cod=
+e class=3D"varname">UnmountIcon</code></td><td>
+           Icon to display when device is not mounted.  Mounted devices dis=
+play icon from the <code class=3D"varname">Icon</code> key.
+	    </td><td>iconstring</td></tr></tbody></table></div></div><br class=3D"=
+table-break"></div><div class=3D"appendix"><h2 class=3D"title" style=3D"cle=
+ar: both"><a name=3D"deprecated-items"></a>C.&nbsp;Deprecated Items</h2><p>
+    As this standard is quite old there are some deprecated items that
+    may or may not be used by several implementations.
+  </p><div class=3D"itemizedlist"><ul class=3D"itemizedlist" style=3D"list-=
+style-type: disc; "><li class=3D"listitem"><p>
+          <code class=3D"literal">Type=3DMimeType</code> is deprecated as t=
+here is a
+          new standard for this now, see the <a class=3D"ulink" href=3D"htt=
+p://www.freedesktop.org/Standards/shared-mime-info-spec" target=3D"_top">Sh=
+ared
+          MIME-info Database specification</a> for more
+          information. In consequence the Keys
+          <code class=3D"varname">Patterns</code> (various file name extens=
+ions
+          associated with the MIME type) and
+          <code class=3D"varname">DefaultApp</code> (the default applicatio=
+n
+          associated with this MIME type) are also deprecated.
+        </p></li><li class=3D"listitem"><p>
+          Using <code class=3D"filename">.kdelnk</code> instead of
+          <code class=3D"filename">.desktop</code> as the file extension is
+          deprecated.
+        </p></li><li class=3D"listitem"><p>
+          Using <code class=3D"literal">[KDE Desktop Entry]</code> instead =
+of
+          <code class=3D"literal">[Desktop Entry]</code> as header is depre=
+cated.
+        </p></li><li class=3D"listitem"><p>
+	  The <code class=3D"literal">Encoding</code> key is deprecated. It was us=
+ed to
+	  specify whether keys of type <code class=3D"literal">localestring</code>=
+ were
+	  encoded in UTF-8 or in the specified locale. Possible values are
+	  <code class=3D"literal">UTF-8</code> and <code class=3D"literal">Legacy-=
+Mixed</code>. See
+	  <a class=3D"xref" href=3D"https://specifications.freedesktop.org/desktop=
+-entry-spec/desktop-entry-spec-latest.html#legacy-mixed" title=3D"D.&nbsp;T=
+he Legacy-Mixed Encoding (Deprecated)">Appendix&nbsp;D, <i>The <code class=
+=3D"constant">Legacy-Mixed</code> Encoding (Deprecated)</i></a> for more de=
+tails.
+        </p></li><li class=3D"listitem"><p>
+          Deprecated <code class=3D"varname">Exec</code> field codes:
+          <code class=3D"literal">%m</code> (the mini-icon associated with =
+the
+          desktop entry, this should be expanded as two arguments,
+          <code class=3D"literal">--miniicon</code> and the content of the
+          <code class=3D"varname">MiniIcon</code> key, it can also be ignor=
+ed by
+          expanding it to no arguments), %v (the device as listed
+          in the <code class=3D"varname">Dev</code> key in the desktop file=
+),
+          %d (the directory of a file), %D (the directories of
+          files), %n (the base name of a file) and %N (the base names
+          of files).
+        </p></li><li class=3D"listitem"><p>
+          Deprecated keys: <code class=3D"varname">MiniIcon</code> (small i=
+con for
+          menus, etc.), <code class=3D"varname">TerminalOptions</code> (if =
+the
+          program runs in a terminal, any options that should be
+          passed to the terminal emulator before actually executing
+          the program), <code class=3D"varname">Protocols</code>,
+          <code class=3D"varname">Extensions</code>,
+          <code class=3D"varname">BinaryPattern</code>,
+          <code class=3D"varname">MapNotify</code>.
+        </p></li><li class=3D"listitem"><p>
+	  The <code class=3D"literal">SwallowTitle</code> and
+	  <code class=3D"literal">SwallowExec</code> keys are deprecated.
+	  The <code class=3D"literal">SwallowTitle</code> key is of type
+	  <code class=3D"literal">localestring</code> and specifies the title of t=
+he window
+	  if is swallowed onto the panel. The <code class=3D"literal">SwallowExec<=
+/code>
+	  key is of type <code class=3D"literal">string</code> and specifies the
+	  program to exec if swallowed app is clicked.
+        </p></li><li class=3D"listitem"><p>
+	  The <code class=3D"literal">SortOrder</code> key is deprecated. It is of=
+ type
+	  <code class=3D"literal">string(s)</code> and may be used to specify the =
+order in
+	  which to display files. The <a class=3D"ulink" href=3D"http://www.freede=
+sktop.org/Standards/menu-spec" target=3D"_top">Desktop
+          Menu Specification</a> defines another mechanism for defining the
+	  order of menu items.
+        </p></li><li class=3D"listitem"><p>
+	  The <code class=3D"literal">FilePattern</code> key is deprecated.
+	  The value is a list of regular
+	  expressions to match against for a file manager to determine if this
+	  entry's icon should be displayed. Usually simply the name of the main
+	  executable and friends.
+        </p></li><li class=3D"listitem"><p>
+    Historically some booleans have been represented by the numeric
+    entries <code class=3D"constant">0</code> or <code class=3D"constant">1=
+</code>. With
+    this version of the standard they are now to be represented as a
+    boolean string. However, if an implementation is reading a pre-1.0
+    desktop entry, it should interpret <code class=3D"constant">0</code> an=
+d
+    <code class=3D"constant">1</code> as <code class=3D"constant">false</co=
+de> and
+    <code class=3D"constant">true</code>, respectively.=20
+        </p></li><li class=3D"listitem"><p>
+          Historically lists have been comma separated. This is inconsisten=
+t with other lists which are separated by a semicolon. When reading a pre-1=
+.0 desktop entry, comma separated lists should continue to be supported.=20
+        </p></li></ul></div></div><div class=3D"appendix"><h2 class=3D"titl=
+e" style=3D"clear: both"><a name=3D"legacy-mixed"></a>D.&nbsp;The <code cla=
+ss=3D"constant">Legacy-Mixed</code> Encoding (Deprecated)</h2><p>
+      The <code class=3D"constant">Legacy-Mixed</code> encoding corresponds=
+ to the
+      traditional encoding of desktop files in older versions of the GNOME =
+and
+      KDE desktop files. In this encoding, the encoding of each
+      <code class=3D"literal">localestring</code> key is determined by the =
+locale tag for
+      that key, if any, instead of being UTF-8. For keys without a locale t=
+ag,
+      the value must contain only ASCII characters.
+    </p><p>
+      If the file specifies an unsupported encoding, the implementation
+      should either ignore the file, or, if the user has requested a direct
+      operation on the file (such as opening it for editing), display an
+      appropriate error indication to the user.
+    </p><p>
+      In the absence of an <code class=3D"varname">Encoding</code> key, the=
+ implementation may choose
+      to autodetect the encoding of the file by using such factors
+      as:
+    </p><div class=3D"itemizedlist"><ul class=3D"itemizedlist" style=3D"lis=
+t-style-type: disc; "><li class=3D"listitem"><p>
+	  The location of the file on the file system
+	</p></li><li class=3D"listitem"><p>
+	  Whether the contents of the file are valid UTF-8
+	</p></li></ul></div><p>
+      If the implementation does not perform such auto-detection, it should
+      treat a file without an <code class=3D"varname">Encoding</code> key i=
+n the same way as a file with an
+      unsupported <code class=3D"varname">Encoding</code> key.
+    </p><p>
+      If the locale tag includes an <code class=3D"literal">.<em class=3D"r=
+eplaceable"><code>ENCODING</code></em></code> part, then that determines
+      the encoding for the line. Otherwise, the encoding is determined
+      by the language, or
+      <code class=3D"literal"><em class=3D"replaceable"><code>lang</code></=
+em>_<em class=3D"replaceable"><code>COUNTRY</code></em></code>
+      pair from the locale tag, according to the following table.
+    </p><div class=3D"informaltable"><table class=3D"informaltable" border=
+=3D"1"><colgroup><col><col></colgroup><thead><tr><th>Encoding</th><th>Alias=
+es</th><th>Tags</th></tr></thead><tbody><tr><td>ARMSCII-8 (*)</td><td>&nbsp=
+;</td><td>hy</td></tr><tr><td>BIG5</td><td>&nbsp;</td><td>zh_TW</td></tr><t=
+r><td>CP1251</td><td>&nbsp;</td><td>be bg</td></tr><tr><td>EUC-CN</td><td>G=
+B2312</td><td>zh_CN</td></tr><tr><td>EUC-JP</td><td>&nbsp;</td><td>ja</td><=
+/tr><tr><td>EUC-KR</td><td>&nbsp;</td><td>ko</td></tr><tr><td>GEORGIAN-ACAD=
+EMY (*)</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>GEORGIAN-PS (*)</td>=
+<td>&nbsp;</td><td>ka</td></tr><tr><td>ISO-8859-1</td><td>&nbsp;</td><td>br=
+ ca da de en es eu fi fr gl it nl no pt sv wa</td></tr><tr><td>ISO-8859-2</=
+td><td>&nbsp;</td><td>cs hr hu pl ro sk sl sq sr</td></tr><tr><td>ISO-8859-=
+3 </td><td>&nbsp;</td><td>eo</td></tr><tr><td>ISO-8859-5</td><td>&nbsp;</td=
+><td>mk sp</td></tr><tr><td>ISO-8859-7</td><td>&nbsp;</td><td>el</td></tr><=
+tr><td>ISO-8859-9</td><td>&nbsp;</td><td>tr</td></tr><tr><td>ISO-8859-13</t=
+d><td>&nbsp;</td><td>lt lv mi</td></tr><tr><td>ISO-8859-14</td><td>&nbsp;</=
+td><td>cy ga</td></tr><tr><td>ISO-8859-15</td><td>&nbsp;</td><td>et</td></t=
+r><tr><td>KOI8-R</td><td>&nbsp;</td><td>ru</td></tr><tr><td>KOI8-U</td><td>=
+&nbsp;</td><td>uk</td></tr><tr><td>TCVN-5712 (*)</td><td>TCVN</td><td>vi</t=
+d></tr><tr><td>TIS-620</td><td>&nbsp;</td><td>th</td></tr><tr><td>VISCII</t=
+d><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></div><div class=3D"va=
+riablelist"><dl class=3D"variablelist"><dt><span class=3D"term">Encoding</s=
+pan></dt><dd><p>
+	    The name given here is listed here is typically the
+	    canonical name for the encoding in the GNU C Library's
+	    <code class=3D"function">iconv</code> facility.  Encodings marked with=
+ (*) are not
+	    currently supported by the GNU C Library; for this reason,
+	    implementations may choose to ignore lines in desktop
+	    files that resolve to this encoding. Desktop files with
+	    these encodings are currently rare or non-existent.
+	  </p></dd><dt><span class=3D"term">Aliases</span></dt><dd><p>
+	    Other names for the encoding found in existing desktop
+	    files.
+	  </p></dd><dt><span class=3D"term">Tags</span></dt><dd><p>
+	    Language tags for which this is the default encoding.
+	  </p></dd></dl></div><p>
+      This table above covers all tags and encodings that are known to
+      be currently in use. Implementors may choose to support
+      encodings not in the above set. For tags without defaults listed
+      in the above table, desktop file creators must specify the
+      <code class=3D"literal">.<em class=3D"replaceable"><code>ENCODING</co=
+de></em></code> part of the locale tag.
+    </p><p>
+      Matching the <code class=3D"literal">.<em class=3D"replaceable"><code=
+>ENCODING</code></em></code> part of the locale tag against a locale
+      name or alias should be done by stripping all punctuation
+      characters from both the tag and the name or alias, converting
+      both name and alias to lowercase, and comparing the result.
+      This is necessary because, for example, <code class=3D"literal">Big5<=
+/code> is frequently
+      found instead of <code class=3D"literal">BIG5</code> and <code class=
+=3D"literal">georgianacademy</code> instead of
+      <code class=3D"literal">GEORGIAN-ACADEMY</code>. Desktop files creato=
+rs should, however, use
+      the name as it appears in the "Encoding" column above.
+    </p></div><div class=3D"appendix"><h2 class=3D"title" style=3D"clear: b=
+oth"><a name=3D"idm45632483469632"></a>E.&nbsp;Changes to this Specificatio=
+n</h2><div class=3D"section"><div class=3D"titlepage"><div><div><h2 class=
+=3D"title" style=3D"clear: both"><a name=3D"idm45632483468992"></a>Changes =
+from version 1.3 to 1.4</h2></div></div></div><p>
+        Add PrefersNonDefaultGPU key.
+      </p></div><div class=3D"section"><div class=3D"titlepage"><div><div><=
+h2 class=3D"title" style=3D"clear: both"><a name=3D"idm45632483467840"></a>=
+Changes from version 1.2 to 1.3</h2></div></div></div><p>
+        New type "iconstring", similar to "localestring" but not user-displ=
+ayable.
+      </p></div><div class=3D"section"><div class=3D"titlepage"><div><div><=
+h2 class=3D"title" style=3D"clear: both"><a name=3D"idm45632483466576"></a>=
+Changes from version 1.1 to 1.2</h2></div></div></div><p>
+        New section "File naming", to formalize file names, with relation t=
+o D-Bus naming.
+      </p><p>
+        Add Implements key.
+      </p><p>
+        Specify XDG_CURRENT_DESKTOP.
+      </p></div><div class=3D"section"><div class=3D"titlepage"><div><div><=
+h2 class=3D"title" style=3D"clear: both"><a name=3D"idm45632483464544"></a>=
+Changes from version 1.0 to 1.1</h2></div></div></div><p>
+        Add DBusActivatable key.
+      </p><p>
+        Add support for Actions.
+      </p><p>
+        Add Keyword key.
+      </p><p>
+        Make Exec key mandatory.
+      </p><p>
+        Make Version key a string.
+      </p><p>
+        Make UnmountIcon key a localestring.
+      </p></div></div></div>
+</body></html>
+------MultipartBoundary--SUoUp28T0mgGT7y0GHZkmaWZaG48XgNAXGyBMJw2LZ----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-d757445c-6847-4fd8-a162-1d03435064fc@mhtml.blink
+
+@charset "utf-8";
+
+.bd911b39-7cb1-4433-bb7e-5d87c87aea01 { position: relative !important; bord=
+er-radius: 0.2em !important; padding: 0px !important; margin: 0px !importan=
+t; }
+
+.a94e9391-9c72-4b89-9a5b-263fd6209c97 .ssh-close { position: absolute; left=
+: -8px; top: -8px; width: 16px; height: 16px; z-index: 999; border: none; b=
+ackground: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAA=
+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
+NGpVYJkfGwAAAABJRU5ErkJggg=3D=3D") no-repeat border-box border-box; animati=
+on-duration: 275ms; animation-timing-function: ease-out; box-shadow: none; =
+animation-name: b62f98f4-b0cb-4e9a-8603-80a31da74eb0; }
+
+.a94e9391-9c72-4b89-9a5b-263fd6209c97 .ssh-close:hover, .a94e9391-9c72-4b89=
+-9a5b-263fd6209c97 .ssh-close:focus { background-image: url("data:image/png=
+;base64,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"); }
+
+@media print {
+  .a94e9391-9c72-4b89-9a5b-263fd6209c97 { box-shadow: unset !important; -we=
+bkit-print-color-adjust: exact !important; }
+}
+
+@keyframes b62f98f4-b0cb-4e9a-8603-80a31da74eb0 {=20
+  0% { opacity: 0; transform: scale(0.6); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes a288d496-aa41-434c-b89d-62d8136e60fd {=20
+  100% { opacity: 0; transform: scale(0.3); }
+}
+
+.a94e9391-9c72-4b89-9a5b-263fd6209c97 { background-color: rgba(238, 238, 23=
+8, 0.7); color: rgb(170, 170, 170); font: inherit; box-shadow: rgb(238, 238=
+, 238) 0px 0px 0.35em; text-shadow: none !important; }
+
+.default-red-aa94e3d5-ab2f-4205-b74e-18ce31c7c0ce { box-shadow: rgb(255, 12=
+8, 128) 0px 0px 0.35em; background-color: rgba(255, 128, 128, 0.7) !importa=
+nt; color: rgb(0, 0, 0) !important; }
+
+.default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 { box-shadow: rgb(255,=
+ 210, 170) 0px 0px 0.35em; background-color: rgba(255, 210, 170, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-yellow-aaddcf5c-0e41-4f83-8a64-58c91f7c6250 { box-shadow: rgb(255,=
+ 255, 170) 0px 0px 0.35em; background-color: rgba(255, 255, 170, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-green-c4d41e0a-e40f-4c3f-91ad-2d66481614c2 { box-shadow: rgb(170, =
+255, 170) 0px 0px 0.35em; background-color: rgba(170, 255, 170, 0.7) !impor=
+tant; color: rgb(0, 0, 0) !important; }
+
+.default-cyan-f88e8827-e652-4d79-a9d9-f6c8b8ec9e2b { box-shadow: rgb(170, 2=
+55, 255) 0px 0px 0.35em; background-color: rgba(170, 255, 255, 0.7) !import=
+ant; color: rgb(0, 0, 0) !important; }
+
+.default-purple-c472dcdb-f2b8-41ab-bb1e-2fb293df172a { box-shadow: rgb(255,=
+ 170, 255) 0px 0px 0.35em; background-color: rgba(255, 170, 255, 0.7) !impo=
+rtant; color: rgb(0, 0, 0) !important; }
+
+.default-grey-da7cb902-89c6-46fe-b0e7-d3b35aaf237a { box-shadow: rgb(119, 1=
+19, 119) 0px 0px 0.35em; background-color: rgba(119, 119, 119, 0.7) !import=
+ant; color: rgb(255, 255, 255) !important; }
+------MultipartBoundary--SUoUp28T0mgGT7y0GHZkmaWZaG48XgNAXGyBMJw2LZ------

@@ -1,0 +1,17 @@
+# https://develop.kde.org/docs/dolphin/service-menus/
+# https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+# https://unix.stackexchange.com/questions/446388/back-ticks-vs-double-quotes
+# https://unix.stackexchange.com/questions/68694/when-is-double-quoting-necessary/68748#68748
+# https://unix.stackexchange.com/questions/144422/getting-the-current-path-in-desktop-exec-command
+
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Actions=pasteAsShortcut
+X-KDE-Priority=TopLevel
+
+[Desktop Action pasteAsShortcut]
+Name=paste shortcut inside
+Icon=edit-paste
+Exec=u=$(echo %u) && bash ~/pasteAsShortcut.sh "$u"
