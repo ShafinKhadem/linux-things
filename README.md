@@ -1,3 +1,14 @@
+## Cleanly work on a large repo
+
+- Fork it & never touch the main branch.
+- git clone the fork.
+- :warning: Delete all remote branches except main or master from fork: `git branch -r | grep -Po '(?<=origin/).*' | grep -v 'main\|master' | xargs -I {} git push origin :{}`
+- Add new remote named 'upstream' from upstream url to track upstream main.
+- Clear the useless remote tracking branches from 'upstream': `git branch -r | grep -Po '(?<=upstream/).*' | grep -v 'main\|master' | xargs -I {} git branch -r -d upstream/{}`
+
+If you ever mistakenly remove the 'origin' remote, after re-adding it, you can make the local branches track their origin equivalents by `git branch | cut -c 3- | xargs -I {} git branch -u origin/{} {}`
+
+
 ## Properly ignore changes in git
 
 **Discard changes (from gitkraken) will discard/reset the changes, not ignore**
