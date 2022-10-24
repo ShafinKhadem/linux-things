@@ -1,4 +1,4 @@
-https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits/43138338#43138338
+https://git-scm.com/docs/git-rebase#_splitting_commits, Pro-tip from [an stackoverflow answer](https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits/43138338#43138338): you can reuse previous commit message using `git commit --file .git/rebase-merge/message`
 
 ## Cleanly work on a large repo
 
