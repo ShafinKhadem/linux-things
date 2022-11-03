@@ -1,12 +1,14 @@
 https://git-scm.com/docs/git-rebase#_splitting_commits, Pro-tip from [an stackoverflow answer](https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits/43138338#43138338): you can reuse previous commit message using `git commit --file .git/rebase-merge/message`
 
+https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet
+
 ## Cleanly work on a large repo
 
 - Fork it & never touch the main branch.
 - git clone the fork.
-- :warning: Delete all remote branches except main or master from fork: `git branch -r | grep -Po '(?<=origin/).*' | grep -v 'main\|master' | xargs -I {} git push origin :{}`
+- :warning: Delete all remote branches except main or master from fork: `git branch -r | grep -Po '(?<=origin/).*' | grep -v 'main\|master' | xargs -I {} git push origin :{}` (github now does it by default).
 - Add new remote named 'upstream' from upstream url to track upstream main.
-- Clear the useless remote tracking branches from 'upstream': `git branch -r | grep -Po '(?<=upstream/).*' | grep -v 'main\|master' | xargs -I {} git branch -r -d upstream/{}`
+- Not recommended but you can clear the useless remote tracking branches from 'upstream': `git branch -r | grep -Po '(?<=upstream/).*' | grep -v 'main\|master' | xargs -I {} git branch -r -d upstream/{}`
 
 If you ever mistakenly remove the 'origin' remote, after re-adding it, you can make the local branches track their origin equivalents by `git branch | cut -c 3- | xargs -I {} git branch -u origin/{} {}`
 
