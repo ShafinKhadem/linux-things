@@ -1,5 +1,5 @@
 run freshInstall.sh and follow its ending comments.
-sudo apt install kompare kamoso qdbusviewer
+sudo apt install kompare kamoso qdbusviewer kronometer
 cp pasteAsShortcut.desktop ~/.local/share/kservices5/ServiceMenus/
 cp pasteAsShortcut.sh ~
 sudo add-apt-repository ppa:kubuntu-ppa/backports
